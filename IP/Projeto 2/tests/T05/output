@@ -1,0 +1,35 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> 4 castelos:
+3 reinos:
+Jogo iniciado, comeca o reino Lannister.
+Lannister > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (NightWatch)
+Casterly Rock (Lannister)
+Dread Fort (sem dono)
+3 reinos:
+Lannister; Stark; NightWatch
+Lannister > 4 castelos:
+3 reinos:
+Castelo ja ocupado.
+Jogo iniciado, comeca o reino Lannister.
+Lannister > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (sem dono)
+Casterly Rock (Lannister)
+Dread Fort (sem dono)
+2 reinos:
+Lannister; Stark
+Lannister > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (sem dono)
+Casterly Rock (Lannister)
+Dread Fort (sem dono)
+2 reinos:
+Lannister; Stark
+Lannister > Obrigado por jogar. Ate a proxima.

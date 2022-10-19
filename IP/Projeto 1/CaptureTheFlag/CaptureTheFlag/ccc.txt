@@ -1,0 +1,69 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> Jogo iniciado, comeca a equipa NightWatch.
+NightWatch > 10 10
+NightWatch 5 2 cavaleiro(vivo) 5 3 espadachim(vivo) 6 2 lanceiro(vivo) 5 1
+Wildlings 5 9 cavaleiro(vivo) 5 10 espadachim(vivo) 6 9 lanceiro(vivo) 5 8
+NightWatch > NightWatch cavaleiro(vivo) 5 4
+NightWatch cavaleiro(vivo) 5 5
+NightWatch cavaleiro(vivo) 5 6
+Wildlings > Wildlings lanceiro(vivo) 5 7
+NightWatch > NightWatch cavaleiro(vivo) 6 6
+NightWatch cavaleiro(vivo) 6 7
+NightWatch cavaleiro(vivo) 6 8
+Wildlings > Wildlings lanceiro(vivo) 5 6
+NightWatch > Muhahah, sou um NightWatch! Sou invencivel! Nenhum espadachim me faz frente!
+NightWatch cavaleiro(vivo) 6 9
+NightWatch cavaleiro(vivo) 6 10
+Muhahah, sou um NightWatch! Sou invencivel! Nenhum cavaleiro me faz frente!
+NightWatch cavaleiro(vivo) 5 10
+Wildlings > Wildlings lanceiro(vivo) 5 5
+NightWatch > NightWatch lanceiro(vivo) 4 1
+Wildlings > Wildlings lanceiro(vivo) 5 4
+NightWatch > NightWatch lanceiro(vivo) 4 2
+Wildlings > Wildlings lanceiro(vivo) 4 4
+NightWatch > NightWatch lanceiro(vivo) 4 3
+Wildlings > Muhahah, sou um Wildlings! Sou invencivel! Nenhum lanceiro me faz frente!
+Wildlings lanceiro(vivo) 4 3
+NightWatch > Jogo iniciado, comeca a equipa NightWatch.
+NightWatch > NightWatch espadachim(vivo) 6 3
+Wildlings > Wildlings espadachim(vivo) 6 8
+NightWatch > NightWatch espadachim(vivo) 6 4
+Wildlings > Wildlings espadachim(vivo) 6 7
+NightWatch > NightWatch espadachim(vivo) 6 5
+Wildlings > Wildlings espadachim(vivo) 6 6
+NightWatch > Muhahah, sou um NightWatch! Sou invencivel! Nenhum espadachim me faz frente!
+NightWatch espadachim(vivo) 6 6
+Wildlings > Wildlings lanceiro(vivo) 6 8
+NightWatch > NightWatch espadachim(vivo) 6 7
+Wildlings > Wildlings cavaleiro(vivo) 4 10
+Wildlings cavaleiro(vivo) 4 9
+Wildlings cavaleiro(vivo) 4 8
+NightWatch > Muhahah, sou um NightWatch! Sou invencivel! Nenhum lanceiro me faz frente!
+NightWatch espadachim(vivo) 6 8
+Wildlings > Jogo iniciado, comeca a equipa Wildlings.
+NightWatch > O lanceiro da ilustre casa de NightWatch e um cobardolas.
+NightWatch lanceiro(vivo) 5 1
+Wildlings > O cavaleiro da ilustre casa de Wildlings e um cobardolas.
+Wildlings cavaleiro(vivo) 5 10
+O cavaleiro da ilustre casa de Wildlings e um cobardolas.
+Wildlings cavaleiro(vivo) 5 10
+O cavaleiro da ilustre casa de Wildlings e um cobardolas.
+Wildlings cavaleiro(vivo) 5 10
+NightWatch > O lanceiro da ilustre casa de NightWatch e um cobardolas.
+NightWatch lanceiro(vivo) 5 1
+Wildlings > Wildlings lanceiro(vivo) 4 8
+NightWatch > NightWatch lanceiro(vivo) 4 1
+Wildlings > Wildlings lanceiro(vivo) 4 9
+NightWatch > O lanceiro da ilustre casa de NightWatch e um cobardolas.
+NightWatch lanceiro(vivo) 4 1
+Wildlings > Wildlings lanceiro(vivo) 4 10
+NightWatch > O lanceiro da ilustre casa de NightWatch e um cobardolas.
+NightWatch lanceiro(vivo) 4 1
+Wildlings > O lanceiro da ilustre casa de Wildlings e um cobardolas.
+Wildlings lanceiro(vivo) 4 10
+NightWatch > 10 10
+Wildlings 5 9 cavaleiro(vivo) 5 10 espadachim(vivo) 6 9 lanceiro(vivo) 4 10
+NightWatch 5 2 cavaleiro(vivo) 5 3 espadachim(vivo) 6 2 lanceiro(vivo) 4 1
+NightWatch > Obrigado por jogar. Ate a proxima.

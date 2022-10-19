@@ -1,0 +1,4 @@
+vhdl work "m4_1_8bit.vhf"
+vhdl work "e4_2.vhf"
+vhdl work "ULA.vhf"
+vhdl work "TestULA.vhd"

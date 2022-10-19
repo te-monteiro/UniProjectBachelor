@@ -1,0 +1,101 @@
+model Aeroporto
+
+-- classes
+
+class Airline
+attributes
+  name : String
+  profitRate: Real
+end
+
+class Flight
+attributes
+  cost : Real
+  number : Integer
+operations
+  addPassenger(p: Passenger)
+end
+
+class Aircraft
+attributes
+  manufacturer: String
+  aircraftModel: String
+  capacity : Integer
+end
+
+class Passenger
+attributes
+  name : String
+end
+
+class Airport
+attributes
+  name : String
+end
+
+class IndirectFlight < Flight
+end
+
+class Time
+attributes
+  year : Integer
+  month : Integer
+  day : Integer
+  hour : Integer
+  minute : Integer
+  second : Integer
+end
+
+
+
+--associations
+
+association runs between
+  Airline [1] role airline
+  Flight [0..*] role flight
+end
+
+association flies between
+  Flight [1..*] role flight
+  Aircraft [1] role aircraft
+end
+
+association travels between
+  Passenger [0..*] role passengers
+  Flight [1..*] role flights
+end
+
+associationclass embarks between
+  Passenger [0..*] role passengers
+  Airport [1..*] role airports
+attributes
+  departureGate : Integer
+end
+
+associationclass departures between
+  Flight [0..*] role outgoing
+  Airport [1] role departure
+attributes
+  departureTime : Time
+end
+
+
+associationclass destinations between
+  Flight [0..*] role incoming
+  Airport [1] role destination
+attributes
+  landingTime : Time
+end
+
+associationclass stops between
+  IndirectFlight [0..*] role transit
+  Airport [1..*] role stop
+attributes
+  landingTime : Time
+  departureTime : Time
+end
+
+association flying between
+  embarks [0..*] role embark
+  Flight [1] role flight
+end

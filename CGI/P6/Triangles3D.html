@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+
+varying vec4 originalPosition;
+
+uniform mat4 mModel;
+uniform mat4 mView;
+uniform mat4 mProjection;
+
+void main(){
+
+    gl_Position = mProjection * mModel * mView * vPosition;
+    originalPosition = vPosition;
+}
+</script>
+    
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+
+varying vec4 originalPosition;
+
+void main() {
+    if(originalPosition.y > 0.2){
+       gl_FragColor = vec4(0.0, 0.5, 1.0, 1.0);
+    } else if( originalPosition.x > 0.2){
+       gl_FragColor = vec4(1.0, 1.0, 0.0, 1.0);
+    } else if( originalPosition.z > 0.3){
+       gl_FragColor = vec4(0.0, 1.0, 1.0, 1.0);
+    } else {
+      gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+    }
+      
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type ="text/javascript" src="../Common/cube.js"></script> 
+ <script type ="text/javascript" src="../Common/sphere.js"></script>
+<script type="text/javascript" src="Triangles3D.js"></script>
+</head>
+<body>
+<title>Triangle</title>
+    <canvas id="gl-canvas" width="512" height="512">
+        Oops... your browser doesn't support the HTML5 canvas element"
+    </canvas>
+Deslocamento x <input id= "tx" type = "range" min = "-1" max = "1" step = "0.01" >  
+Deslocamento y <input id= "ty" type = "range" min = "-1" max = "1" step = "0.01" >
+Deslocamento z <input id= "tz" type = "range" min = "-1" max = "1" step = "0.01" >
+Rotação x <input id= "rx" type = "range" min = "-180" max = "180" step = "0.01" >
+Rotação y <input id= "ry" type = "range" min = "-180" max = "180" step = "0.01" >
+Rotação z <input id= "rz" type = "range" min = "-180" max = "180" step = "0.01" >
+Escala x <input id= "sx" type = "range" min = "0.05" max = "2" step = "0.01" >
+Escala y <input id= "sy" type = "range" min = "0.05" max = "2" step = "0.01" >
+Escala z <input id= "sz" type = "range" min = "0.05" max = "2" step = "0.01" >
+<button id = "esfera" > Esfera </button>
+<button id = "cube" > Cube </button>
+<button id = "guardar" > Guardar </button>
+<button id = "reset" > Reset </button>
+
+    
+</body>
+</html>

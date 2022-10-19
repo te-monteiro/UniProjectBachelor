@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0037)http://ia.ssdi.di.fct.unl.pt/tp1.html -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml"><!-- #BeginTemplate "/Templates/master.dwt" --><!-- DW6 --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- #BeginEditable "doctitle" -->
+<title>Inteligência Artificial</title>
+<link rel="stylesheet" crossorigin="anonymous" href="./Inteligência Artificial -1_files/main.css"><style type="text/css">
+.mycode {
+	font-family: Courier New, Courier, monospace;
+}
+.mymaroon {
+}
+</style>
+<!-- #EndEditable -->
+<link href="./Inteligência Artificial -1_files/style3.css" media="screen" rel="stylesheet" title="CSS" type="text/css">
+<style type="text/css">
+.style1 {
+	border-width: 0px;
+}
+</style>
+<style type="text/css"></style></head>
+
+<body>
+
+<!-- Begin Container -->
+<div id="container">
+	<!-- Begin Masthead -->
+	<div id="masthead">
+		<a href="http://ia.ssdi.di.fct.unl.pt/index.html">
+		<img alt="" height="66" src="./Inteligência Artificial -1_files/logo.gif" width="150" class="style1"></a>
+		<p>Inteligência Artificial</p>
+	</div>
+	<!-- End Masthead -->
+	<!-- Begin Navigation -->
+	<div id="navigation">
+		<ul>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/index.html">Início</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/objectivos.html">Objectivos</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/programa.html">Programa</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/bibliografia.html">Bibliografia</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/docentes.html">Docentes</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/avaliacao.html">Avaliação</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/horario.html">Horário</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/aulas.html">Aulas</a></li>
+	  </ul>
+	</div>
+	<!-- End Navigation -->
+	<!-- Begin Page Content -->
+	<div id="page_content">
+		<!-- Begin Left Column -->
+		<div id="column_l">
+			<!-- #BeginEditable "content" -->
+			<h2>Procura em Espaços de Estados            </h2>
+			<p><span lang="pt" xml:lang="pt">O tópico destas aulas são os problemas de procura em espaços de estados e os respectivos algoritmos para a sua resolução. É apresentada uma representação genérica destes problemas e uma implementação de vários algoritmos de procura cega (procura em profundidade, procura em largura e procura de custo uniforme) e de procura informada (procura sôfrega e procura A*). O código disponibilizado (em Java) visa o entendimento dos conceitos em detrimento da eficiência, possibilitando a fácil compreensão da matéria e distinção entre os algoritmos.</span>            </p>
+			<p><span lang="pt" xml:lang="pt">Dada a generalidade da modelação fornecida, será possível aplicar os algoritmos na resolução de diversos problemas de procura em espaços de estados. Complementarmente, fornece-se uma implementação para a representação de problemas de cálculo de rotas em mapas de estradas. Deste modo, será possível experimentar os diferentes algoritmos de procura e perceber as suas vantagens e inconvenientes para a resolução deste tipo de problemas.</span>            </p>
+			<h3><a name="searchproblem" id="searchproblem">1 – Instalação e utilização da implementação fornecida </a>            </h3>
+			<p><span lang="pt" xml:lang="pt">Crie um novo projeto de JAVA (pode ser simples com uma classe Main) num IDE de sua escolha (por exemplo Eclipse), instale os <a href="http://ia.ssdi.di.fct.unl.pt/tp1/src.zip">pacotes</a> Java fornecidos e leia atentamente o <a href="http://ia.ssdi.di.fct.unl.pt/guiao1.html">guião</a> que explica o seu funcionamento detalhado. Experimente o seguinte código no qual se cria um grafo com o mapa da Roménia e se resolve o problema de encontrar o caminho mais curto entre Arad e Bucharest usando o algoritmo de procura em largura:</span>            </p>
+			<p>
+            &nbsp;<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:#7F0055">public static void</span></strong> main(String[] args) { <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graph graph = <strong><span style="color:#7F0055">new</span></strong> Graph(); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;graph.defineGraphRomenia(); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;graph.showLinks(); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;graph.showSets(); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node n; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n = graph.searchSolution(<span style="color:#2A00FF">"Arad"</span>, <span style="color:#2A00FF">"Bucharest"</span>, Algorithms.<strong><em><span style="color:#0000C0">BreadthFirstSearch</span></em></strong>); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span lang="pt" xml:lang="pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;graph.showSolution(n);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><br>
+<span lang="pt" xml:lang="pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></code></p>
+			<p><span lang="pt" xml:lang="pt">Como resultado deverão aparecer:</span>            </p>
+            <p><span lang="pt" xml:lang="pt">todas</span><span lang="pt" xml:lang="pt"> as ligações e respectivos quilómetros</span></p>
+            <p><span lang="pt" xml:lang="pt"><code>********************* LINKS *********************</code></span> <br>
+            <code><span lang="pt" xml:lang="pt">Oradea: Sibiu (218.0); Zerind (56.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Zerind: Arad (51.0); Oradea (56.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Bucharest: Fagaras (180.0); Giurgiu (59.0); Pitesti (108.0); Urziceni (52.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Urziceni: Bucharest (52.0); Hirsova (103.0); Vaslui (229.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Arad: Sibiu (221.0); Timisoara (49.0); Zerind (51.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Mehadia: Dobreta (37.0); Lugoj (94.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Neamt: Iasi (94.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Iasi: Neamt (94.0); Vaslui (58.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">R. Vilcea: Craiova (96.0); Pitesti (47.0); Sibiu (79.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Eforie: Hirsova (88.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Pitesti: Bucharest (108.0); Craiova (103.0); R. Vilcea (47.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Timisoara: Arad (49.0); Lugoj (54.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Craiova: Dobreta (96.0); Pitesti (103.0); R. Vilcea (96.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Hirsova: Eforie (88.0); Urziceni (103.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Vaslui: Iasi (58.0); Urziceni (229.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Giurgiu: Bucharest (59.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Sibiu: Arad (221.0); Fagaras (65.0); Oradea (218.0); R. Vilcea (79.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Dobreta: Craiova (96.0); Mehadia (37.0); </span> </code><br>
+            <code><span lang="pt" xml:lang="pt">Fagaras: Bucharest (180.0); Sibiu (65.0); </span> </code><br>
+            <code>Lugoj: Mehadia (94.0); Timisoara (54.0); </code><br>
+            <code>************************************************* </code></p>
+            <p><span lang="pt" xml:lang="pt">todas</span><span lang="pt" xml:lang="pt"> as regiões e respectivas cidades</span></p>
+            <p><span lang="pt" xml:lang="pt"><code>********************* SETS *********************</code></span><code> <br>
+            <span lang="pt" xml:lang="pt">Banat: Timisoara; Lugoj; Mehadia; </span> <br>
+            <span lang="pt" xml:lang="pt">Crisana: Zerind; Oradea; Arad; </span> <br>
+            <span lang="pt" xml:lang="pt">Dobrogea: Eforie; Hirsova; </span> <br>
+            <span lang="pt" xml:lang="pt">Moldova: Neamt; Iasi; Vaslui; </span> <br>
+            <span lang="pt" xml:lang="pt">Muntenia: Bucharest; Giurgiu; Urziceni; Pitesti; </span> <br>
+            <span lang="pt" xml:lang="pt">Oltenia: R. Vilcea; Craiova; Dobreta; </span> <br>
+            Transilvania: Fagaras; Sibiu; <br>
+            *************************************************</code>            </p>
+            <p><span lang="pt" xml:lang="pt">a</span><span lang="pt" xml:lang="pt"> solução obtida e os respectivos indicadores estatísticos do algoritmo</span></p>
+            <p><code>******************* SOLUTION ******************** <br>
+            Node Expansions: 8 <br>
+            Nodes Generated: 21 <br>
+            State Repetitions: 4 <br>
+            Runtime (ms):&nbsp; 1,125 <br>
+            | Arad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; 0 | [Arad, Sibiu] -&gt; 221 <br>
+            <span lang="pt" xml:lang="pt">| Sibiu&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; 221 | [Sibiu, Fagaras] -&gt; 65</span> <br>
+            <span lang="pt" xml:lang="pt">| Fagaras&nbsp;&nbsp; |&nbsp; 286 | [Fagaras, Bucharest] -&gt; 180</span> <br>
+            | Bucharest |&nbsp; 466 | <br>
+            *************************************************</code></p>
+            <p><span lang="pt" xml:lang="pt">Experimente com outras cidades de origem e destino e com diferentes algoritmos de procura.</span>            </p>
+            <h3>2 – Comparação entre os diferentes algoritmos de procura </h3>
+            <p><span lang="pt" xml:lang="pt">Compare o comportamento dos diferentes algoritmos de procura para calcular a melhor rota em cada um dos seguintes problemas. Para cada um deles, considere o número de nós expandidos, gerados e repetidos, assim como o tempo de execução e indique qual o algoritmo com a melhor performance para cada um dos casos. Verifique ainda se conseguiu obter a solução óptima:</span></p>
+            <table border="1">
+              <tbody><tr>
+                <th scope="col">&nbsp;</th>
+                <th scope="col"><div align="center">Cidade de origem</div></th>
+                <th scope="col"><div align="center">Cidade de destino</div></th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td><div align="center">Arad</div></td>
+                <td><div align="center">Bucharest</div></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><div align="center">Bucharest</div></td>
+                <td><div align="center">Oradea</div></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><div align="center">Oradea</div></td>
+                <td><div align="center">Bucharest</div></td>
+              </tr>
+              <tr>
+                <td>4 </td>
+                <td><div align="center">Timisoara</div></td>
+                <td><div align="center">Neamt</div></td>
+              </tr>
+            </tbody></table>
+            <h3>3 – Problemas com passagem obrigatória numa província            </h3>
+            <p><span lang="pt" xml:lang="pt">Considere agora uma extensão ao problema anterior em que se pretende igualmente ir de uma cidade de origem para uma cidade de destino, mas onde se requer também a passagem por uma cidade que pertença a uma província pré-determinada. Assume-se que a cidade de origem é distinta da cidade de destino e que nem uma nem a outra pertencem à província em questão. </span>            </p>
+            <p><span lang="pt" xml:lang="pt">Por exemplo, considere que se pretende ir de Arad para Bucharest passando por uma cidade da província de Dobrogea. Como se pode ver acima, a província de Dobrogea contém duas cidades: Eforie e Hirsova. Por isso, neste caso uma solução seria iniciar o percurso em Arad escolher o melhor caminho para Eforie e finalmente escolher o melhor caminho de Eforie para Bucharest. A única solução alternativa a esta seria ir de Arad para Hirsova e posteriormente de Hirsova para Bucharest escolhendo sempre os caminhos mais curtos. Claro que se a província de passagem contivesse mais cidades, maior seria o número de possíveis soluções alternativas. Neste problema, tal como nos outros, estamos interessados na solução de menor custo, isto é, a que apresenta um percurso total mais curto. </span>            </p>
+            <p><span lang="pt" xml:lang="pt">Note que este problema pode ser resolvido usando um novo grafo que apenas contém os vértices correspondentes à cidade inicial, à cidade final e às cidades pertencentes à província de passagem. Para forçar a passagem pela província, o novo grafo teria que ter uma ligação da cidade inicial para todas as cidades dessa província e destas para a cidade destino. No exemplo acima teríamos que ter ligações entre: Arad e Eforie; Arad e Hirsova; Eforie e Bucharest; Hirsova e Bucharest. Para garantir o percurso total mais curto seria necessário associar a cada ligação deste novo grafo um custo correspondente ao do caminho mais curto entre as cidades envolvidas (que poderia ser calculado por um algoritmo de procura no grafo original). </span>            </p>
+            <p><span lang="pt" xml:lang="pt">No exemplo acima o novo grafo teria as seguintes ligações:</span></p>
+            <p><code>********************* LINKS ********************* <br>
+            Hirsova: Arad (610.0); Bucharest (155.0); <br>
+            Bucharest: Eforie (243.0); Hirsova (155.0); <br>
+            <span lang="pt" xml:lang="pt">Arad: Eforie (698.0); Hirsova (610.0); </span> <br>
+            <span lang="pt" xml:lang="pt">Eforie: Arad (698.0); Bucharest (243.0); </span> <br>
+            <span lang="pt" xml:lang="pt">*************************************************</span></code></p>
+            <p><span lang="pt" xml:lang="pt">Usando neste novo grafo o método <em>searchSolution</em> para calcular o caminho mais curto entre a cidade de origem e a cidade de destino, neste caso Arad e Bucharest, obtém-se a solução pretendida. Esta solução pode ser visualizada pelo método <em>showSolution</em> evocado no grafo original. </span>            </p>
+            <p><span lang="pt" xml:lang="pt">No exemplo o resultado com o algoritmo de procura A* seria:</span></p>
+            <p><code>******************* SOLUTION ********************<br>
+Node Expansions: 28</code><br>
+<code>Nodes Generated: 78</code><br>
+<code>State Repetitions: 1</code><br>
+<code>Runtime (ms):&nbsp; 3,999 </code><br>
+<code>| Arad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; 0 | [Arad, Sibiu, R. Vilcea, Pitesti, Bucharest, Urziceni, Hirsova] -&gt; 610</code><br>
+<code>| Hirsova&nbsp;&nbsp; |&nbsp; 610 | [Hirsova, Urziceni, Bucharest] -&gt; 155</code><br>
+<code>| Bucharest |&nbsp; 765 | </code><br>
+<code>*************************************************            </code></p>
+            <p><span lang="pt" xml:lang="pt">Implemente um novo método <em>searchSolution</em> em que além da identificação das cidades de origem e destino, e do algoritmo de procura, se pode especificar uma província de passagem (que não contenha nenhuma destas cidades). Este novo método deve criar automaticamente o novo grafo e usá-lo para resolver o problema como explicado acima.&nbsp; </span></p>
+            <h3>4 – Problemas com passagem obrigatória numa sequência de províncias</h3>
+            <p><span lang="pt" xml:lang="pt">Considere uma nova extensão ao problema em que além de se pretender ir de uma cidade de origem para uma cidade de destino, se requer a passagem por uma sequência pré-determinada de províncias (distintas entre si) pela ordem indicada. Assume-se que a cidade de origem é distinta da cidade de destino e que nem uma nem a outra pertencem a nenhuma das províncias em questão. </span>            </p>
+            <p><span lang="pt" xml:lang="pt">Implemente um novo método <em>searchSolution</em> em que além da identificação das cidades de origem e destino, e do algoritmo de procura, se pode especificar uma sequência de províncias de passagem (que não contenha nenhuma destas cidades). </span></p>
+                        <p><span lang="pt" xml:lang="pt">No caso de uma viagem de Arad para Bucharest passando por uma cidade de Dobrogea e uma de Banat, o novo grafo teria as seguintes ligações:</span></p>
+            <p><code>********************* LINKS ********************* <br>
+            <span lang="pt" xml:lang="pt">Hirsova: Arad (610.0); Lugoj (593.0); Mehadia (499.0); Timisoara (647.0); </span> <br>
+            <span lang="pt" xml:lang="pt">Bucharest: Lugoj (438.0); Mehadia (344.0); Timisoara (492.0); </span> <br>
+            <span lang="pt" xml:lang="pt">Arad: Eforie (698.0); Hirsova (610.0); </span> <br>
+            <span lang="pt" xml:lang="pt">Mehadia: Eforie (587.0); Hirsova (499.0); Bucharest (344.0); </span> <br>
+            <span lang="pt" xml:lang="pt">Lugoj: Eforie (681.0); Hirsova (593.0); Bucharest (438.0); </span> <br>
+            <span lang="pt" xml:lang="pt">Eforie: Arad (698.0); Lugoj (681.0); Mehadia (587.0); Timisoara (735.0); </span> <br>
+            <span lang="pt" xml:lang="pt">Timisoara: Eforie (735.0); Hirsova (647.0); Bucharest (492.0); </span> <br>
+            <span lang="pt" xml:lang="pt">*************************************************</span></code></p>
+            <p><span lang="pt" xml:lang="pt">Neste exemplo, o resultado com o algoritmo de procura A* seria:</span></p>
+<p><code>******************* SOLUTION ********************<br>
+Node Expansions: 105</code><br>
+<code>Nodes Generated: 289</code><br>
+<code>State Repetitions: 9</code><br>
+<code>Runtime (ms): 11.512</code><br>
+<code>| Arad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;| [Arad, Sibiu, R. Vilcea, Pitesti, Bucharest, Urziceni, Hirsova] -&gt; 610</code><br>
+<code>| Hirsova	&nbsp;&nbsp;|&nbsp;&nbsp;610&nbsp;| [Hirsova, Urziceni, Bucharest, Pitesti, Craiova, Dobreta, Mehadia] -&gt; 499</code><br>
+<code>| Mehadia&nbsp;&nbsp;&nbsp;|&nbsp;1109&nbsp;| [Mehadia, Dobreta, Craiova, Pitesti, Bucharest] -&gt; 344</code><br>
+<code>| Bucharest&nbsp;|&nbsp;1453&nbsp;| </code><br>
+<code>*************************************************            </code></p> 
+
+            <p>&nbsp;</p>
+			<!-- #EndEditable --></div>
+		<!-- End Left Column --></div>
+	<!-- End Page Content -->
+	<!-- Begin Footer -->
+	<div id="footer">
+		<p>	<a href="http://ia.ssdi.di.fct.unl.pt/index.html">Início</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/objectivos.html">Objectivos</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/programa.html">Programa</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/bibliografia.html">Bibliografia</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/docentes.html">Docentes</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/avaliacao.html">Avaliação</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/horario.html">Horário</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/aulas.html">Aulas</a> |
+	  </p><p>Comentários e sugestões para 
+		<a href="mailto:jleite@fct.unl.pt?subject=BD%20-%20Website">jleite@fct.unl.pt</a></p>
+	</div>
+	<!-- End Footer --></div>
+<!-- End Container -->
+
+
+
+<!-- #EndTemplate -->
+</body></html>

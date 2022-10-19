@@ -1,0 +1,37 @@
+
+		for (int i = 1; i <= transcriptChars.length; i++) {
+			for (int j = 1; j <= originalChars.length; j++) {
+
+				tableResult[i][j] = tableResult[i - 1][j - 1]
+						+ this.calcDistPoints(originalChars[j - 1], transcriptChars[i - 1]);
+			}
+		}
+
+
+3
+egyim 
+anows
+uflth
+time
+yme
+
+
+public static void print2D(int mat[][]) {
+		// Loop through all rows
+		for (int i = 0; i < mat.length; i++) {
+			System.out.println();
+			System.out.print("  ");
+			// Loop through all elements of current row
+			for (int j = 0; j < mat[i].length; j++)
+				System.out.print(mat[i][j] + " ");
+		}
+		System.out.println("\n");
+
+	}
+
+
+
+
+
+
+[[0, -5, -10, -15], [0, 3, 3, 2], [0, -1, 7, 1], [0, -7, 0, 0]]

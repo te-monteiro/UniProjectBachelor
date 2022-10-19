@@ -1,0 +1,28 @@
+create table Workers (
+    
+);
+
+
+create table Branches (
+    code_b number(10,0),
+    address_b varchar(255) not null,
+    name_b varchar(255) not null,
+    phone_b number(9,0) not null unique,
+    
+    primary key(code_b)
+    
+);
+
+create table People (
+    nif number(9,0),
+    email_p varchar(254) not null,
+    phone_p number(9,0) not null,
+    address_p varchar(255) not null,
+    birthdate date not null,
+    name_p varchar(255) not null,
+    code_b number(10,0) not null,
+   
+    primary key (nif),
+    foreign key (code_b) references Branches(code_b)
+);
+

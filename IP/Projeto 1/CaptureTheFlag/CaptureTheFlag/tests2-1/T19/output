@@ -1,0 +1,39 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> Jogo iniciado, comeca a equipa Baratheon.
+Baratheon > Baratheon cavaleiro(vivo) 3 6
+Baratheon cavaleiro(vivo) 4 6
+Baratheon cavaleiro(vivo) 5 6
+Targaryen > Targaryen cavaleiro(vivo) 7 6
+Targaryen cavaleiro(vivo) 6 6
+Muhahah, sou um Targaryen! Sou invencivel! Nenhum cavaleiro me faz frente!
+Targaryen cavaleiro(vivo) 5 6
+Baratheon > Baratheon lanceiro(vivo) 3 4
+Targaryen > Targaryen cavaleiro(vivo) 4 6
+Targaryen cavaleiro(vivo) 3 6
+Muhahah, sou um Targaryen! Sou invencivel! Nenhum espadachim me faz frente!
+Targaryen cavaleiro(vivo) 3 5
+Baratheon > Muhahah, sou um Baratheon! Sou invencivel! Nenhum cavaleiro me faz frente!
+Baratheon lanceiro(vivo) 3 5
+Targaryen > 10 10
+Baratheon 2 5 cavaleiro(morto) 5 6 espadachim(morto) 3 5 lanceiro(vivo) 3 5
+Targaryen 8 5 cavaleiro(morto) 3 5 espadachim(vivo) 9 5 lanceiro(vivo) 8 4
+Targaryen > Targaryen lanceiro(vivo) 7 4
+Baratheon > Baratheon lanceiro(vivo) 3 4
+Targaryen > Targaryen lanceiro(vivo) 6 4
+Baratheon > Baratheon lanceiro(vivo) 4 4
+Targaryen > Targaryen lanceiro(vivo) 5 4
+Baratheon > Muhahah, sou um Baratheon! Sou invencivel! Nenhum lanceiro me faz frente!
+Baratheon lanceiro(vivo) 5 4
+Targaryen > 10 10
+Baratheon 2 5 cavaleiro(morto) 5 6 espadachim(morto) 3 5 lanceiro(vivo) 5 4
+Targaryen 8 5 cavaleiro(morto) 3 5 espadachim(vivo) 9 5 lanceiro(morto) 5 4
+Targaryen > Targaryen espadachim(vivo) 9 4
+Baratheon > Baratheon lanceiro(vivo) 6 4
+Targaryen > Targaryen espadachim(vivo) 8 4
+Baratheon > Baratheon lanceiro(vivo) 7 4
+Targaryen > Muhahah, sou um Targaryen! Sou invencivel! Nenhum lanceiro me faz frente!
+Sou um heroi Targaryen! A bandeira Baratheon e nossa! Vitoria gloriosa!
+Targaryen espadachim(vivo) 7 4
+> Obrigado por jogar. Ate a proxima.

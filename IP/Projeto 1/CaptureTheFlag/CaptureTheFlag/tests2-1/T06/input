@@ -1,0 +1,21 @@
+novo 10 10
+lannisters 2 2
+starks 8 8
+mapa
+novo 10 9
+lannisters 2 3
+starks 7 8
+mapa
+novo 9 10
+lannisters 2 3
+starks 7 8
+mapa
+novo -20 -40
+benfica -10 -10 
+porto -18 -30
+mapa
+novo 20 20
+TheMountain 2 5
+TheHound 17 12
+mapa
+sai

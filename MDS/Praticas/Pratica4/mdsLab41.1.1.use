@@ -1,0 +1,16 @@
+model exercisesMDS
+
+--isto é um comentario
+
+class Person 
+end
+
+
+class Spouse
+end
+
+--associacoes:
+association marriage between 
+	Person[1] role person
+	Spouse[0..1] role spouse
+end

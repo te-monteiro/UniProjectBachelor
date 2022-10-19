@@ -1,0 +1,9 @@
+(define (domain hanoi)
+  (:predicates (smaller ?x ?y) (on ?x ?y) (disk ?x) (clear ?x))
+  (:action move-disk
+	   :parameters (?x ?y ?z)
+	   :precondition (and (disk ?x) (on?x ?y) (smaller ?x ?z) (clear ?z))
+	   :effect (and (clear ?y) (on ?x ?z) (not (on ?x ?y)) (not (clear ?z)))
+	   )
+	   )
+

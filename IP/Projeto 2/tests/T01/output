@@ -1,0 +1,19 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> 4 castelos:
+3 reinos:
+Jogo iniciado, comeca o reino Lannister.
+Lannister > novo - Novo jogo
+soldado - Move o soldado
+recruta - Recruta um soldado num castelo
+mapa - Lista todos os castelos do mapa, incluindo os abandonados, pela ordem de criacao no jogo e todos os reinos ainda em jogo, pela ordem de jogada
+castelos - Lista os castelos do jogador activo, pela ordem pela qual foram conquistados
+exercito - Lista os soldados vivos do jogador activo, pela ordem de recrutamento
+reinos - Lista os varios reinos ainda em jogo, ordenados por nome do reino
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+Lannister > Obrigado por jogar. Ate a proxima.

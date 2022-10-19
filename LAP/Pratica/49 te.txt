@@ -1,0 +1,50 @@
+<HTML>
+
+    <HEAD>
+        <TITLE>Searching...</TITLE>
+
+        <SCRIPT>
+            function runForm3(form, prefixo) {
+            var url = form.url.value;
+            if (url == "") {
+                alert("Error: Empty URL");
+            }
+            else {
+                document.location = prefixo + form.url.value;   // Change URL
+            }
+        }
+    </SCRIPT>
+    </HEAD>
+
+    <BODY>
+        <H1>Search</H1>
+        <FORM ID="form3">
+            Enter text in English: <INPUT TYPE="text" ID="url" SIZE=40 VALUE="Type...">
+        <P><INPUT TYPE="button" ID="button0" VALUE="Google" ONCLICK="runForm3(form, 'http://www.google.com/search?q=')">
+
+                <INPUT TYPE="button" ID="button1" VALUE="Wikipedia" ONCLICK="runForm3(form, 'http://en.wikipedia.org/')">
+                    <INPUT TYPE="button" ID="button2" VALUE="Dictionary"
+                        ONCLICK="runForm3(form, 'http://www.thefreedictionary.com/')">
+                        <INPUT TYPE="button" ID="button3" VALUE="Thesaurus"
+                            ONCLICK="runForm3(form, 'http://thesaurus.com/misspelling?term=')">
+                            <INPUT TYPE="button" ID="button4" VALUE="Images"
+                                ONCLICK="runForm3(form, 'https://www.google.com/search?tbm=isch&source=hp&biw=1280&bih=578&ei=FwjcXNPTKMfSkgWP-pjACw&q=')">
+                                <INPUT TYPE="button" ID="button5" VALUE="Twitter" ONCLICK="runForm3(form, 'http://twitter.com/')">
+                                    <INPUT TYPE="button" ID="button6" VALUE="YouTube"
+                                        ONCLICK="runForm3(form, 'https://www.youtube.com/results?search_query=')">
+        </P>
+                                    <P><INPUT TYPE="button" ID="button0" VALUE="Portuguese"
+                                        ONCLICK="runForm3(form, 'http://www.google.com/search?q=')">
+
+                                        <INPUT TYPE="button" ID="button1" VALUE="French" ONCLICK="runForm3(form, 'http://en.wikipedia.org/')">
+                                            <INPUT TYPE="button" ID="button2" VALUE="Japanese"
+                                                ONCLICK="runForm3(form, 'http://www.thefreedictionary.com/')">
+                                                <INPUT TYPE="button" ID="button3" VALUE="Xhosa" ONCLICK="runForm3(form, 'http://thesaurus.com/')">
+                                                    <INPUT TYPE="button" ID="button4" VALUE="Swahili" ONCLICK="runForm3(form, 'http://www.google.com/images/')">
+        </P>
+
+
+    </FORM>
+</BODY>
+
+</HTML>

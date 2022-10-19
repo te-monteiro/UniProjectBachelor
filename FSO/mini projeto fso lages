@@ -1,0 +1,584 @@
+#include "fs.h"
+#include "disk.h"
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <unistd.h>
+#include <math.h>
+
+#define FS_MAGIC           0xf0f03410
+#define INODES_PER_BLOCK   64
+#define POINTERS_PER_INODE 14
+
+#define FALSE 0
+#define TRUE 1
+
+#define VALID 1
+#define NON_VALID 0
+
+#define FREE 0
+#define NOT_FREE 1
+
+struct fs_superblock {															// SUPERBLOCO
+	unsigned int magic;
+	unsigned int nblocks;
+	unsigned int ninodeblocks;
+	unsigned int ninodes;
+};
+
+struct fs_superblock my_super;													// NOSSO SUPERBLOCO
+
+struct fs_inode {																// INODE
+	unsigned int isvalid;
+	unsigned int size;
+	unsigned int direct[POINTERS_PER_INODE];
+};
+
+union fs_block {																// UNION
+	struct fs_superblock super;
+	struct fs_inode inode[INODES_PER_BLOCK];									// LISTA DE INODES
+	char data[DISK_BLOCK_SIZE];
+};
+
+unsigned char * blockBitMap;													// BITMAP
+
+struct fs_inode inode;															// NOSSO INODE
+
+int fs_format()
+{
+  union fs_block block;
+  unsigned int i, nblocks;
+  int ninodeblocks;
+
+  if(my_super.magic == FS_MAGIC){
+    printf("Cannot format a mounted disk!\n");
+    return -1;
+  }
+  nblocks = disk_size();
+  block.super.magic = FS_MAGIC;
+  block.super.nblocks = nblocks;
+  ninodeblocks = (int)ceil((float)nblocks*0.1);
+  block.super.ninodeblocks = ninodeblocks;
+  block.super.ninodes = block.super.ninodeblocks * INODES_PER_BLOCK;
+  
+  printf("superblock:\n");
+  printf("    %d blocks\n",block.super.nblocks);
+  printf("    %d inode blocks\n",block.super.ninodeblocks);
+  printf("    %d inodes\n",block.super.ninodes);
+
+  /* escrita do superbloco */
+  disk_write(0,block.data);
+
+  /* preparacao da tabela de inodes */
+  bzero( block.data, DISK_BLOCK_SIZE);
+  for( i = 0; i < INODES_PER_BLOCK; i++ )
+    block.inode[i].isvalid = NON_VALID;
+
+  /* escrita da tabela de inodes */
+  for( i = 1; i <= ninodeblocks; i++)
+    disk_write( i, block.data );
+
+  return 0;
+}
+
+void fs_debug()
+{
+	union fs_block sBlock;
+	union fs_block iBlock;
+	unsigned int i, j, k;
+
+	disk_read(0,sBlock.data);
+
+	if(sBlock.super.magic != FS_MAGIC){
+	  printf("disk unformatted !\n");
+	  return;
+	}
+	printf("superblock:\n");
+	printf("    %d blocks\n",sBlock.super.nblocks);
+	printf("    %d inode blocks\n",sBlock.super.ninodeblocks);
+	printf("    %d inodes\n",sBlock.super.ninodes);
+
+	for( i = 1; i <= sBlock.super.ninodeblocks; i++){
+	  disk_read( i, iBlock.data );
+	  for( j = 0; j < INODES_PER_BLOCK; j++)
+	    if( iBlock.inode[j].isvalid == VALID){
+	      printf("-----\n inode: %d\n", (i-1)*INODES_PER_BLOCK + j);
+	      printf("size: %d \n",iBlock.inode[j].size);
+	      printf("blocks:");
+	      for( k = 0; k < POINTERS_PER_INODE; k++)
+			    if (iBlock.inode[j].direct[k]!=0)
+				    printf("  %d",iBlock.inode[j].direct[k]);
+		  printf("\n");
+	    }
+	}
+}
+
+int fs_mount()																	// ------------------ MOUNT ------------------------- MOUNT ---------------------- MOUNT---------
+{
+  union fs_block block;
+  int i, j, k;
+
+  if(my_super.magic == FS_MAGIC){												
+    printf("disc already mounted!\n");
+    return -1;
+  }
+
+  disk_read(0,block.data);
+  
+  if(block.super.magic != FS_MAGIC){
+    printf("cannot mount an unformatted disc!\n");
+    return -1;
+  }
+  if(block.super.nblocks != disk_size()){
+    printf("file system size and disk size differ!\n");
+    return -1;
+  }
+
+  /* CODIGO A FAZER */
+	
+	my_super = block.super;														// leitura do SUPERBLOCO
+
+	blockBitMap = malloc(my_super.nblocks * sizeof(char));						// criacao do BITMAP em memoria
+	
+	for(i = 0; i < my_super.nblocks; i++) {										// indicacao no BITMAP de quais os blocos livres de ocupados em disco
+	
+		if(i <= my_super.ninodeblocks) {
+			blockBitMap[i] = NOT_FREE;
+		}
+		else {
+			blockBitMap[i] = FREE;
+		}
+	}
+	
+	
+	for(i = 1; i <= my_super.ninodeblocks; i++) {														// marcar no BITMAP os blocos de dados ocupados
+
+		disk_read(i, block.data);																		// leitura de um bloco de inodes da INODE TABLE
+		
+		for(j = 0; j < INODES_PER_BLOCK; j++) {															// percorrer cada um dos inodes no bloco
+		
+		struct fs_inode inodeInBlockAtJ = block.inode[j];
+			
+			if(inodeInBlockAtJ.isvalid) {																// verificacao da ocupacao do inode
+				
+				int inodeNumberOfPointers = (int)ceil((double)inodeInBlockAtJ.size / DISK_BLOCK_SIZE);	// numero de DATA BLOCKS dentro de cada inode
+				
+				for(k = 0; k < inodeNumberOfPointers; k++) {											// percorrer cada um dos DATA BLOCKS
+					int usedBlock = inodeInBlockAtJ.direct[k];
+					blockBitMap[usedBlock] = NOT_FREE;
+				}
+			}
+		}
+	}
+  return 0;
+}
+
+int fs_create()																	// --------------------- CREATE -------------------- CREATE ---------------------- CREATE-------
+{
+  int freeInode, inodeBlock;
+  union fs_block block;
+  int i, j;
+
+
+  if(my_super.magic != FS_MAGIC){
+    printf("disc not mounted\n");
+    return -1;
+  }
+ 
+  /* CODIGO A FAZER */
+  
+  freeInode = -1;
+  int inodeFound = FALSE;
+  
+  i = 1;
+  
+  while(i <= my_super.ninodeblocks && !inodeFound) {
+  
+	disk_read(i,block.data);
+	
+	j = 0;
+	
+	while(j < INODES_PER_BLOCK && !inodeFound) {
+		
+  		struct fs_inode inodeInBlockAtJ = block.inode[j];
+  	
+  		if(!inodeInBlockAtJ.isvalid) {
+  			
+  			inodeBlock = i-1;													// numero do block onde esta o inode em relacao ao inicio da INODE TABLE
+  			
+  			int offsetInodes = inodeBlock * INODES_PER_BLOCK;
+  			
+  			freeInode = offsetInodes + j;
+  			inodeFound = TRUE;
+
+  			inodeInBlockAtJ.size = 0;
+  			inodeInBlockAtJ.isvalid = VALID;
+			
+  			int dir;
+		
+  			for(dir = 0; dir < POINTERS_PER_INODE; dir++) {
+  				inodeInBlockAtJ.direct[dir] = 0;
+  			}
+			
+			block.inode[j] = inodeInBlockAtJ;
+  		}
+		
+		j++;
+		
+  	}
+	
+	if(inodeFound)
+		disk_write(i, block.data);
+	
+	i++;
+  }
+  
+  return freeInode;
+}
+
+void inode_load( int inumber, struct fs_inode *inode ){							// ------------ LOAD------------------------------ LOAD ----------------------- LOAD-------------
+  int inodeBlock;
+  union fs_block block;
+
+  if( inumber > my_super.ninodes ){
+    printf("inode number too big \n");
+    abort();
+  }
+  inodeBlock = 1 + (inumber/INODES_PER_BLOCK);
+  disk_read( inodeBlock, block.data );
+  *inode = block.inode[inumber % INODES_PER_BLOCK];
+}
+
+void inode_save( int inumber, struct fs_inode *inode ){							// -------------------- SAVE -------------------- SAVE ----------------- SAVE----------------
+  int inodeBlock;
+  union fs_block block;
+
+  if( inumber > my_super.ninodes ){
+    printf("inode number too big \n");
+    abort();
+  }
+  inodeBlock = 1 + (inumber/INODES_PER_BLOCK);
+  disk_read(inodeBlock, block.data );
+  block.inode[inumber % INODES_PER_BLOCK] = *inode;
+  disk_write( inodeBlock, block.data );
+}
+
+int fs_delete( int inumber )													// ----------------- DELETE ---------------------DELETE ------------------------ DELETE------------
+{
+  int i;
+
+  if(my_super.magic != FS_MAGIC) {
+    printf("disc not mounted\n");
+    return -1;
+  }
+
+  /* CODIGO A FAZER */
+  
+  //if(inumber > my_super.ninodes)
+  //	return -1;
+  
+  //int inodeBlockNumber = (inumber / INODES_PER_BLOCK) +1;
+  
+  //int inodeOffsetInBlock = inumber % INODES_PER_BLOCK;
+  
+  //union fs_block block;
+  
+  //disk_read(inodeBlockNumber, block.data);
+  
+  //struct fs_inode inodeToRemove = block.inode[inodeOffsetInBlock];
+  
+  struct fs_inode inodeToRemove;
+  
+  inode_load(inumber, &inodeToRemove);
+  
+  if (!inodeToRemove.isvalid)
+	return -1;
+  
+  inodeToRemove.isvalid = NON_VALID;
+  
+  int inodeNumberOfPointers = (int)ceil((double)inodeToRemove.size / DISK_BLOCK_SIZE);
+  
+  for(i = 0; i < inodeNumberOfPointers; i ++) {
+	int usedBlock = inodeToRemove.direct[i];
+	
+	blockBitMap[usedBlock] = FREE;
+	inodeToRemove.direct[i] = 0;
+  }
+
+  inodeToRemove.size = 0;
+	
+  //block.inode[inodeOffsetInBlock] = inodeToRemove;
+	
+  //disk_write(inodeBlockNumber, block.data);	
+	
+  inode_save(inumber, &inodeToRemove);	
+	
+  return 0;
+}
+
+
+
+
+
+int fs_getsize( int inumber )													//----------------- GETSIZE ---------------------- GETSIZE ------------------- GETSIZE -----------
+{
+
+  if(my_super.magic != FS_MAGIC){
+    printf("disc not mounted\n");
+    return -1;
+  }
+
+  /* CODIGO A FAZER */
+  
+  struct fs_inode inodeAtiNumber;												// declaracao do inode
+  
+  inode_load(inumber, &inodeAtiNumber);											// inicializacao do inode
+  
+  //int sizeOfFile = ceil(inodeAtiNumber.size / DISK_BLOCK_SIZE);				// conversao do tamanho do ficheiro
+  
+  int sizeOfFile = -1;
+  
+  if(inodeAtiNumber.isvalid) {													// verificacao da validade de um inode
+	sizeOfFile = inodeAtiNumber.size;
+  }
+  
+  
+  return sizeOfFile;
+}
+
+
+/**************************************************************/
+int fs_read( int inumber, char *data, int length, int offset )					// -------------- READ -------------------- READ ---------------------- READ --------------
+{
+  int currentBlock, offsetCurrent, offsetInBlock;
+  int bytesLeft, bytesToRead;
+  char *dst;
+  union fs_block buff;
+  
+  if(my_super.magic != FS_MAGIC){
+    printf("disc not mounted\n");
+    return -1;
+  }
+  
+  inode_load( inumber, &inode );
+  if( inode.isvalid == NON_VALID ){
+    printf("inode is not valid\n");
+    return -1;
+  }
+  
+  if( offset > inode.size ){
+  
+    printf("offset bigger that file size !\n");
+    return -1;
+  }
+
+  /* CODIGO A FAZER */
+  
+  if(offset == inode.size)
+	return 0;
+  
+  
+  dst = data;
+  bytesToRead = 0;
+  
+  offsetCurrent = (offset / DISK_BLOCK_SIZE);									// PRIMEIRO BLOCO QUE QUEREMOS LER DOS DIRECT DO INODE
+  offsetInBlock = (offset % DISK_BLOCK_SIZE);									// PRIMEIRO BYTE QUE QUEREMOS LER DO BLOCO
+  
+  int lastBlockToRead;															// ULTIMO BLOCO A LER
+  
+  if(offset + length < inode.size) 										
+	lastBlockToRead = ((offset+length) / DISK_BLOCK_SIZE);						// SE LENGTH + OFFSET < SIZE LEMOS ATE LENGTH
+  else 
+	lastBlockToRead = inode.size / DISK_BLOCK_SIZE;								// SE LENGTH > SIZE LEMOS ATE SIZE
+  
+  
+  for(currentBlock = offsetCurrent; currentBlock <= lastBlockToRead; currentBlock++) {
+	
+	disk_read(inode.direct[currentBlock], buff.data);
+	
+	if(currentBlock == offsetCurrent) {
+	
+		int bytesToReadInBlock;
+		
+		bytesLeft = DISK_BLOCK_SIZE - offsetInBlock;							// BYTES QUE PODEM AINDA SER LIDOS NO PRIMEIRO BLOCO
+		
+		if(length < bytesLeft)													// SE LENGTH FOR MENOR QUE OS BYTES DISPONIVEIS
+			bytesLeft = length;
+			
+		if((inode.size - offset) < bytesLeft)									// SE O SIZE DO FICHEIRO FOR MENOR QUE LENGTH
+			bytesLeft = (inode.size - offset);
+		
+		bytesToReadInBlock = bytesLeft + offsetInBlock;							// O ULTIMO BYTE QUE LEMOS DO BLOCO
+			
+		int i;
+		
+		for(i = offsetInBlock; i < bytesToReadInBlock; i++) {					// LER O PRIMEIRO BLOCO
+			dst[bytesToRead] = buff.data[i];
+			bytesToRead++;
+		}
+	}
+	else{
+	
+		if(currentBlock == lastBlockToRead) {									// SE ESTIVERMOS NO ULTIMO BLOCO
+			
+			if(offset+length < inode.size)										// SE OFFSET + LENGTH < SIZE LEMOS ATE LENGTH
+				bytesLeft = ((offset+length) % DISK_BLOCK_SIZE);
+			else
+				bytesLeft = inode.size % DISK_BLOCK_SIZE;						// CASO CONTRARIO LEMOS ATE SIZE
+			
+			int i;
+		
+			for(i = 0; i < bytesLeft; i++) {
+				dst[bytesToRead] = buff.data[i];
+				bytesToRead++;
+			}
+		}
+		else {
+			
+			int i;
+		
+			for(i = 0; i < DISK_BLOCK_SIZE; i++) {
+				dst[bytesToRead] = buff.data[i];
+				bytesToRead++;
+			}
+		}
+	}
+  }
+  
+  return bytesToRead;
+}
+
+/******************************************************************/
+int getFreeBlock(){
+  int i, found;
+
+  i = 0;
+  found = FALSE;
+  do{
+    if(blockBitMap[i] == FREE){
+      found = TRUE;
+      blockBitMap[i] = NOT_FREE;
+    }
+    else i++;
+  }while((!found) && (i < my_super.nblocks));
+
+  if(i == my_super.nblocks) return -1; /* nao ha' blocos livres */
+  else return i;
+}
+
+
+int fs_write( int inumber, char *data, int length, int offset )					// ------------- WRITE------------------- WRITE------------------ WRITE------------------
+{
+  int currentBlock, offsetCurrent, offsetInBlock;
+  int bytesLeft, bytesToWrite, newEntry;
+  char *src;
+  union fs_block buff;
+
+  if(my_super.magic != FS_MAGIC){
+    printf("disc not mounted\n");
+    return -1;
+  }
+  inode_load( inumber, &inode );
+  if( inode.isvalid == NON_VALID ){
+    printf("inode is not valid\n");
+    return -1;
+  }
+
+  if( offset > inode.size ){
+    printf("starting to write after end of file\n");
+    return -1;
+  }
+
+  /* CODIGO A FAZER */
+  
+  struct fs_inode inode;
+  
+  inode_load(inumber, &inode);
+  
+  int newSize = offset + length;												// CALCULO DO NOVO TAMANHO DO INODE
+  
+  if(newSize > inode.size)														// SE FOR MAIOR QUE O TAMANHO ANTIGO ESTE E ALTERADO PARA O NOVO
+	inode.size = newSize;
+  
+  offsetCurrent = offset / DISK_BLOCK_SIZE;
+  offsetInBlock = offset % DISK_BLOCK_SIZE;
+  
+  src = data;
+  
+  int lastBlockToWrite = (offset+length) / DISK_BLOCK_SIZE;
+  
+  int bytesWritten = 0;
+  
+  for(currentBlock = offsetCurrent; currentBlock <= lastBlockToWrite; currentBlock++) {
+	
+	if(!inode.direct[currentBlock]) {
+			
+			newEntry = my_super.ninodeblocks +1;
+			int freeBlockFound = FALSE;
+			
+			while(newEntry < my_super.nblocks && !freeBlockFound) {
+				
+				if(blockBitMap[newEntry] == FREE) {
+					
+					inode.direct[currentBlock] = newEntry;
+					blockBitMap[newEntry] = NOT_FREE;
+					
+					freeBlockFound = TRUE;			
+				}
+				
+				newEntry++;
+			}
+		}
+	
+	disk_read(inode.direct[currentBlock], buff.data);
+	
+	if(currentBlock == offsetCurrent) {
+		
+		bytesToWrite = DISK_BLOCK_SIZE - offsetInBlock;
+		
+		if(bytesToWrite > length)
+			bytesToWrite = length;
+		
+		bytesLeft = offsetInBlock + bytesToWrite;
+		
+		int i;
+		
+		for(i = offsetInBlock; i < bytesLeft; i++) {
+			buff.data[i] = src[bytesWritten];
+			bytesWritten++;
+		}
+	}
+	else {
+		
+		if(currentBlock == lastBlockToWrite) {
+		
+			bytesLeft = (offset+length) % DISK_BLOCK_SIZE;
+			
+			int i;
+			
+			for(i = 0; i < bytesLeft; i++){
+				buff.data[i] = src[bytesWritten];
+				bytesWritten++;
+			}
+		}
+		else {
+			
+			int i;
+			
+			for(i = 0; i < DISK_BLOCK_SIZE; i++){
+				buff.data[i] = src[bytesWritten];
+				bytesWritten++;
+			}
+		}
+	}
+	
+	
+	disk_write(inode.direct[currentBlock], buff.data);
+	
+  }  
+  
+  inode_save( inumber, &inode );
+  return bytesWritten;
+}

@@ -1,0 +1,35 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> Jogo iniciado, comeca a equipa jogo.
+jogo > 10 10
+jogo 2 2 cavaleiro(vivo) 2 3 espadachim(vivo) 3 2 lanceiro(vivo) 2 1
+correcto 8 8 cavaleiro(vivo) 8 9 espadachim(vivo) 9 8 lanceiro(vivo) 8 7
+jogo > erro bandeira em posicao invalida 0 2.
+> Comando inactivo.
+> erro bandeira em posicao invalida 2 0.
+> Comando inactivo.
+> erro bandeira em posicao invalida 16 16.
+> Comando inactivo.
+> erro bandeira em posicao invalida 19 16.
+> Comando inactivo.
+> erro bandeira em posicao invalida 16 16.
+crasso bandeira em posicao invalida 28 77.
+> Comando inactivo.
+> fronteira bandeira em posicao invalida 10 10.
+fronteirinha bandeira em posicao invalida 1 1.
+> Comando inactivo.
+> fronteira bandeira em posicao invalida 10 2.
+fronteirinha bandeira em posicao invalida 2 1.
+> Comando inactivo.
+> demais bandeira em posicao invalida 5 5.
+> Comando inactivo.
+> perto bandeira em posicao invalida 5 5.
+> Comando inactivo.
+> perto bandeira em posicao invalida 5 5.
+> Comando inactivo.
+> Jogo iniciado, comeca a equipa longe.
+longe > 10 10
+longe 2 2 cavaleiro(vivo) 2 3 espadachim(vivo) 3 2 lanceiro(vivo) 2 1
+qb 5 5 cavaleiro(vivo) 5 6 espadachim(vivo) 6 5 lanceiro(vivo) 5 4
+longe > Obrigado por jogar. Ate a proxima.

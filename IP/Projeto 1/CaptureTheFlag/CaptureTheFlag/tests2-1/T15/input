@@ -1,0 +1,42 @@
+novo 10 10
+Stark 2 5
+Lannister 9 5
+ajuda
+cavaleiro este este este
+cavaleiro norte norte oeste
+cavaleiro este este este
+cavaleiro oeste oeste oeste
+cavaleiro este sul sul
+novo 10 10
+Stark 2 6
+Lannister 9 6
+espadachim este
+espadachim norte
+espadachim este
+lanceiro oeste
+espadachim este
+lanceiro oeste
+espadachim este
+lanceiro oeste
+espadachim este
+lanceiro oeste
+espadachim este
+novo 10 10
+Stark 2 6
+Lannister 9 7
+espadachim norte
+lanceiro oeste
+espadachim este
+lanceiro oeste
+espadachim este
+lanceiro oeste
+espadachim este
+lanceiro oeste
+espadachim este
+lanceiro oeste
+espadachim este
+lanceiro oeste
+espadachim norte
+mapa
+lanceiro oeste
+sai

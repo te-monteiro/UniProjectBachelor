@@ -1,0 +1,192 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> Mapa pequeno demais para o jogo.
+Erro fatal, jogo nao inicializado.
+> Comando inactivo.
+> 4 castelos:
+3 reinos:
+Jogo iniciado, comeca o reino Lannister.
+Lannister > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (NightWatch)
+Casterly Rock (Lannister)
+Dread Fort (sem dono)
+3 reinos:
+Lannister; Stark; NightWatch
+Lannister > Mapa pequeno demais para o jogo.
+Erro fatal, jogo nao inicializado.
+> Comando inactivo.
+> Mapa pequeno demais para o jogo.
+Erro fatal, jogo nao inicializado.
+> Comando inactivo.
+> Mapa pequeno demais para o jogo.
+Erro fatal, jogo nao inicializado.
+> Comando inactivo.
+> Numero de reinos invalido.
+Erro fatal, jogo nao inicializado.
+> Comando inactivo.
+> Numero de reinos invalido.
+Erro fatal, jogo nao inicializado.
+> Numero de castelos invalido.
+Erro fatal, jogo nao inicializado.
+> Comando inactivo.
+> Numero de castelos invalido.
+Erro fatal, jogo nao inicializado.
+> Comando inactivo.
+> 5 castelos:
+Castelo em posicao invalida.
+3 reinos:
+Jogo iniciado, comeca o reino Lannister.
+Lannister > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (NightWatch)
+Casterly Rock (Lannister)
+Dread Fort (sem dono)
+3 reinos:
+Lannister; Stark; NightWatch
+Lannister > 4 castelos:
+3 reinos:
+Jogo iniciado, comeca o reino Lannister.
+Lannister > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (NightWatch)
+Casterly Rock (Lannister)
+Dread Fort (sem dono)
+3 reinos:
+Lannister; Stark; NightWatch
+Lannister > 4 castelos:
+3 reinos:
+Jogo iniciado, comeca o reino Stark.
+Stark > novo - Novo jogo
+soldado - Move o soldado
+recruta - Recruta um soldado num castelo
+mapa - Lista todos os castelos do mapa, incluindo os abandonados, pela ordem de criacao no jogo e todos os reinos ainda em jogo, pela ordem de jogada
+castelos - Lista os castelos do jogador activo, pela ordem pela qual foram conquistados
+exercito - Lista os soldados vivos do jogador activo, pela ordem de recrutamento
+reinos - Lista os varios reinos ainda em jogo, ordenados por nome do reino
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+Stark > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (NightWatch)
+Casterly Rock (Lannister)
+Dread Fort (sem dono)
+3 reinos:
+Stark; Lannister; NightWatch
+Stark > 5 castelos:
+Castelo em posicao invalida.
+3 reinos:
+Jogo iniciado, comeca o reino Lannister.
+Lannister > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (NightWatch)
+Casterly Rock (Lannister)
+Dread Fort (sem dono)
+3 reinos:
+Lannister; Stark; NightWatch
+Lannister > 5 castelos:
+Castelo em posicao invalida.
+Castelo em posicao invalida.
+Castelo em posicao invalida.
+Numero insuficiente de castelos criados.
+Erro fatal, jogo nao inicializado.
+> Comando inactivo.
+> 5 castelos:
+Castelo em posicao invalida.
+Castelo em posicao invalida.
+Castelo com riqueza invalida.
+Numero insuficiente de castelos criados.
+Erro fatal, jogo nao inicializado.
+> Comando inactivo.
+> 4 castelos:
+3 reinos:
+Castelo ja ocupado.
+Castelo nao existe.
+Numero insuficiente de reinos criados.
+Erro fatal, jogo nao inicializado.
+> Opcao inexistente.
+> Comando inactivo.
+> 4 castelos:
+3 reinos:
+Castelo ja ocupado.
+Jogo iniciado, comeca o reino Lannister.
+Lannister > 20 20
+4 castelos:
+Winterfell (Lannister)
+Castle Black (Stark)
+Casterly Rock (sem dono)
+Dread Fort (sem dono)
+2 reinos:
+Lannister; Stark
+Lannister > 4 castelos:
+3 reinos:
+Castelo ja ocupado.
+Castelo nao existe.
+Numero insuficiente de reinos criados.
+Erro fatal, jogo nao inicializado.
+> Comando inactivo.
+> 4 castelos:
+3 reinos:
+Castelo ja ocupado.
+Jogo iniciado, comeca o reino Stark.
+Stark > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (sem dono)
+Casterly Rock (sem dono)
+Dread Fort (Lannister)
+2 reinos:
+Stark; Lannister
+Stark > novo - Novo jogo
+soldado - Move o soldado
+recruta - Recruta um soldado num castelo
+mapa - Lista todos os castelos do mapa, incluindo os abandonados, pela ordem de criacao no jogo e todos os reinos ainda em jogo, pela ordem de jogada
+castelos - Lista os castelos do jogador activo, pela ordem pela qual foram conquistados
+exercito - Lista os soldados vivos do jogador activo, pela ordem de recrutamento
+reinos - Lista os varios reinos ainda em jogo, ordenados por nome do reino
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+Stark > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (sem dono)
+Casterly Rock (sem dono)
+Dread Fort (Lannister)
+2 reinos:
+Stark; Lannister
+Stark > 4 castelos:
+3 reinos:
+Os reinos nao podem ter nomes duplicados.
+Jogo iniciado, comeca o reino Lannister.
+Lannister > 20 20
+4 castelos:
+Winterfell (Lannister)
+Castle Black (Stark)
+Casterly Rock (sem dono)
+Dread Fort (sem dono)
+2 reinos:
+Lannister; Stark
+Lannister > 20 20
+4 castelos:
+Winterfell (Lannister)
+Castle Black (Stark)
+Casterly Rock (sem dono)
+Dread Fort (sem dono)
+2 reinos:
+Lannister; Stark
+Lannister > novo - Novo jogo
+soldado - Move o soldado
+recruta - Recruta um soldado num castelo
+mapa - Lista todos os castelos do mapa, incluindo os abandonados, pela ordem de criacao no jogo e todos os reinos ainda em jogo, pela ordem de jogada
+castelos - Lista os castelos do jogador activo, pela ordem pela qual foram conquistados
+exercito - Lista os soldados vivos do jogador activo, pela ordem de recrutamento
+reinos - Lista os varios reinos ainda em jogo, ordenados por nome do reino
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+Lannister > Obrigado por jogar. Ate a proxima.

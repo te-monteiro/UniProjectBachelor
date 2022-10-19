@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "UTF-8">
+<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="http://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css"/><script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+
+varying vec4 originalPos;
+
+uniform mat4 ctm;
+
+void main(){
+// ctm faz a transformacao na matriz
+    gl_Position = ctm * vPosition;
+   // gl_Position.x = ctm[0][3]/2.0;
+    originalPos = vPosition;
+   // circle = vec4(0.0, 0.0, 0.0, 0.0);
+    
+}
+</script>
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+
+varying vec4 originalPos;
+
+
+
+void main() {
+    if(distance(originalPos.xy, vec2(0,0)) <= 0.02){
+        gl_FragColor = vec4(1.0, 1.0, 0.0, 1.0);
+    }
+    if(originalPos.y > 0.2 ){
+        gl_FragColor = vec4(1.0, 1.0, 0.0, 1.0);
+    }else{
+    gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+    }
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="Triangles.js"></script>
+Deslocamento x <input id= "slideDX" type = "range" min = "-1" max = "1" step = "0.01" >  
+Deslocamento y <input id= "slideDY" type = "range" min = "-1" max = "1" step = "0.01" >
+Rotação z <input id= "slideRZ" type = "range" min = "-180" max = "180" step = "0.01" >
+Escala x <input id= "slideEX" type = "range" min = "0.05" max = "2" step = "0.01" >
+Escala y <input id= "slideEY" type = "range" min = "0.05" max = "2" step = "0.01" >
+<button id = "guardar" > Guardar </button>
+<button id = "resetTotal" > Reset Total </button>
+<button id = "reset" > Reset </button>
+</head>
+<body>
+    <title>Triangle</title>
+    <canvas id="gl-canvas" width="512" height="512">
+        Oops... your browser doesn't support the HTML5 canvas element"
+    </canvas>
+</body>
+</html>

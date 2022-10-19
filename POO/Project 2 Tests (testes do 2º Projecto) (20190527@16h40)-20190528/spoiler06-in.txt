@@ -1,0 +1,361 @@
+currentShow
+addRelationship
+Barbie
+Ken
+addShow
+Sophia the First
+currentShow
+addShow
+Game of Thrones
+currentShow
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Modern Family
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+1986
+switchToShow
+Modern Family
+addCharacter
+real
+Javier Delgado
+Benjamin Bratt
+100
+addCharacter
+real
+Terry Bradshaw
+Terry Bradshaw
+0
+addCharacter
+real
+Gloria Pritchett
+Sofia Vergara
+200
+addCharacter
+real
+Manny Delgado
+Rico Rodriguez
+150
+addCharacter
+real
+Jay Pritchett
+Ed ONeill
+200
+addCharacter
+real
+Claire Dunphy
+Julie Bowen
+200
+addCharacter
+real
+Phil Dunphy
+Ty Burrell
+200
+addCharacter
+real
+Mitchell Pritchett
+Jesse Tyler Ferguson
+200
+addCharacter
+real
+Cameron Tucker
+Eric Stonestreet
+200
+addCharacter
+real
+Haley Dunphy
+Sarah Hyland
+150
+addCharacter
+real
+Alex Dunphy
+Ariel Winter
+150
+addCharacter
+real
+Luke Dunphy
+Nolan Gould
+150
+addCharacter
+real
+Lily Tucker-Pritchett
+Aubrey Anderson-Emmons
+100
+addCharacter
+real
+Fulgencio Joe Pritchett-Delgado
+Jeremy Maguire
+50
+addCharacter
+real
+DeDe Pritchett
+Shelley Long
+200
+addCharacter
+real
+Dylan Marshall
+Reid Ewing
+75
+addCharacter
+real
+Frank Dunphy
+Fred Willard
+100
+addCharacter
+real
+Grace Dunphy
+Dead from the start
+0
+addCharacter
+real
+Unnamed Son
+Baby Boy
+10
+addCharacter
+real
+Unnamed Daughter
+Baby Girl
+10
+addCharacter
+real
+Barb Tucker
+Celia Weston
+10
+addCharacter
+real
+Donnie Pritchett
+Jonathan Banks
+20
+addCharacter
+real
+Merle Tucker
+Barry Corbin
+20
+addCharacter
+real
+Pilar Ramirez
+Elizabeth Pena
+20
+addCharacter
+real
+Sonia Ramirez
+Stephanie Beatriz
+5
+addCharacter
+real
+Pameron Tucker
+Dana Powell
+30
+addCharacter
+real
+Calhoun Johnson
+God knows who will play this one
+0
+switchToShow
+Sophia the First
+addCharacter
+real
+Minimus
+Eric Stonestreet
+5
+addCharacter
+real
+Princess Sophia
+Ariel Winter
+10
+addShow
+American Horror Story Murder House
+addCharacter
+real
+Derrick
+Eric Stonestreet
+20
+switchToShow
+Game of Thrones
+addCharacter
+virtual
+Drogon
+Tech company Dragons
+1000
+addCharacter
+virtual
+Viserion
+Tech company Dragons
+800
+addCharacter
+virtual
+Rhaegal
+Tech company Dragons
+900
+addCharacter
+virtual
+Ghost
+Tech company Direwolves
+500
+addCharacter
+virtual
+Grey Wind
+Tech company Direwolves
+500
+addCharacter
+virtual
+Lady
+Tech company Direwolves
+500
+addCharacter
+virtual
+Summer
+Tech company Direwolves
+500
+addCharacter
+virtual
+Shaggydog
+Tech company Direwolves
+500
+addCharacter
+virtual
+Nymeria
+Tech company Direwolves
+600
+addCharacter
+real
+Ned Stark
+Sean Bean
+200
+switchToShow
+Modern Family
+addRelationship
+Javier Delgado
+Manny Delgado
+addRelationship
+Gloria Pritchett
+Manny Delgado
+addRelationship
+Jay Pritchett
+Manny Delgado
+addRelationship
+Jay Pritchett
+Fulgencio Joe Pritchett-Delgado
+addRelationship
+Gloria Pritchett
+Fulgencio Joe Pritchett-Delgado
+addRelationship
+Jay Pritchett
+Mitchell Pritchett
+addRelationship
+Jay Pritchett
+Claire Dunphy
+addRelationship
+DeDe Pritchett
+Mitchell Pritchett
+addRelationship
+DeDe Pritchett
+Claire Dunphy
+addRelationship
+Merle Tucker
+Cameron Tucker
+addRelationship
+Barb Tucker
+Cameron Tucker
+addRelationship
+Merle Tucker
+Pameron Tucker
+addRelationship
+Barb Tucker
+Pameron Tucker
+addRelationship
+Pameron Tucker
+Calhoun Johnson
+addRelationship
+Cameron Tucker
+Lily Tucker-Pritchett
+addRelationship
+Mitchell Pritchett
+Lily Tucker-Pritchett
+addRelationship
+Grace Dunphy
+Phil Dunphy
+addRelationship
+Frank Dunphy
+Phil Dunphy
+addRelationship
+Claire Dunphy
+Haley Dunphy
+addRelationship
+Phil Dunphy
+Haley Dunphy
+addRelationship
+Claire Dunphy
+Alex Dunphy
+addRelationship
+Phil Dunphy
+Alex Dunphy
+addRelationship
+Claire Dunphy
+Luke Dunphy
+addRelationship
+Phil Dunphy
+Luke Dunphy
+addRelationship
+Haley Dunphy
+Unnamed Son
+addRelationship
+Haley Dunphy
+Unnamed Daughter
+addRelationship
+Dylan Marshall
+Unnamed Son
+addRelationship
+Dylan Marshall
+Unnamed Daughter
+switchToShow
+Game of Thrones
+addCharacter
+real
+Daenerys Targaryen
+Emilia Clarke
+500
+addRelationship
+Daenerys Targaryen
+Drogon
+addRelationship
+Daenerys Targaryen
+Rhaegal
+addRelationship
+Daenerys Targaryen
+Viserion
+addRelationship
+Drogon
+Drogon
+addRelationship
+Aerys II Targaryen
+Daenerys Targaryen
+addRelationship
+Daenerys Targaryen
+Unborn son
+addRelationship
+Darth Vader
+Luke Skywalker (sorry for the spoiler)
+addRelationship
+Daenerys Targaryen
+Drogon
+switchToShow
+Modern Family
+addRelationship
+Jay Pritchett
+Manny Delgado
+exit

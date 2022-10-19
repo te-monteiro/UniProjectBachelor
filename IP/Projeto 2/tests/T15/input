@@ -1,0 +1,116 @@
+novo 30 45 4 8
+15 20 5 Castle One
+17 22 10 Castle Two
+19 24 10 Castle Three
+21 26 10 Castle Four
+15 21 10 Castle Five
+15 25 10 Castle Six
+19 25 10 Castle Seven
+1 1 20 Castle Big
+TeamRed Castle Two
+TeamGreen Castle Four
+TeamBlue Castle Six
+TeamWhite Castle One
+mapa
+castelos
+exercito
+recruta cavaleiro Castle Two
+castelos
+recruta lanceiro Castle Four
+castelos
+recruta espadachim Castle Six
+castelos
+recruta lanceiro Castle One
+exercito
+soldado 17 22 norte norte norte
+exercito
+soldado 21 26 sul
+exercito
+soldado 15 25 oeste
+exercito
+soldado 15 20 norte
+exercito
+castelos
+recruta cavaleiro Castle Two
+exercito
+castelos
+recruta lanceiro Castle Four
+castelos
+exercito
+recruta espadachim Castle Six
+mapa
+exercito
+castelos
+recruta cavaleiro Castle One
+castelos
+exercito
+mapa
+exercito
+castelos
+soldado 17 22 sul sul sul
+exercito
+castelos
+mapa
+exercito
+soldado 21 25 sul
+exercito
+soldado 14 25 norte
+exercito
+castelos
+soldado 15 21 este
+exercito
+castelos
+mapa
+soldado 17 25 este este sul
+castelos
+mapa
+exercito
+soldado 21 24 este
+exercito
+soldado 15 25 oeste
+exercito
+soldado 15 20 oeste oeste oeste
+exercito
+soldado 17 19 sul sul sul
+exercito
+castelos
+soldado 21 26 este
+exercito
+castelos
+recruta cavaleiro Castle Six
+castelos
+exercito
+soldado 12 20 sul sul sul
+exercito
+castelos
+recruta lanceiro Castle Seven
+castelos
+exercito
+recruta cavaleiro Castle Four
+exercito
+soldado 15 25 oeste oeste sul
+exercito
+soldado 12 17 oeste oeste oeste
+exercito
+castelos
+soldado 19 24 sul oeste oeste
+exercito
+castelos
+recruta espadachim Castle Four
+exercito
+castelos
+recruta lanceiro Castle Six
+exercito
+soldado 9 17 sul sul sul
+mapa
+exercito
+castelos
+soldado 19 25 sul
+exercito
+castelos
+soldado 21 26 norte norte norte
+exercito
+castelos
+mapa
+ajuda
+sai

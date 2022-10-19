@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0037)http://ia.ssdi.di.fct.unl.pt/tp3.html -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml"><!-- #BeginTemplate "/Templates/master.dwt" --><!-- DW6 --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- #BeginEditable "doctitle" -->
+<title>Inteligência Artificial</title>
+<!-- #EndEditable -->
+<link href="./Inteligência Artificial -3_files/style3.css" media="screen" rel="stylesheet" title="CSS" type="text/css">
+<link rel="stylesheet" crossorigin="anonymous" href="./Inteligência Artificial -3_files/main.css"><style type="text/css">
+.style1 {
+	border-width: 0px;
+}
+</style>
+<style type="text/css"></style></head>
+
+<body>
+
+<!-- Begin Container -->
+<div id="container">
+	<!-- Begin Masthead -->
+	<div id="masthead">
+		<a href="http://ia.ssdi.di.fct.unl.pt/index.html">
+		<img alt="" height="66" src="./Inteligência Artificial -3_files/logo.gif" width="150" class="style1"></a>
+		<p>Inteligência Artificial</p>
+	</div>
+	<!-- End Masthead -->
+	<!-- Begin Navigation -->
+	<div id="navigation">
+		<ul>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/index.html">Início</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/objectivos.html">Objectivos</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/programa.html">Programa</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/bibliografia.html">Bibliografia</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/docentes.html">Docentes</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/avaliacao.html">Avaliação</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/horario.html">Horário</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/aulas.html">Aulas</a></li>
+			</ul>
+	</div>
+	<!-- End Navigation -->
+	<!-- Begin Page Content -->
+	<div id="page_content">
+		<!-- Begin Left Column -->
+		<div id="column_l">
+			<!-- #BeginEditable "content" -->
+			<h2>Pesquisa com adversários</h2>
+			<p>O tópico destas aulas é a pesquisa com adversários. Pretende-se que use o algoritmo minimax, bem como a sua versão melhorada com os cortes alfa-beta, para encontrar a melhor jogada em vários jogos.			</p>
+			<h3>1 - Algoritmo Minimax e  Minimax com cortes alfa-beta</h3>
+			<p>Para cada uma das seguintes árvores de jogo</p>
+<ul>
+  <li>determine a estratégia óptima para o jogador MAX usando 
+    <ul>
+      <li>o algoritmo minimax e </li>
+      <li> o algoritmo minimax com cortes alfa-beta</li>
+    </ul>
+  </li>
+  <li>encontre uma ordenação da árvore de jogo que resulte na melhor performance possível do algoritmo minimax com cortes alfa-beta. </li>
+  </ul>
+<p align="center"><a href="./Inteligência Artificial -3_files/arvore5.png" target="_new"><img src="./Inteligência Artificial -3_files/arvore5.png" width="164" height="155"></a></p>
+<p align="center"><a href="./Inteligência Artificial -3_files/arvore3.png" target="_new"><img src="./Inteligência Artificial -3_files/arvore3.png" width="393" height="314"></a></p>
+<p align="center"><a href="./Inteligência Artificial -3_files/arvore6.png" target="_new"><img src="./Inteligência Artificial -3_files/arvore6.png" width="559" height="314"></a></p>
+<p align="center"><a href="./Inteligência Artificial -3_files/arvore2.png" target="_new"><img src="./Inteligência Artificial -3_files/arvore2.png" width="174" height="289"></a></p>
+<h3>2 - Jogo Maluco</h3>
+<p>Considere o seguinte jogo: há dois jogadores, MAX e MIN; em cada momento, o estado de um jogo é um inteiro N; na sua vez de jogar, MAX pode escolher uma das seguintes duas jogadas:</p>
+<ul>
+  <li><strong>Jogada A</strong>: N:=N+(N mod 23)-11.</li>
+  <li><strong>Jogada B</strong>: N:=N+(N mod 7)-4.</li>
+</ul>
+<p>Na sua vez de jogar, MIN pode escolher uma das seguintes duas jogadas:</p>
+<ul>
+  <li><strong>Jogada C</strong>: N:=N+2*(N mod 17)-16.</li>
+  <li><strong>Jogada D</strong>: N:=N+((N mod 11)-5)*(N mod 17).</li>
+</ul>
+<p>No início, N=100 e MAX joga primeiro. O jogo decorre durante quatro jogadas (duas para cada jogador), após as quais termina.</p>
+<p>Suponha que a árvore de jogo é gerada em profundidade primeiro, da esquerda para a direita (i.e. A, B, C e D são aplicadas por esta ordem) e que se usa o algoritmo minimax com cortes alfa-beta:</p>
+<ol>
+  <li>Mostre a parte da árvore do jogo que é gerada</li>
+  <li>Determine o valor do nó inicial</li>
+  <li>Indique a jogada inicial de MAX</li>
+</ol>
+<h3>3 - Outro Jogo </h3>
+<p>Considere a seguinte árvore de jogo, cujos estados terminais têm utilidades inteiras, e <strong>n</strong> e <strong>m</strong> são variáveis. </p><p align="center"><a href="./Inteligência Artificial -3_files/arvore4.png" target="_new"><img src="./Inteligência Artificial -3_files/arvore4.png" width="160" height="310"></a></p>
+<ol>
+  <li>Atribua valores a n e m tal que para calcular o valor da raiz da árvore não seja possível fazer cortes alfa-beta. Calcule o valor da raiz.</li>
+  <li>Atribua valores a n e m tal que para calcular o valor da raíz da árvore  seja possível fazer cortes alfa-beta. Indique o corte alfa-beta e calcule o valor da raiz.</li>
+</ol>
+<h3>4 - Chomp </h3>
+<p>Considere o  jogo chomp. Dois jogadores (MAX e MIN) têm uma tablete de chocolate com m*n (largura*altura) quadrados. Sabe-se que o quadrado do canto superior esquerdo é venenoso. Os jogadores jogam à vez, de acordo com as seguintes regras: o jogador escolhe um dos quadrados de chocolate restantes, que come juntamente com todos os quadrados que lhe estão abaixo e à direita. Por outras palavras, o jogador retira o rectângulo de chocolate cujo canto superior esquerdo é o quadrado escolhido. Naturalmente, o jogador que comer o quadrado venenoso perde o jogo. A seguinte figura ilustra a árvore do jogo chomp 2*2.</p>
+<p align="center"><a href="./Inteligência Artificial -3_files/chomp22.png" target="_new"><img src="./Inteligência Artificial -3_files/chomp22.png" width="284" height="268"></a></p>
+<p>Encontre uma estratégia vencedora para MAX no chomp <u>3*2</u> usando cada um dos seguintes algoritmos.</p>
+<ol>
+  <li>o algoritmo minimax </li>
+  <li> o algoritmo minimax com cortes alfa-beta</li>
+  <li>o algoritmo minimax com cortes alfa-beta, sabendo que os valores dos nós estão compreendidos entre -1 e 1.</li>
+</ol>
+<p>Para cada um dos algoritmo usados, apresente a parte da árvore de jogo gerada para o caso em que a primeira jogada de MAX corresponde à escolha do quadrado inferior direito, e que nenhuma outra parte da árvore foi previamente gerada.</p>
+            <!-- #EndEditable --></div>
+		<!-- End Left Column --></div>
+	<!-- End Page Content -->
+	<!-- Begin Footer -->
+	<div id="footer">
+		<p>	<a href="http://ia.ssdi.di.fct.unl.pt/index.html">Início</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/objectivos.html">Objectivos</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/programa.html">Programa</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/bibliografia.html">Bibliografia</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/docentes.html">Docentes</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/avaliacao.html">Avaliação</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/horario.html">Horário</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/aulas.html">Aulas</a> |
+	  </p><p>Comentários e sugestões para 
+		<a href="mailto:jleite@fct.unl.pt?subject=BD%20-%20Website">jleite@fct.unl.pt</a></p>
+	</div>
+	<!-- End Footer --></div>
+<!-- End Container -->
+
+
+
+<!-- #EndTemplate -->
+</body></html>

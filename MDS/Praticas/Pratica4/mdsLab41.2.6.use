@@ -1,0 +1,11 @@
+model exercicisesMds6
+
+class Flyer
+end
+
+class Airline
+end
+
+--associacoes
+association voos between
+	Flyer[

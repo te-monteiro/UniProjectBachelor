@@ -1,0 +1,432 @@
+
+<!-- saved from url=(0066)http://ctp.di.fct.unl.pt/miei/lap/projs/proj2019-1/proj2019-1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Enunciado do 1º Trabalho Prático (OCaml)</title>
+</head>
+<body text="#000000" bgcolor="#E0F0E0" link="#0000EE" vlink="#551A8B" alink="#FF0000" marginwidth="5" marginheight="5">
+
+<h1>Linguagens e Ambientes de Programação (2018/2019) [Eng.Inf. - DI/FCT/UNL]</h1>
+<h2>Enunciado do 1º Projeto Prático (OCaml)</h2>
+<h4>Artur Miguel Dias</h4>
+
+<hr><h2>Datas</h2>
+<li>02/abr (19:00) - Divulgação da versão provisória do enunciado
+</li><li>03/abr (22:00) - Divulgação da versão final do enunciado
+</li><li>09/abr (22:00) - Data e hora limite de entrega do 1º projeto.
+</li><li>11/abr (22:00) - Data e hora limite de entrega com atraso. Dois valores de penalização por cada dia de atraso.
+<p>
+</p><hr><h2>Changelog</h2>
+<ul>
+<li>03/abr (23:00) - Os autómatos <tt>abc</tt> e <tt>abcND</tt> tinham problemas. Os erros foram corrigidos neste enunciado e também no ficheiro "FiniteAutomata.ml". O resultado do exemplo da função <tt>gcut</tt> também foi ajustado. Foi apenas alterada uma transição em cada um dos autómatos.
+</li><li>03/abr (01:00) - Adicionada a função <tt>gcut</tt> e adicionados exemplos de avaliação para todas as funções.
+</li><li>02/abr (19:00) - Possíveis correções a este enunciado serão assinaladas aqui.
+</li></ul>
+
+<hr><h1><a href="http://ctp.di.fct.unl.pt/miei/lap/projs/proj2019-1/submiss2019-1.html">Submission rules</a>
+
+
+
+
+<hr></h1><h1>Prior notice</h1>
+
+<p>You do not have to learn much about theoretical computer science to get this project done. In fact, it is enough to study the essential definitions and gain some intuitions about them. The challenge of this project lies elsewhere, specifically in the technical aspects of programming.
+
+
+</p><hr><h1><font size="+4">Finite Automata</font></h1>
+
+<p> 
+
+
+Finite Automata is a simple mathematical model of computation that can be used to specify languages. A language is a set of words. The expressive power of the model is relatively weak, and is only capable of describing languages with very regular structure. Nevertheless, it is an useful model with many theoretical and practical applications.
+
+</p><p>In this model, the specification of each language is accomplished via recognition. Each particular Finite Automaton (FA) <b>recognize</b> some language in the sense that the FA checks whether a word belongs or do not belongs to the language. When applying the FA to a word, the FA merely produces binary information (one Boolean value) about that word. Either:
+
+</p><ul>
+<li> the word is <b>accepted</b> by the FA;
+</li><li> or the word is <b>rejected</b> by the FA.
+</li></ul>
+
+<p> Among other elements, a FA is characterized by a finite set of states. The FA transitions from state to state while transversing some input word, one symbol at a time.
+
+
+
+
+</p><hr><h1>Components of a FA and how it works</h1>
+
+In order to specify an FA, it is necessary to indicate five elements:
+
+<ol>
+<li> <b>Input alphabet</b> - The non-empty finite set of symbols that make up the words that the FA attempts to accept.
+</li><li> <b>States</b> - A non-empty finite set of states.
+</li><li> <b>Initial state</b> - The initial state.
+</li><li> <b>Transition relation</b> - State transition relation with triples (state, symbol, nextState), describing the allowed state transitions.
+</li><li> <b>Accept states</b> - A (possibly empty) finite set of states. 
+</li></ol>
+
+This is how a FA works:
+
+<ol>
+
+<li> The FA starts running in the initial state.
+</li><li> The FA consumes the symbols of the input word sequentially, while transitioning from state to state. At each step, the FA uses the transition relation to choose the next state given the current state and the current symbol.
+</li><li> Once the input word has been entirely consumed, the automaton stops:
+<ul>
+<li> Now, if the current state belong to the set of accept states, the word is accepted.
+</li><li> Otherwise, the word is rejected.
+</li></ul>
+</li><li> In the step 2, when trying to transitioning using the current state and the current symbol, if there is no transition available, the word is rejected.
+</li></ol>
+
+<hr><h1>Graphical Representation of an FA</h1>
+
+An FA is represented by a directed graph, called <b>state diagram</b>, using the following rules: 
+
+<ul>
+<li> The vertices represent the states.
+</li><li> The arcs, labeled with symbols of the input alphabet, show the transitions.
+</li><li> The initial state is denoted by an single incoming arc with no label.
+</li><li> The accept states are indicated by double circles.
+</li></ul>
+
+As an example, the following state diagram represents an FA that determines whether a binary number has an even number of 0s.
+
+<p><img src="./DFAexample.svg">
+
+
+</p><p>As an exercise, imagine the FA running for each of the following input words: <tt>''</tt>, <tt>'00'</tt>, <tt>'011110'</tt>, <tt>'011111'</tt>, <tt>'000'</tt>.
+
+</p><p>As another exercise, identify the five elements that characterize this FA: input alphabet, states, initial state, transition relation, accept states.
+
+</p><hr><h1>Determinism and non-determinism</h1>
+
+Finite Automaton can be classified into two categories:
+
+<ul>
+<li> Deterministic Finite Automaton (DFA)
+</li><li> Non-deterministic Finite Automaton (NDFA)
+</li></ul>
+
+In a Deterministic Finite Automaton, for each input symbol, there is only one state to which the machine will move. In other words, the transition relation if a proper function with a unique result for each pair (state, symbol). This means that the FA produces a unique computation for each input word. The previous example, of the binary numbers with an even number of 0s, is an example of a DFA.
+
+<p>In a Non-deterministic Finite Automaton, the transition relation is not a proper function meaning that, there may be multiple results for each pair (state, symbol). In this situation it is harder to process the input word because, at each step of the computation, there may exist alternative paths that can be followed. Furthermore, to accept the input word, it is enough that one of the paths makes the NDFA stops at an accept state. So, to reject a word, we need to make sure that all the paths make the automaton stop outside an accept state. (The standard definition of NDFA has one further element - <i>empty string transitions</i> - but we leave them out to simplify.)
+
+</p><p>Here is an example of NDFA with lots on non-determinism. Note that, for instance, considering the state "a", the symbol "0" has two transitions associated: a transition to the state "a" and a transition to the state "b".
+
+</p><p><img src="./ndfa_graphical_representation.jpg">
+
+</p><hr><h1>Data representation</h1>
+
+<p>For the representation of FAs, we need multiple OCaml types:
+
+</p><ul><pre>type symbol = char;;       (* our symbols are represented by chars *)
+type word = symbol list;;  (* our words are represented by lists of symbols *)
+
+type state = string;;      (* our states are represented by strings *)
+type states = state list;;
+
+type transition =
+    state   (* state *)
+  * symbol  (* consumed input symbol *)
+  * state   (* next state *)
+;;
+type transitions = transition list;;
+
+type fAutomaton = {
+    initialState: state;       (* Initial state *)
+    transitions: transitions;  (* Transition relation *)
+    acceptStates: states       (* Accept states *)
+};;
+</pre></ul>
+
+
+To exemplify, here is an interesting concrete DFA over the alphabet <tt>{'a','b','c','d'}</tt> that recognizes the language of all the strings that contain the substring <tt>"abc"</tt>:
+
+<ul><pre>let abc = {
+    initialState = "START" ;
+    transitions = [
+            ("START",'a',"A"); ("START",'b',"START"); ("START",'c',"START"); ("START",'d',"START");
+            ("A",'a',"A"); ("A",'b',"AB"); ("A",'c',"START"); ("A",'d',"START"); 
+            ("AB",'a',"A"); ("AB",'b',"START"); ("AB",'c',"SUCCESS"); ("AB",'d',"START");
+            ("SUCCESS",'a',"SUCCESS"); ("SUCCESS",'b',"SUCCESS"); ("SUCCESS",'c',"SUCCESS"); ("SUCCESS",'d',"SUCCESS")
+        ];
+    acceptStates = ["SUCCESS"]
+};;
+</pre></ul>
+<p>
+
+As another example, now a somewhat strange FA. Is is non-deterministic because there are two transitions for the symbol 'a' in the state "SUCCESS". Furthermore, it includes an useless state - <tt>"UNREACHABLE"</tt> - that is unreachable from the initial state and another useless state - <tt>"UNPRODUCTIVE"</tt> - from which no accept state is reachable.
+
+</p><ul><pre>let abcND = {
+    initialState = abc.initialState ;
+    transitions = abc.transitions @ [
+            ("SUCCESS",'a',"UNPRODUCTIVE");
+            ("UNREACHABLE",'a',"SUCCESS");
+            ("SUCCESS",'e',"UNPRODUCTIVE"); ("UNPRODUCTIVE",'a',"UNPRODUCTIVE")
+        ];
+    acceptStates = abc.acceptStates
+};;
+</pre></ul>
+
+
+
+
+
+<hr><h1>Module "FiniteAutomata"</h1>
+
+<p>The aim of this project is to write a closed module named "FiniteAutomata" containing a data representation for FAs and containing the implementation of some functions over FAs.
+
+</p><p>The module interface has already been fully written and you are not allowed to change it: <a href="http://ctp.di.fct.unl.pt/miei/lap/projs/proj2019-1/files/FiniteAutomata.mli">FiniteAutomata.mli</a>. As you can see, the data representation is public and there is also a small number of public functions declared. All the other entities you define in the module body will be private.
+
+</p><p>Use this file as starting point to write your module body: <a href="http://ctp.di.fct.unl.pt/miei/lap/projs/proj2019-1/files/FiniteAutomata.ml">FiniteAutomata.ml</a>.
+
+
+
+
+
+</p><hr><h1>Evaluation and grades</h1>
+
+You will submit the file "FiniteAutomata.ml" via Mooshak.
+
+<p>Around 80% of the grade of your group is automatically assigned by Mooshak. The remaining 20% is assigned manually by the teacher, who analyzes the quality of your code.
+
+</p><p>A special case: In case of code of extremely bad quality, or code that uses the forbidden imperative mechanisms of OCaml, or code that constantly simulates imperative mechanisms and concepts, a special rule will be used so that the grade will be always below 50%, even if the program works well.
+
+</p><p>To compile your module, Mooshak will use the following command
+
+</p><ul><pre>ocamlc -c FiniteAutomata.mli FiniteAutomata.ml
+</pre></ul>
+
+After the compilation, Mooshak tests the module in the interpreter like this: 
+
+<ul><pre>$ ocaml
+    Objective Caml version 4.02.3
+# #load "FiniteAutomata.cmo";;
+# open FiniteAutomata;;
+...
+...
+</pre></ul>
+
+<p>It is not mandatory to develop this project in Linux. However, you should test the final version of your module in the laboratories because the official environmental for this project is the Linux version installed in the laboratories.
+
+</p><p>It is also recommended you develop the project in Eclipse but, of course, this is also not mandatory. The best way to use Eclipse in this project is to develop the module using only the OCaml's interpreter. Please, make a backup of the file "FiniteAutomata.ml" once a while, because the file can disappear as result of human error or as result of a software/hardware malfunction.
+
+
+
+
+
+
+
+
+</p><hr><h1>The public functions of the module</h1>
+
+There are nine public functions to implement. Please, write the functions using the inductive method. Also, take advantage of the predefined functions of the <a href="http://caml.inria.fr/pub/docs/manual-ocaml/libref/List.html">module List</a> (functions such as <tt>map</tt>, <tt>filter</tt>, <tt>mem</tt>, <tt>flatten</tt>, <tt>sort_uniq</tt>, <tt>partition</tt>, etc.) Furthermore, in the unlikely case you want other modules from the OCaml library, please make sure you never employ functions with side effects.
+
+<p> All the functions that return simple lists require the result to be sorted and free of repetitions. Use the provided function <tt>canonical</tt> to achieve this.
+
+</p><p> Except where indicated, the functions should work with both deterministic and non-deterministic automata.
+
+
+
+
+</p><pre><b>getAlphabet : fAutomaton -&gt; symbol list
+<i>let getAlphabet fa = ...</i>
+</b></pre>
+<ul>
+Calculate the alphabet of an automaton <tt><b>fa</b></tt>. The result is ordered in ascending order and is free of repetitions.
+<pre># getAlphabet abcND;;
+- : symbol list = ['a'; 'b'; 'c'; 'd'; 'e']
+</pre>
+</ul>
+
+
+
+<pre><b>getStates : fAutomaton -&gt; state list
+<i>let getStates fa = ...</i>
+</b></pre>
+
+<ul>
+Calculate the list of all the states of an automaton <tt><b>fa</b></tt>. The result is ordered in ascending order and is free of repetitions.
+<pre># getStates abcND;; 
+- : state list =
+["A"; "AB"; "START"; "SUCCESS"; "UNPRODUTIVE"; "UNREACHABLE"]
+</pre>
+</ul>
+
+
+
+
+<pre><b>gcut : state -&gt; transitions -&gt; transitions * transitions
+<i>let gcut s ts = ...</i>
+</b></pre>
+<ul>
+Given a state <tt><b>s</b></tt> and a list of transitions <tt><b>ts</b></tt>, partitions <tt><b>ts</b></tt> in two parts. The first one are the transitions coming out of the state <tt><b>s</b></tt>; the second one is the rest of the transitions. This function may be useful to think inductively over FAs.
+<pre>#  gcut abcND.initialState abcND.transitions;;
+- : transition list * transition list =
+([("START", 'a', "A"); ("START", 'b', "START"); ("START", 'c', "START");
+  ("START", 'd', "START")],
+ [("A", 'a', "A"); ("A", 'b', "AB"); ("A", 'c', "START");
+  ("A", 'd', "START"); ("AB", 'a', "A"); ("AB", 'b', "START");
+  ("AB", 'c', "SUCCESS"); ("AB", 'd', "START"); ("SUCCESS", 'a', "SUCCESS");
+  ("SUCCESS", 'b', "SUCCESS"); ("SUCCESS", 'c', "SUCCESS");
+  ("SUCCESS", 'd', "SUCCESS"); ("SUCCESS", 'a', "UNPRODUTIVE");
+  ("UNREACHABLE", 'a', "SUCCESS"); ("SUCCESS", 'e', "UNPRODUTIVE");
+  ("UNPRODUTIVE", 'a', "UNPRODUTIVE")])
+</pre>
+</ul>
+
+
+<pre><b>determinism : fAutomaton -&gt; bool
+<i>let determinism fa = ...</i>
+</b></pre>
+<ul>
+Checks whether the automaton <tt><b>fa</b></tt> is deterministic. 
+<pre># determinism abc;;
+- : bool = true
+# determinism abcND;;
+- : bool = false
+</pre>
+</ul>
+
+
+<pre><b>reachable: fAutomaton -&gt; states
+<i>let reachable fa = ...</i>
+</b></pre>
+<ul>
+Given an automaton <tt><b>fa</b></tt>, determines all the states that are reachable from the initial state, including the initial state. The result is ordered in ascending order and is free of repetitions.
+<pre># reachable abcND;;
+- : state list = ["A"; "AB"; "START"; "SUCCESS"; "UNPRODUTIVE"]
+</pre>
+</ul>
+
+
+<pre><b>productive: fAutomaton -&gt; states
+<i>let productive fa = ...</i>
+</b></pre>
+<ul>
+A state is said to be <b>productive</b> if it can be used to reach an accept state, that is if there is an oriented path from it to an accept state. This function determines all the productive states of the automaton <tt><b>fa</b></tt>. The result is ordered in ascending order and is free of repetitions.
+<pre># productive abcND;;
+val z : state list = ["A"; "AB"; "START"; "SUCCESS"; "UNREACHABLE"]
+</pre>
+</ul>
+
+
+<pre><b>accept : word -&gt; fAutomaton -&gt; bool     (* pre: fa is deterministic *)
+<i>let accept w fa = ...</i>
+</b></pre>
+<ul>
+Checks whether a word <tt><b>w</b></tt> is accepted by a an automaton <tt><b>fa</b></tt>. Assume that <tt><b>fa</b></tt> is deterministic. The function should be optimized for this simpler case. If <tt><b>fa</b></tt> is a NDFA the result does not matter and is undefined. 
+<pre># accept [] abc;;
+- : bool = false
+# accept ['a';'b';'c'] abc;;
+- : bool = true
+# accept ['d';'d';'a';'b';'c';'d';'d';'d'] abc;;
+- : bool = true
+# accept ['a';'b';'b';'c'] abc;;
+- : bool = false
+</pre>
+</ul>
+
+
+<pre><b>generate : int -&gt; fAutomaton -&gt; word list
+<i>let generate n fa = ...</i>
+</b></pre>
+<ul>
+Generate all the words of length <tt><b>n</b></tt> in the language recognized by the automaton <tt><b>fa</b></tt>. The result is ordered in ascending order and is free of repetitions. 
+<pre># generate 0 abcND;;
+- : symbol list list = []
+# generate 1 abcND;;
+- : symbol list list = []
+# generate 2 abcND;;
+- : symbol list list = []
+# generate 3 abcND;;
+- : symbol list list = [['a'; 'b'; 'c']]
+# generate 4 abcND;;
+- : symbol list list =
+[['a'; 'a'; 'b'; 'c']; ['a'; 'b'; 'c'; 'a']; ['a'; 'b'; 'c'; 'b'];
+ ['a'; 'b'; 'c'; 'c']; ['a'; 'b'; 'c'; 'd']; ['b'; 'a'; 'b'; 'c'];
+ ['c'; 'a'; 'b'; 'c']; ['d'; 'a'; 'b'; 'c']]
+</pre>
+</ul>
+
+
+<pre><b>accept2 : word -&gt; fAutomaton -&gt; bool
+<i>let accept2 w fa = ...</i>
+</b></pre>
+<ul>
+Checks whether a word <tt><b>w</b></tt> is accepted by a an automaton <tt><b>fa</b></tt>.
+<pre># accept2 [] abcND;;
+- : bool = false
+# accept2 ['a';'b';'c'] abcND;;
+- : bool = true
+# accept2 ['d';'d';'a';'b';'c';'d';'d';'d'] abcND;;
+- : bool = true
+# accept2 ['a';'b';'b';'c'] abcND;;
+- : bool = false
+</pre>
+</ul>
+
+
+
+<hr><h1>Regras principais</h1>
+<ul>
+<li>Produza um ficheiro chamado <tt>FiniteAutomata.ml</tt>. Nas regras de submissão, a publicar mais tarde, será explicada a forma de submeter no Mooshak.
+
+</li><li>O ficheiro "FiniteAutomata.ml" tem de incluir logo nas primeiras linhas, um comentário inicial contendo: <b>o nome e número dos dois alunos que realizaram o projeto</b>; indicação de quais as partes do trabalho que foram feitas e das que não foram feitas (para facilitar uma correção sem enganos); ainda possivelmente alertando para alguns aspetos da implementação que possam ser menos óbvios para o avaliador.
+
+</li><li>O projeto é para ser realizado por grupos de dois alunos. Um projeto entregue por três ou mais alunos vale zero valores. Poderão ser permitidos grupos de um aluno em circunstâncias especiais que terão de ser previamente autorizadas por AMD - estão automaticamente autorizados, sem ser preciso perguntar, os alunos Erasmus mais os alunos com o estatuto formal de trabalhadores estudantes. 
+
+</li><li>Na realização deste projeto é proibido usar os mecanismos imperativos que a linguagem OCaml suporta mas não foram estudados nas aulas.
+</li><li>Mesmo que desenvolva o programa em Windows ou no MacOS, a versão final do seu programa deverá correr no sistema Linux instalado nos laboratórios.
+</li><li>Programe as funções recursivas usando o método indutivo. Também pode usar livremente funções de biblioteca, especialmente as disponíveis no módulo List.
+</li><li>O programa deve ser bem indentado, por forma a ficar bem legível. Além disso, a largura do programa não deve exceder as 80 colunas para poderem ser impressos. Podem haver algumas exceções, muito pontuais. Considera-se que um TAB ocupa quatro posições.
+</li><li>O não cumprimento das regras anteriores implica penalizações automáticas na nota.
+</li></ul>
+
+<hr><h1>Regras de entrega</h1> 
+<ul> 
+<li>Será ativado um concurso do Mooshak, que servirá para submeter os trabalhos. Os detalhes da forma de fazer a submissão serão divulgados nessa altura. Até lá preocupe-se apenas em escrever um bom programa.
+</li><li>Depois do prazo limite ainda se aceitam trabalhos atrasados, mas com penalizações na nota. Mais detalhes nas primeiras linhas deste enunciado.
+</li></ul> 
+ 
+<hr><h1>Outras regras</h1> 
+<ul> 
+<li>Apesar de o projeto ser de grupo, cada aluno, a título individual, tem a responsabilidade de responder por todo o projeto. Assim é indispensável que os dois membros de cada grupo programem efetivamente.
+</li><li>Não se proíbe que alunos de turnos práticos diferentes façam grupo. Isso é apenas desaconselhado.
+</li><li>Não há inscrição prévia dos grupos e basta que cada trabalho tenha 2 autores identificados.
+</li><li>A nota máxima do projeto é 20 valores.
+</li></ul> 
+ 
+<hr><h1>Avaliação</h1>
+
+O docente responsável pela gestão e pela avaliação deste trabalho é Artur Miguel Dias.
+
+<p>A nota do projeto será em grande parte determinada por meios automáticos, através do Mooshak. Portanto é essencial respeitar a especificação contida neste enunciado, em todos os seus detalhes.
+
+</p><p>Mas, relativamente a programas que funcionem minimamente, também haverá uma apreciação mais subjetiva da qualidade, tendo em conta aspetos, tais como:
+</p><ul>
+<li>organização,
+</li><li>clareza e simplicidade das ideias programadas,
+</li><li>bom uso da linguagem,
+</li><li>legibilidade do código,
+</li><li>em alguma medida, eficiência.
+</li></ul>
+
+Obviamente não é obrigatório fazer o trabalho todo para obter nota positiva. Mas, claro, vale a pena trabalhar para produzir uma solução bastante completa e com a melhor qualidade possível.
+<p>
+
+</p><hr><h1>Observações</h1>
+<ul>
+<li>Os grupos são incentivados a discutir entre si os aspetos gerais do projeto, inclusivamente no fórum. Mas sempre que chega o momento de escrever código concreto, esse tem de ser um esforço interno a cada grupo (trabalhando de forma independente de todos os outros grupos). A escrita de código exige esforço intelectual, mas só com esforço se consegue evoluir.
+<p></p></li><li>O objetivo deste projeto é levar os alunos a praticar. Um aluno que pratique de forma genuína ganha experiência e provavelmente não terá dificuldade em conseguir aprovação nos testes e exames.
+<p></p></li><li>Cuidado com as fraudes. Por exemplo, se alguém dum grupo oferecer o projeto resolvido a um elemento de outro grupo, trata-se duma fraude envolvendo dois grupos. Também se um grupo deixa distraidamente a área aberta e se alguém de outro grupo "rouba" o projeto, então também se considera fraude dos dois grupos. Ainda um terceiro caso: se dois grupos se juntam para fazer o projeto conjuntamente e depois o entregam em duplicado, então também se considera fraude. Em suma, cada grupo é responsável pelo seu projeto e não o pode mostrar ou oferecer, direta ou indiretamente, de propósito ou sem querer, o seu código a outro grupo. Note que é muito melhor ter zero num dos três projetos do que ser logo excluído da cadeira por motivo de fraude.
+</li></ul>
+
+
+
+
+
+<hr><h1>Final</h1>
+
+<p>Bom trabalho! Esperamos que goste.
+
+</p><hr><hr>
+</li></body></html>

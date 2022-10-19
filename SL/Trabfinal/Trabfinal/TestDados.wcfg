@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Xilinx/Desktop/Trabfinal/Dados_Dados_sch_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="dados_dados_sch_tb" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/dados_dados_sch_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/oper1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">oper1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">oper1[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/oper2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">oper2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">oper2[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/res" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">res[7:0]</obj_property>
+      <obj_property name="ObjectShortName">res[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/sel" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sel</obj_property>
+      <obj_property name="ObjectShortName">sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/loadtemp" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">loadtemp</obj_property>
+      <obj_property name="ObjectShortName">loadtemp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/cleartemp" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cleartemp</obj_property>
+      <obj_property name="ObjectShortName">cleartemp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/passthrough" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">passthrough</obj_property>
+      <obj_property name="ObjectShortName">passthrough</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/dec" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">dec</obj_property>
+      <obj_property name="ObjectShortName">dec</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/add" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">add</obj_property>
+      <obj_property name="ObjectShortName">add</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/anl" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">anl</obj_property>
+      <obj_property name="ObjectShortName">anl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/loadc" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">loadc</obj_property>
+      <obj_property name="ObjectShortName">loadc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/clearc" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clearc</obj_property>
+      <obj_property name="ObjectShortName">clearc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/cplc" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cplc</obj_property>
+      <obj_property name="ObjectShortName">cplc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/dados_dados_sch_tb/zero" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">zero</obj_property>
+      <obj_property name="ObjectShortName">zero</obj_property>
+   </wvobject>
+</wave_config>

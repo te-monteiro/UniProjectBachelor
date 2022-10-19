@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0037)http://ia.ssdi.di.fct.unl.pt/tp2.html -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml"><!-- #BeginTemplate "/Templates/master.dwt" --><!-- DW6 --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- #BeginEditable "doctitle" -->
+<title>Inteligência Artificial</title>
+<!-- #EndEditable -->
+<link href="./Inteligência Artificial -2_files/style3.css" media="screen" rel="stylesheet" title="CSS" type="text/css">
+<link rel="stylesheet" crossorigin="anonymous" href="./Inteligência Artificial -2_files/main.css"><style type="text/css">
+.style1 {
+	border-width: 0px;
+}
+</style>
+<style type="text/css"></style></head>
+
+<body>
+
+<!-- Begin Container -->
+<div id="container">
+	<!-- Begin Masthead -->
+	<div id="masthead">
+		<a href="http://ia.ssdi.di.fct.unl.pt/index.html">
+		<img alt="" height="66" src="./Inteligência Artificial -2_files/logo.gif" width="150" class="style1"></a>
+		<p>Inteligência Artificial</p>
+	</div>
+	<!-- End Masthead -->
+	<!-- Begin Navigation -->
+	<div id="navigation">
+		<ul>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/index.html">Início</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/objectivos.html">Objectivos</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/programa.html">Programa</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/bibliografia.html">Bibliografia</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/docentes.html">Docentes</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/avaliacao.html">Avaliação</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/horario.html">Horário</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/aulas.html">Aulas</a></li>
+			</ul>
+	</div>
+	<!-- End Navigation -->
+	<!-- Begin Page Content -->
+	<div id="page_content">
+		<!-- Begin Left Column -->
+		<div id="column_l">
+			<!-- #BeginEditable "content" -->
+			<h2>Simulated Annealing</h2>
+			<p>O tópico destas aulas é a implementação e utilização do Simulated Annealing para a resolução de  problemas de caixeiro viajante. Pretende-se que implemente, usando uma linguagem julgada adequada (C, Java, ...), o Simulated Annealing para pesquisar o melhor caminho num problema do caixeiro viajante. Na sua formulação original, o problema consiste em descobrir o circuito mais curto que percorra N cidades, sem repetir nenhuma das cidades e voltando à cidade de partida. Entre quaisquer duas cidades existe um caminho directo entre elas com um determinado comprimento (caso não exista essa via directa, considera-se um comprimento arbitrariamente grande).</p>
+       		<h3><a name="searchproblem" id="searchproblem">1 – Descrição do problema e algoritmo</a>            </h3>
+			<p><span lang="pt" xml:lang="pt">Comece por </span>ler com atenção o <a href="http://ia.ssdi.di.fct.unl.pt/guiao2.html">guião</a> que contém uma descrição do problema bem como algumas sugestões sobre a melhor forma de o modelar para ser resolvido pelo algoritmo de Simulated Annealing.</p>
+                   		<h3><a name="implement" id="implement">2 – Implementação do algoritmo</a>            </h3>
+			<p>Implemente um programa que utilize o Simulated Annealing para a resolução de problemas de caixeiro viajante.  O programa a implementar terá as seguintes partes:</p>
+			<ol>
+              <li>Inicialização das estruturas de dados, incluindo    a matriz de distâncias (ver <a href="http://ia.ssdi.di.fct.unl.pt/tp2/Distancias.txt">exemplo</a>).
+			  Pode usar o seguinte pacote em Java (<a href="http://ia.ssdi.di.fct.unl.pt/tp2/distanceMatrix.zip">DistanceMatrix</a>) ou em Python (<a href="http://ia.ssdi.di.fct.unl.pt/tp2/distanceMatrix.py">DistanceMatrix</a>) que permite ler os dados de um ficheiro que contenha uma matriz de distâncias. 
+			  </li>
+              <li>Leitura dos parâmetros de execução, incluindo    qual o conjunto das cidades que vão ser consideradas. Toda    esta informação pode estar num ficheiro ou ser    fornecido na linha de comando</li>
+              <li>Execução (ver <a href="http://ia.ssdi.di.fct.unl.pt/tp2/algoritmo.html">algoritmo</a>)</li>
+              <li>Apresentação dos resultados</li>
+            </ol>
+			<p>Algumas indicações para a    implementação </p>
+            <ul>
+              <li>O cálculo da função       de avaliação deve ser diferencial, i.e. deve adicionar ao valor da função de avaliação da solução anterior a diferença de custo para a solução seguinte. </li>
+              <li>Não perca tempo em interfaces       gráficas.</li>
+            </ul>
+            <p>Sugestões de funcionalidades a    implementar:
+		    </p>
+		    <ul>
+		      <li>Possibilidade de definir o modo de funcionamento do algoritmo,        nomeadamente no que se refere ao método de decaimento da temperatura        (geométrico, gradual, ...), ao método de variação do número de iterações        por temperatura (constante, linear, ...), ao critério de paragem (temperatura mínima,        total de iterações, percentagem de soluções aceites,...), e à forma de determinação da temperatura inicial (dada pelo        utilizador, calculada, ...).</li>
+		      <li>Ajuste automático dos       parâmetros de acordo com a instância a tratar. O       programa deveria propor valores por defeito para os       parâmetros, preferencialmente dependentes da       instância em resolução.</li>
+		      <li>No final de uma execução       deve apresentar os seguintes resultados: a melhor       solução, a pior solução, a primeira       e a última solução, o número total       de iterações, e o tempo de execução.       Note que para cada solução apresentada pode       indicar, a iteração em que ocorreu, o valor da       temperatura, a solução (o percurso) e o valor da       função.<br>
+	          </li>
+		    </ul>
+       		<h3><a name="teste" id="teste">3 – Teste do algoritmo</a>            </h3>
+			<p><span lang="pt" xml:lang="pt">Teste a sua implementação com os seguintes exemplos</span>:            </p>
+			<ul>
+			  <li><strong>E1</strong>: Atroeira, Douro, Pinhal, Teixoso, Ulgueira,    Vilar. </li>
+			  <li><strong>E2</strong>: Cerdeira, Douro, Gonta, Infantado, Lourel, Nelas,    Oura, Quebrada, Roseiral, Serra, Teixoso, Ulgueira</li>
+			  <li><strong>E3</strong>: Belmar, Cerdeira, Douro, Encosta, Freita, Gonta,    Horta, Infantado, Lourel, Monte, Nelas, Oura, Pinhal, Quebrada,    Roseiral, Serra, Teixoso, Ulgueira.</li>
+			  <li><strong>E4</strong>: todas as cidades            </li>
+			</ul>
+
+            <p>TABELA 1 - Cidades e suas distâncias (em Km) [<a href="http://ia.ssdi.di.fct.unl.pt/tp2/Distancias.txt">versão texto simples</a>]            </p>
+            <center>
+            <table border="1px" align="right" cellpadding="0" cellspacing="0">
+              <tbody><tr>
+                <td width="50" bgcolor="#999999">Distância</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Atroeira</div></td>
+                <td colspan="20"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Belmar</td>
+                <td>383</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Belmar</div></td>
+                <td colspan="19"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Cerdeira</td>
+                <td>129</td>
+                <td>504</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Cerdeira</div></td>
+                <td colspan="18"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Douro</td>
+                <td>287</td>
+                <td>566</td>
+                <td>185</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Douro</div></td>
+                <td colspan="17"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Encosta</td>
+                <td>239</td>
+                <td>271</td>
+                <td>366</td>
+                <td>299</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Encosta</div></td>
+                <td colspan="16"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Freita</td>
+                <td>60</td>
+                <td>329</td>
+                <td>178</td>
+                <td>314</td>
+                <td>91</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Freita</div></td>
+                <td colspan="15"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Gonta</td>
+                <td>305</td>
+                <td>78</td>
+                <td>426</td>
+                <td>488</td>
+                <td>191</td>
+                <td>251</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Gonta</div></td>
+                <td colspan="14"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Horta</td>
+                <td>522</td>
+                <td>165</td>
+                <td>643</td>
+                <td>732</td>
+                <td>437</td>
+                <td>468</td>
+                <td>244</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Horta</div></td>
+                <td colspan="13"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Infantado</td>
+                <td>163</td>
+                <td>369</td>
+                <td>260</td>
+                <td>197</td>
+                <td>102</td>
+                <td>161</td>
+                <td>291</td>
+                <td>535</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Infantado</div></td>
+                <td colspan="12"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Jardim</td>
+                <td>506</td>
+                <td>210</td>
+                <td>622</td>
+                <td>765</td>
+                <td>456</td>
+                <td>452</td>
+                <td>270</td>
+                <td>85</td>
+                <td>652</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Jardim</div></td>
+                <td colspan="11"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Lourel</td>
+                <td>126</td>
+                <td>273</td>
+                <td>244</td>
+                <td>402</td>
+                <td>179</td>
+                <td>72</td>
+                <td>195</td>
+                <td>412</td>
+                <td>233</td>
+                <td>385</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Lourel</div></td>
+                <td colspan="10"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Monte</td>
+                <td>256</td>
+                <td>183</td>
+                <td>372</td>
+                <td>530</td>
+                <td>264</td>
+                <td>202</td>
+                <td>138</td>
+                <td>296</td>
+                <td>402</td>
+                <td>250</td>
+                <td>146</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Monte</div></td>
+                <td colspan="9"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Nelas</td>
+                <td>438</td>
+                <td>98</td>
+                <td>558</td>
+                <td>700</td>
+                <td>365</td>
+                <td>380</td>
+                <td>172</td>
+                <td>93</td>
+                <td>512</td>
+                <td>68</td>
+                <td>324</td>
+                <td>182</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Nelas</div></td>
+                <td colspan="8"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Oura</td>
+                <td>276</td>
+                <td>178</td>
+                <td>403</td>
+                <td>390</td>
+                <td>93</td>
+                <td>222</td>
+                <td>100</td>
+                <td>344</td>
+                <td>193</td>
+                <td>360</td>
+                <td>172</td>
+                <td>219</td>
+                <td>235</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Oura</div></td>
+                <td colspan="7"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Pinhal</td>
+                <td>71</td>
+                <td>446</td>
+                <td>58</td>
+                <td>216</td>
+                <td>308</td>
+                <td>123</td>
+                <td>368</td>
+                <td>585</td>
+                <td>202</td>
+                <td>565</td>
+                <td>189</td>
+                <td>317</td>
+                <td>505</td>
+                <td>339</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Pinhal</div></td>
+                <td colspan="6"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" height="10" bgcolor="#999999">Quebrada</td>
+                <td height="10">188</td>
+                <td height="10">195</td>
+                <td height="10">309</td>
+                <td height="10">464</td>
+                <td height="10">181</td>
+                <td height="10">134</td>
+                <td height="10">117</td>
+                <td height="10">346</td>
+                <td height="10">295</td>
+                <td height="10">330</td>
+                <td height="10">78</td>
+                <td height="10">80</td>
+                <td height="10">229</td>
+                <td height="10">147</td>
+                <td height="10">251</td>
+                <td height="10" colspan="2" bgcolor="#999999"><div align="left">Quebrada</div></td>
+                <td height="10" colspan="5"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Roseiral</td>
+                <td>299</td>
+                <td>143</td>
+                <td>420</td>
+                <td>575</td>
+                <td>316</td>
+                <td>245</td>
+                <td>105</td>
+                <td>256</td>
+                <td>406</td>
+                <td>205</td>
+                <td>189</td>
+                <td>47</td>
+                <td>150</td>
+                <td>186</td>
+                <td>362</td>
+                <td>123</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Roseiral</div></td>
+                <td colspan="4"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Serra</td>
+                <td>383</td>
+                <td>93</td>
+                <td>501</td>
+                <td>641</td>
+                <td>340</td>
+                <td>325</td>
+                <td>115</td>
+                <td>143</td>
+                <td>478</td>
+                <td>126</td>
+                <td>270</td>
+                <td>128</td>
+                <td>61</td>
+                <td>203</td>
+                <td>451</td>
+                <td>191</td>
+                <td>90</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Serra</div></td>
+                <td colspan="3"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Teixoso</td>
+                <td>144</td>
+                <td>519</td>
+                <td>56</td>
+                <td>241</td>
+                <td>382</td>
+                <td>191</td>
+                <td>441</td>
+                <td>658</td>
+                <td>275</td>
+                <td>641</td>
+                <td>262</td>
+                <td>367</td>
+                <td>578</td>
+                <td>412</td>
+                <td>69</td>
+                <td>324</td>
+                <td>435</td>
+                <td>520</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Teixoso</div></td>
+                <td colspan="2"></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Ulgueira</td>
+                <td>169</td>
+                <td>528</td>
+                <td>94</td>
+                <td>120</td>
+                <td>261</td>
+                <td>199</td>
+                <td>450</td>
+                <td>683</td>
+                <td>159</td>
+                <td>656</td>
+                <td>282</td>
+                <td>412</td>
+                <td>585</td>
+                <td>352</td>
+                <td>98</td>
+                <td>349</td>
+                <td>460</td>
+                <td>535</td>
+                <td>150</td>
+                <td colspan="2" bgcolor="#999999"><div align="left">Ulgueira</div></td>
+                <td></td>
+              </tr>
+              <tr align="right">
+                <td width="50" bgcolor="#999999">Vilar</td>
+                <td>86</td>
+                <td>415</td>
+                <td>185</td>
+                <td>228</td>
+                <td>177</td>
+                <td>86</td>
+                <td>366</td>
+                <td>554</td>
+                <td>75</td>
+                <td>327</td>
+                <td>158</td>
+                <td>288</td>
+                <td>452</td>
+                <td>268</td>
+                <td>127</td>
+                <td>220</td>
+                <td>331</td>
+                <td>395</td>
+                <td>241</td>
+                <td>113</td>
+                <td colspan="1" bgcolor="#999999"><div align="left">Vilar</div></td>
+                <td></td>
+              </tr>
+            </tbody></table>
+            </center>
+            <p>&nbsp;</p>
+
+			<!-- #EndEditable --></div>
+		<!-- End Left Column --></div>
+	<!-- End Page Content -->
+	<!-- Begin Footer -->
+	<div id="footer">
+		<p>	<a href="http://ia.ssdi.di.fct.unl.pt/index.html">Início</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/objectivos.html">Objectivos</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/programa.html">Programa</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/bibliografia.html">Bibliografia</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/docentes.html">Docentes</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/avaliacao.html">Avaliação</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/horario.html">Horário</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/aulas.html">Aulas</a> |
+	  </p><p>Comentários e sugestões para 
+		<a href="mailto:jleite@fct.unl.pt?subject=BD%20-%20Website">jleite@fct.unl.pt</a></p>
+	</div>
+	<!-- End Footer --></div>
+<!-- End Container -->
+
+
+
+<!-- #EndTemplate -->
+</body></html>

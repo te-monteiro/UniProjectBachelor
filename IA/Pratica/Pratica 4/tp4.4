@@ -1,0 +1,21 @@
+% instance
+team(a).
+team(b).
+team(c).
+team(d).
+team(e).
+team(f).
+
+group(1).
+group(2).
+
+% encoding
+3{teamemgroup(X,Y) : team(X)}3 :- group(Y).
+1{teamemgroup(X,Y) : group(Y)}1 :- team(X).
+
+ :- teamemgroup(a,1).
+ :- teamemgroup(a,Y), teamemgroup(e,Y).
+ :- teamemgroup(f,Y), teamemgroup(e,Y).
+ r4 :- teamemgroup(b,Y), teamemgroup(c, Y).
+ :- not r4.
+

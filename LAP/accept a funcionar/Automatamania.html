@@ -1,0 +1,126 @@
+<!DOCTYPE>
+<HTML>
+<!-- Artur Miguel Dias, 2019 -->
+<!-- INSIDE THIS FILE, YOU CAN CHANGE ALMOST EVERYTHING! -->
+
+<HEAD>
+	<TITLE>Linguagens e Ambientes de Programação (2018/2019) [Eng.Inf. - DI/FCT/UNL] - 3º projeto prático
+		(Automatamania)</TITLE>
+	<META name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+	<SCRIPT src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></SCRIPT>
+	<SCRIPT src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.js"></SCRIPT>
+	<SCRIPT src="https://cytoscape.org/cytoscape.js-edgehandles/cytoscape-edgehandles.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="Automatamania.js"></SCRIPT>
+	<STYLE>
+		html,
+		body {
+			font-family: helvetica neue, helvetica, liberation sans, arial, sans-serif;
+			font-size: 14px;
+			height: 100%;
+			width: 100%;
+			padding: 0;
+			margin: 0;
+		}
+
+		#cy {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			z-index: 999;
+		}
+
+		h1 {
+			opacity: 1;
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		#buttons {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			z-index: 99999;
+		}
+
+		.btn-group button {
+			border: 1px solid green;
+			/* Green border */
+			padding: 0px 24px;
+			/* Some padding */
+			cursor: pointer;
+			/* Pointer/hand icon */
+			width: 50%;
+			/* Set a width if needed */
+			display: block;
+			/* Make the buttons appear below each other */
+			margin-bottom: 10px;
+		}
+
+		.btn-group button:hover {
+			background-color: lightcyan;
+		}
+
+		ul {
+			list-style: none;
+			padding-left: 10px;
+		}
+	</STYLE>
+</HEAD>
+
+<BODY ONLOAD="onLoadAction(event)">
+
+	<DIV ID="menu" STYLE="position: fixed; top: 0px; left: 0px; height: 100%; width: 200px; background: pink;">
+
+		<hr>
+		<hr>
+		<h1 style="font-size: 26px;">Automatamania</h1>
+
+		<hr>
+		<hr><b>Authors:</b> <br />
+		<UL>
+			<!-- Put here your number and name! -->
+			<li>52597 Teresa Monteiro
+			<li>52787 Ana Filipa Silva
+		</UL>
+
+		<hr><b> Statistics :</b> <br />
+		<UL>
+			<li>Number of states:<span id='o meu id'>texto alterado</span>
+			<li>Number of accept states:<span id='o seu id'>texto alterado </span>
+			<li>Size of the alphabet:<span id='o nosso id'>texto alterado </span>
+			<li>Deterministic?<span id='o vosso id'>texto alterado aceite</span>
+
+		</UL>
+
+		<hr><b>Input box:</b><br />
+		<input type="text" id="inputBox">
+		</UL>
+
+
+		<hr><b> Commands:</b> <br />
+		<DIV class="btn-group">
+			<UL>
+				<li><BUTTON ID="reachable" ONCLICK="getReachable(event)">Reachable</BUTTON>
+				<li><BUTTON ID="productive" ONCLICK="getProductive(event)">Productive</BUTTON>
+				<li><BUTTON ID="useful" ONCLICK="getUseful(event)">Useful</BUTTON>
+				<li><BUTTON ID="useful" ONCLICK="getUseful(event)">Useful</BUTTON>
+				<li><BUTTON ID="accept" ONCLICK="ana(event)">Accept</BUTTON>
+
+				<li><b></b><br />
+					<INPUT TYPE="text" ID="text2" VALUE="Maybe" READONLY style="text-align: right; font-weight: bold">
+				<li>...
+				<li><INPUT ID="file-select" TYPE='file' ACCEPT='applicati\n/json' ONCHANGE='fileSelectAction(event)'>
+			</UL>
+
+			<hr>
+			<hr>
+		</DIV>
+
+
+		<DIV id="cy" STYLE="position: fixed; top: 0px; left: 200px; background: lightcyan;"></DIV>
+
+</BODY>
+
+</HTML>

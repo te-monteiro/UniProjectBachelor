@@ -1,0 +1,401 @@
+P1.1:
+chuva :- .
+molhado :-chuva.
+molhado :- rega.
+
+{chuva; molhado; rega}.
+
+P1.2:
+cafe :- .
+limao :- cha.
+acucar :- cafe.
+leite :- cafe,acucar.
+cha :- limao.
+cha :-dieta.
+
+{cafe; limao; cha;acucar;dieta; leite}.
+
+P1.3
+camisa :- .
+sapatilhas :- .
+calcas :- sapatilhas.
+saia :- camisa,sandalias.
+sandalias :- vestido.
+
+{camisa; sapatilhas; calcas; vestido; sandalias}.
+
+
+P1.4
+tinto :-.
+carne :-couves.
+carne :- tinto.
+peixe :- espargos.
+espargos :- peixe,branco.
+branco :- peixe.
+
+{peixe; branco; espargos; tinto; carne; couves}.
+
+P1.5:
+rega :- not chuva.
+chuva :-  not rega.
+molhado :- chuva.
+molhado :- rega.
+
+{rega; molhado; chuva}.
+
+P1.6:
+dieta :-  not acucar.
+cafe :- not cha.
+limao :- cha.
+acucar :- cafe.
+leite :- cafe,acucar.
+cha:- limao.
+cha :- dieta.
+
+{dieta; acucar; limao; cha;cafe;leite}.
+
+P1.7
+vestido :- not camisa.
+camisa :- not vestido.
+sandalias :- not sapatilhas.
+sapatilhas :- not sandalias.
+calcas :- sapatilhas.
+saia :- camisa,sandalias.
+sandalias :-vestido.
+
+{sandalias; vestido; camisa; sapatilhas ; saia}.
+
+P1.8
+espargos :- not couves.
+couves :- not espargos.
+tinto :- not branco.
+carne :- couves.
+carne :- tinto.
+peixe :- espargos.
+espargos :- peixe,branco.
+branco :- peixe.
+
+{branco; peixe; espargos; tinto; carne; couves}.
+
+
+2
+F1:
+1{cycle(X,Y) : edge(X,Y)}1 :- node(X).
+reach(Y) :- cycle(1,Y).
+reach(Y) :- reach(X),cycle(X,Y),X !=1.
+:-node(Y), not reach(Y).
+
+node(1).
+node(2).
+node(3).
+
+edge(1,2).
+edge(2,3).
+edge(3,1).
+edge(3,2).
+
+F2
+1{cycle(X,Y) : edge(X,Y)}1 :- node(X).
+reach(Y) :- cycle(1,Y).
+reach(Y) :- reach(X),cycle(X,Y),X !=1.
+:-node(Y), not reach(Y).
+
+node(1).
+node(2).
+node(3).
+node(4).
+
+edge(1,2).
+edge(1,3).
+edge(2,3).
+edge(2,4).
+
+
+edge(3,2).
+edge(3,4).
+edge(4,1).
+edge(4,2).
+
+
+4.
+% instance
+team(a).
+team(b).
+team(c).
+team(d).
+team(e).
+team(f).
+
+group(1).
+group(2).
+
+% encoding
+3{teamemgroup(X,Y) : team(X)}3 :- group(Y).
+1{teamemgroup(X,Y) : group(Y)}1 :- team(X).
+
+ :- teamemgroup(a,1).
+ :- teamemgroup(a,Y), teamemgroup(e,Y).
+ :- teamemgroup(f,Y), teamemgroup(e,Y).
+ r4 :- teamemgroup(b,Y), teamemgroup(c, Y).
+ :- not r4.
+
+#show teamemgroup/2
+
+5.
+
+set(1).
+element(1,a). 
+element(1,b). 
+element(1,c).
+set(2). 
+element(2,a). 
+element(2,c). 
+element(2,d).
+set(3). 
+element(3,b). 
+element(3,c).
+
+%encoding
+1{select(Y) : element(X,Y)}1:- set(X).
+
+#show select/1.
+
+II)
+
+vertex(1). 
+vertex(2). 
+vertex(3). 
+vertex(4). 
+vertex(5). 
+vertex(6).
+edge(1,2). 
+edge(1,3). 
+edge(2,4). 
+edge(3,5). 
+edge(4,5). 
+edge(4,6).
+threshold(2).
+
+%encoding
+1{select(X) : vertex(X)}Z :- threshold(Z).
+
+--testar todos os que nao estao selecionados
+teste(X) :- select(X).
+teste(Y) :- edge(X, Y), vertex(X), not select(Y), select(X).
+teste(Y) :- edge(Y, X), vertex(X), not select(Y), select(X).
+:- not teste(Y), vertex(Y).
+
+
+#show select/1.
+III)
+
+vertex(1).
+vertex(2). 
+vertex(3). 
+vertex(4). 
+vertex(5). 
+vertex(6).
+edge(1,2).
+edge(1,3).
+edge(2,4).
+edge(3,5).
+edge(4,5).
+edge(4,6).
+threshold(3).
+
+%encoding
+1{select(X) : vertex(X)}Z :- threshold(Z).
+
+ :- edge(X, Y),  not select(Y), not select(X).
+
+#show select/1.
+
+6.
+homem(miguel).
+homem(joao).
+homem(pedro).
+homem(marco).
+homem(carlos).
+
+mulher(maria).
+mulher(paula).
+mulher(carla).
+mulher(cristina).
+mulher(ana).
+
+clube(porto).
+clube(academica).
+clube(sporting).
+clube(benfica).
+clube(setubal).
+
+animal(raposa).
+animal(cavalo).
+animal(tartaruga).
+animal(cao).
+animal(gato).
+
+bebida(agua).
+bebida(cha).
+bebida(leite).
+bebida(sumo).
+bebida(cafe).
+
+cor(amarela).
+cor(azul).
+cor(vermelha).
+cor(branca).
+cor(verde).
+
+casa(1).
+casa(2).
+casa(3).
+casa(4).
+casa(5).
+
+pref(miguel,paula,5).
+pref(miguel,ana,4).
+pref(miguel,maria,3).
+pref(miguel,carla,2).
+pref(miguel,cristina,1).
+
+pref(maria,carlos,5).
+pref(maria,miguel,4).
+pref(maria,marco,3).
+pref(maria,joao,2).
+pref(maria,pedro,1).
+
+pref(joao,maria,5).
+pref(joao,paula,4).
+pref(joao,carla,3).
+pref(joao,cristina,2).
+pref(joao,ana,1).
+
+pref(paula,marco,5).
+pref(paula,carlos,4).
+pref(paula,joao,3).
+pref(paula,miguel,2).
+pref(paula,pedro,1).
+
+pref(pedro,paula,5).
+pref(pedro,carla,4).
+pref(pedro,ana,3).
+pref(pedro,cristina,2).
+pref(pedro,maria,1).
+
+pref(carla,miguel,5).
+pref(carla,marco,4).
+pref(carla,joao,3).
+pref(carla,pedro,2).
+pref(carla,carlos,1).
+
+pref(marco,maria,5).
+pref(marco,carla,4).
+pref(marco,paula,3).
+pref(marco,cristina,2).
+pref(marco,ana,1).
+
+pref(cristina,pedro,5).
+pref(cristina,joao,4).
+pref(cristina,marco,3).
+pref(cristina,miguel,2).
+pref(cristina,carlos,1).
+
+pref(carlos,ana,5).
+pref(carlos,carla,4).
+pref(carlos,paula,3).
+pref(carlos,maria,2).
+pref(carlos,cristina,1).
+
+pref(ana,marco,5).
+pref(ana,joao,4).
+pref(ana,pedro,3).
+pref(ana,carlos,2).
+pref(ana,miguel,1).
+
+
+1{corDaCasa(X, Y) : cor(X)}1 :- homem(Y).
+1{corDaCasa(X, Y) : homem(Y)}1 :- cor(X).
+1{casamento(X,Y) : mulher(X)}1 :- homem(Y).
+1{casamento(X,Y): homem(Y)}1 :- mulher(X).
+1{dona(X,Y) : animal(X)}1 :- mulher(Y).
+1{dona(X,Y) : mulher(Y)}1 :- animal(X).
+1{adepto(X,Y) : clube(X)}1 :- homem(Y).
+1{adepto(X,Y) : homem(Y)}1 :- clube(X).
+
+1{vizinhos(X,Y) : homem(Y)}1 :- homem(X).
+1{vizinhos(X,Y) : homem(X)}1 :- homem(Y).
+
+1{vive(X,N) : homem(X)}1 :- casa(N).
+1{vive(X,N) : casa(N)}1 :- homem(X).
+
+
+vizinho(X, Y) :- homem(X), homem(Y), aDireita(Y,X).
+vizinho(X, Y) :- homem(X), homem(Y), aDireita(X,Y).
+aDireita(X,Y) :- vive(X, N1), vive(Y,N2), N2 - N1 = 1.
+
+
+1{bebe(X,Y) : bebida(X)}1 :- homem(Y).
+1{bebe(X,Y) : homem(Y)}1 :- bebida(X).
+
+
+filho(miguel, joao).
+filho(joao, pedro).
+filho(marco, pedro).
+filho(carlos, marco).
+
+r5 :- filho(carlos, PAIDOCARLOS), corDaCasa(vermelha, PAIDOCARLOS).
+:- not r5.
+
+r6 :- casamento(MULHER, miguel), dona(cao, MULHER).
+:- not r6.
+
+r7 :- filho(carlos, PAIDOCARLOS), filho(PAIDOCARLOS, AVODOCARLOS), vive(AVODOCARLOS, 1).
+:- not r7.
+
+r8 :- adepto(porto, HOMEM), corDaCasa(amarela, HOMEM).
+:- not r8.
+
+r9 :- casamento(MULHER2, HOMEM2), dona(raposa, MULHER2), adepto(academica, HOMEM1), vizinho(HOMEM1, HOMEM2).
+:- not r9.
+
+r10 :- homem(HOMEM), vizinho(pedro, HOMEM), corDaCasa(azul, HOMEM).
+:- not r10.
+
+r11 :- adepto(sporting, HOMEM1), casamento(MULHER1, HOMEM1), dona(tartaruga, MULHER1).
+:- not r11.
+
+r12 :- adepto(benfica, HOMEM), bebe(sumo, HOMEM).
+:- not r12.
+
+r13 :- filho(miguel, PAIDOMIGUEL), bebe(cha, PAIDOMIGUEL).
+:- not r13.
+
+r14 :- filho(FILHODOMARCO, marco), adepto(setubal, FILHODOMARCO).
+:- not r14.
+
+r15 :- adepto(porto, HOMEM2), vizinho(HOMEM1, HOMEM2), casamento(MULHER1, HOMEM1), dona(cavalo, MULHER1).
+:- not r15.
+
+r16 :- corDaCasa(verde, HOMEM), bebe(cafe, HOMEM).
+:- not r16.
+%homem2-homem1 para estar a direita
+r17 :- corDaCasa(verde, HOMEM1), corDaCasa(branca, HOMEM2), aDireita(HOMEM1, HOMEM2). 
+:- not r17.
+
+r18 :- vive(HOMEM, 3), bebe(leite, HOMEM).
+:- not r18.
+
+r19 :- casamento(ana, pedro).
+:- not r19.
+
+r20 :- casamento(maria, carlos).
+
+donaDoGato(MULHER, N) :-  dona(gato, MULHER), vive(HOMEM, N), casamento(MULHER, HOMEM), corDaCasa(COR, HOMEM) .
+
+#show donaDoGato/2.
+
+
+
+
+

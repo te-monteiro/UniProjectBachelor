@@ -1,0 +1,35 @@
+novo 20 20 3 4
+10 15 4 Winterfell
+12 20 1 Castle Black
+1 3 10 Casterly Rock
+15 16 2 Dread Fort
+Lannister Casterly Rock
+Stark Winterfell
+NightWatch Castle Black
+castelos
+recruta cavaleiro Casterly Rock
+castelos
+recruta lanceiro Winterfell
+castelos
+recruta espadachim Castle Black
+exercito
+soldado 1 3 norte norte norte
+exercito
+soldado 10 15 sul
+exercito
+soldado 12 20 oeste
+exercito
+castelos
+recruta lanceiro Casterly Rock
+exercito
+castelos
+recruta cavaleiro Winterfell
+exercito
+castelos
+recruta cavaleiro Castle Black
+castelos
+exercito
+soldado 1 6 norte norte este
+exercito
+soldado 10 15 este oeste este
+sai

@@ -1,0 +1,110 @@
+novo 10 10 2 3
+3 2 10 Castle Black
+6 5 15 Castle Red
+6 2 7 Castle My
+TeamBlack Castle Black
+TeamRed Castle Red
+mapa
+recruta cavaleiro Castle Black
+recruta cavaleiro Castle Red
+soldado 3 2 norte este este
+castelos
+soldado 6 5 sul este sul
+exercito
+recruta lanceiro Castle Black
+exercito
+soldado 7 3 oeste oeste oeste
+soldado 3 2 este
+soldado 4 3 oeste sul sul
+castelos
+exercito
+soldado 4 2 este
+castelos
+exercito
+recruta espadachim Castle Black
+exercito
+soldado 5 2 este
+exercito
+soldado 3 1 este este este
+exercito
+soldado 6 2 sul
+exercito
+castelos
+soldado 3 2 sul
+soldado 6 1 este
+soldado 3 1 este
+soldado 7 1 oeste
+soldado 4 1 este
+soldado 6 1 oeste
+exercito
+soldado 5 1 oeste
+recruta soldado Castle My
+soldado 4 1 norte
+recruta espadachim Castle My
+soldado 4 2 oeste
+soldado 6 2 sul
+recruta cavaleiro Castle Red
+soldado 6 1 norte
+soldado 3 2 norte
+soldado 6 2 norte
+mapa
+recruta cavaleiro Castle Black
+soldado 6 3 norte
+soldado 3 2 sul sul oeste
+soldado 6 4 norte
+soldado 6 5 sul sul sul
+novo 10 10 2 3
+3 2 10 Castle Black
+6 5 15 Castle Red
+6 2 7 Castle My
+TeamBlack Castle Black
+TeamRed Castle Red
+mapa
+recruta cavaleiro Castle Black
+recruta cavaleiro Castle Red
+soldado 3 2 norte este este
+castelos
+soldado 6 5 sul este sul
+exercito
+recruta lanceiro Castle Black
+exercito
+soldado 7 3 oeste oeste oeste
+soldado 3 2 este
+soldado 4 3 oeste sul sul
+castelos
+exercito
+soldado 4 2 este
+castelos
+exercito
+recruta espadachim Castle Black
+exercito
+soldado 5 2 este
+exercito
+soldado 3 1 este este este
+exercito
+soldado 6 2 sul
+exercito
+castelos
+soldado 3 2 sul
+soldado 6 1 este
+soldado 3 1 este
+soldado 7 1 oeste
+soldado 4 1 este
+soldado 6 1 oeste
+exercito
+soldado 5 1 oeste
+recruta soldado Castle My
+soldado 4 1 norte
+recruta espadachim Castle My
+soldado 4 2 oeste
+soldado 6 2 sul
+recruta cavaleiro Castle Red
+soldado 6 1 norte
+soldado 6 5 sul sul norte
+soldado 6 2 norte
+soldado 6 4 sul norte norte
+recruta cavaleiro Castle Red
+exercito
+mapa
+soldado 6 5 sul sul sul
+sai

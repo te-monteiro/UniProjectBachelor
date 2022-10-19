@@ -1,0 +1,58 @@
+> currentShow - show the current show
+addShow - add a new show
+switchToShow - change the context to a particular show
+addSeason - add a new season to the current show
+addEpisode - add a new episode to a particular season of the current show
+addCharacter - add a new character to a show
+addRelationship - add a family relationship between characters
+addRomance - add a romantic relationship between characters
+addEvent - add a significant event involving at least one character
+addQuote - add a new quote to a character
+seasonsOutline - outline the contents of the selected seasons for the selected show
+characterResume - outline the main information on a specific character
+howAreTheseTwoRelated - find out if and how two characters may be related
+famousQuotes - find out which character(s) said a particular quote
+alsoAppearsOn - which other shows and roles is the same actor on?
+mostRomantic - find out who is at least as romantic as X
+kingOfCGI - find out which company has earned more revenue with their CGI virtual actors
+help - shows the available commands
+exit - terminates the execution of the program
+> currentShow - show the current show
+addShow - add a new show
+switchToShow - change the context to a particular show
+addSeason - add a new season to the current show
+addEpisode - add a new episode to a particular season of the current show
+addCharacter - add a new character to a show
+addRelationship - add a family relationship between characters
+addRomance - add a romantic relationship between characters
+addEvent - add a significant event involving at least one character
+addQuote - add a new quote to a character
+seasonsOutline - outline the contents of the selected seasons for the selected show
+characterResume - outline the main information on a specific character
+howAreTheseTwoRelated - find out if and how two characters may be related
+famousQuotes - find out which character(s) said a particular quote
+alsoAppearsOn - which other shows and roles is the same actor on?
+mostRomantic - find out who is at least as romantic as X
+kingOfCGI - find out which company has earned more revenue with their CGI virtual actors
+help - shows the available commands
+exit - terminates the execution of the program
+> currentShow - show the current show
+addShow - add a new show
+switchToShow - change the context to a particular show
+addSeason - add a new season to the current show
+addEpisode - add a new episode to a particular season of the current show
+addCharacter - add a new character to a show
+addRelationship - add a family relationship between characters
+addRomance - add a romantic relationship between characters
+addEvent - add a significant event involving at least one character
+addQuote - add a new quote to a character
+seasonsOutline - outline the contents of the selected seasons for the selected show
+characterResume - outline the main information on a specific character
+howAreTheseTwoRelated - find out if and how two characters may be related
+famousQuotes - find out which character(s) said a particular quote
+alsoAppearsOn - which other shows and roles is the same actor on?
+mostRomantic - find out who is at least as romantic as X
+kingOfCGI - find out which company has earned more revenue with their CGI virtual actors
+help - shows the available commands
+exit - terminates the execution of the program
+> Bye!

@@ -1,0 +1,194 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> 4 castelos:
+3 reinos:
+Jogo iniciado, comeca o reino Lannister.
+Lannister > 1 castelos:
+Casterly Rock com riqueza 10 na posicao (1,3)
+Lannister > cavaleiro recrutado no Casterly Rock do reino Lannister por 4 moedas.
+Stark > 1 castelos:
+Winterfell com riqueza 5 na posicao (10,15)
+Stark > lanceiro recrutado no Winterfell do reino Stark por 2 moedas.
+NightWatch > 1 castelos:
+Castle Black com riqueza 3 na posicao (12,20)
+NightWatch > espadachim recrutado no Castle Black do reino NightWatch por 2 moedas.
+Lannister > 1 soldados:
+cavaleiro na posicao (1,3)
+Lannister > Lannister cavaleiro (1,4)
+Lannister cavaleiro (1,5)
+Lannister cavaleiro (1,6)
+Stark > 1 soldados:
+lanceiro na posicao (10,15)
+Stark > Stark lanceiro (10,14)
+NightWatch > 1 soldados:
+espadachim na posicao (12,20)
+NightWatch > NightWatch espadachim (11,20)
+Lannister > 1 soldados:
+cavaleiro na posicao (1,6)
+Lannister > 1 castelos:
+Casterly Rock com riqueza 12 na posicao (1,3)
+Lannister > lanceiro recrutado no Casterly Rock do reino Lannister por 2 moedas.
+Stark > 1 soldados:
+lanceiro na posicao (10,14)
+Stark > 1 castelos:
+Winterfell com riqueza 9 na posicao (10,15)
+Stark > cavaleiro recrutado no Winterfell do reino Stark por 4 moedas.
+NightWatch > 1 soldados:
+espadachim na posicao (11,20)
+NightWatch > 1 castelos:
+Castle Black com riqueza 7 na posicao (12,20)
+NightWatch > cavaleiro recrutado no Castle Black do reino NightWatch por 4 moedas.
+Lannister > 1 castelos:
+Casterly Rock com riqueza 13 na posicao (1,3)
+Lannister > 2 soldados:
+cavaleiro na posicao (1,6)
+lanceiro na posicao (1,3)
+Lannister > Lannister cavaleiro (1,7)
+Lannister cavaleiro (1,8)
+Lannister cavaleiro (2,8)
+Stark > 2 soldados:
+lanceiro na posicao (10,14)
+cavaleiro na posicao (10,15)
+Stark > Stark cavaleiro (11,15)
+Stark cavaleiro (10,15)
+Stark cavaleiro (11,15)
+NightWatch > 2 soldados:
+espadachim na posicao (11,20)
+cavaleiro na posicao (12,20)
+NightWatch > Nao existe nenhum soldado ilustre da casa de NightWatch na posicao (12,10).
+Lannister > 2 soldados:
+cavaleiro na posicao (2,8)
+lanceiro na posicao (1,3)
+Lannister > Lannister cavaleiro (2,7)
+Lannister cavaleiro (3,7)
+Lannister cavaleiro (4,7)
+Stark > 2 soldados:
+lanceiro na posicao (10,14)
+cavaleiro na posicao (11,15)
+Stark > Stark lanceiro (9,14)
+NightWatch > 2 soldados:
+espadachim na posicao (11,20)
+cavaleiro na posicao (12,20)
+NightWatch > O espadachim da ilustre casa de NightWatch e um cobardolas.
+NightWatch espadachim (11,20)
+Lannister > 2 soldados:
+cavaleiro na posicao (4,7)
+lanceiro na posicao (1,3)
+Lannister > Lannister cavaleiro (5,7)
+Lannister cavaleiro (6,7)
+Lannister cavaleiro (7,7)
+Stark > 2 soldados:
+lanceiro na posicao (9,14)
+cavaleiro na posicao (11,15)
+Stark > Stark cavaleiro (10,15)
+Stark cavaleiro (9,15)
+O cavaleiro da ilustre casa de Stark devia tentar ir para outro sitio.
+Stark cavaleiro (9,15)
+NightWatch > 2 soldados:
+espadachim na posicao (11,20)
+cavaleiro na posicao (12,20)
+NightWatch > NightWatch espadachim (10,20)
+Lannister > 2 soldados:
+cavaleiro na posicao (7,7)
+lanceiro na posicao (1,3)
+Lannister > O lanceiro da ilustre casa de Lannister e um cobardolas.
+Lannister lanceiro (1,3)
+Stark > 2 soldados:
+lanceiro na posicao (9,14)
+cavaleiro na posicao (9,15)
+Stark > O cavaleiro da ilustre casa de Stark devia tentar ir para outro sitio.
+Stark cavaleiro (9,15)
+Stark cavaleiro (9,16)
+Stark cavaleiro (9,15)
+NightWatch > 2 soldados:
+espadachim na posicao (10,20)
+cavaleiro na posicao (12,20)
+NightWatch > NightWatch cavaleiro (11,20)
+O cavaleiro da ilustre casa de NightWatch devia tentar ir para outro sitio.
+NightWatch cavaleiro (11,20)
+O cavaleiro da ilustre casa de NightWatch e um cobardolas.
+NightWatch cavaleiro (11,20)
+Lannister > 2 soldados:
+cavaleiro na posicao (7,7)
+lanceiro na posicao (1,3)
+Lannister > Lannister cavaleiro (7,6)
+Lannister cavaleiro (7,5)
+Lannister cavaleiro (8,5)
+Stark > 2 soldados:
+lanceiro na posicao (9,14)
+cavaleiro na posicao (9,15)
+Stark > O lanceiro da ilustre casa de Stark devia tentar ir para outro sitio.
+Stark lanceiro (9,14)
+NightWatch > 2 soldados:
+espadachim na posicao (10,20)
+cavaleiro na posicao (11,20)
+NightWatch > O cavaleiro da ilustre casa de NightWatch e um cobardolas.
+NightWatch cavaleiro (11,20)
+NightWatch cavaleiro (11,19)
+NightWatch cavaleiro (10,19)
+Lannister > 2 soldados:
+cavaleiro na posicao (8,5)
+lanceiro na posicao (1,3)
+Lannister > 1 castelos:
+Casterly Rock com riqueza 28 na posicao (1,3)
+Lannister > Lannister lanceiro (1,2)
+Stark > 2 soldados:
+lanceiro na posicao (9,14)
+cavaleiro na posicao (9,15)
+Stark > O lanceiro da ilustre casa de Stark devia tentar ir para outro sitio.
+Stark lanceiro (9,14)
+NightWatch > 2 soldados:
+espadachim na posicao (10,20)
+cavaleiro na posicao (10,19)
+NightWatch > 1 castelos:
+Castle Black com riqueza 21 na posicao (12,20)
+NightWatch > cavaleiro recrutado no Castle Black do reino NightWatch por 4 moedas.
+Lannister > 2 soldados:
+cavaleiro na posicao (8,5)
+lanceiro na posicao (1,2)
+Lannister > 1 castelos:
+Casterly Rock com riqueza 31 na posicao (1,3)
+Lannister > espadachim recrutado no Casterly Rock do reino Lannister por 2 moedas.
+Stark > 2 soldados:
+lanceiro na posicao (9,14)
+cavaleiro na posicao (9,15)
+Stark > 1 castelos:
+Winterfell com riqueza 26 na posicao (10,15)
+Stark > espadachim recrutado no Winterfell do reino Stark por 2 moedas.
+NightWatch > 3 soldados:
+espadachim na posicao (10,20)
+cavaleiro na posicao (10,19)
+cavaleiro na posicao (12,20)
+NightWatch > O cavaleiro da ilustre casa de NightWatch devia tentar ir para outro sitio.
+NightWatch cavaleiro (10,19)
+NightWatch cavaleiro (10,18)
+NightWatch cavaleiro (10,17)
+Lannister > 3 soldados:
+cavaleiro na posicao (8,5)
+lanceiro na posicao (1,2)
+espadachim na posicao (1,3)
+Lannister > O espadachim da ilustre casa de Lannister devia tentar ir para outro sitio.
+Lannister espadachim (1,3)
+Stark > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (NightWatch)
+Casterly Rock (Lannister)
+Dread Fort (sem dono)
+3 reinos:
+Lannister; Stark; NightWatch
+Stark > 3 soldados:
+lanceiro na posicao (9,14)
+cavaleiro na posicao (9,15)
+espadachim na posicao (10,15)
+Stark > 1 castelos:
+Winterfell com riqueza 27 na posicao (10,15)
+Stark > Stark espadachim (10,16)
+NightWatch > 3 soldados:
+espadachim na posicao (10,20)
+cavaleiro na posicao (10,17)
+cavaleiro na posicao (12,20)
+NightWatch > 1 castelos:
+Castle Black com riqueza 23 na posicao (12,20)
+NightWatch > Obrigado por jogar. Ate a proxima.

@@ -1,0 +1,49 @@
+novo 10 10
+jogo 2 2
+correcto 8 8
+mapa
+novo 12 10
+erro 0 2
+parvo 8 8
+mapa
+novo 14 18
+erro 2 0
+parvo 7 8
+mapa
+novo 18 15
+erro 16 16
+parvo 8 7
+mapa
+novo 18 15
+erro 19 16
+parvo 8 7
+mapa
+novo 18 15
+erro 16 16
+crasso 28 77
+mapa
+novo 10 10
+fronteira 10 10
+fronteirinha 1 1
+mapa
+novo 10 10
+fronteira 10 2
+fronteirinha 2 1
+mapa
+novo 10 10
+perto 5 5
+demais 5 5
+mapa
+novo 10 10
+mesmo 4 4
+perto 5 5
+mapa
+novo 10 10
+continua 2 3
+perto 5 5
+mapa
+novo 10 10
+longe 2 2
+qb 5 5
+mapa
+sai

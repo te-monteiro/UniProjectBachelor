@@ -1,0 +1,74 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> Jogo iniciado, comeca a equipa Targaryen.
+Targaryen > 10 10
+Targaryen 9 9 cavaleiro(vivo) 9 10 espadachim(vivo) 10 9 lanceiro(vivo) 9 8
+Baratheon 2 2 cavaleiro(vivo) 2 3 espadachim(vivo) 3 2 lanceiro(vivo) 2 1
+Targaryen > O cavaleiro da ilustre casa de Targaryen e um cobardolas.
+Targaryen cavaleiro(vivo) 9 10
+Targaryen cavaleiro(vivo) 10 10
+O cavaleiro da ilustre casa de Targaryen e um cobardolas.
+Targaryen cavaleiro(vivo) 10 10
+Baratheon > Baratheon cavaleiro(vivo) 1 3
+O cavaleiro da ilustre casa de Baratheon e um cobardolas.
+Baratheon cavaleiro(vivo) 1 3
+Baratheon cavaleiro(vivo) 2 3
+Targaryen > Targaryen cavaleiro(vivo) 9 10
+Targaryen cavaleiro(vivo) 8 10
+Targaryen cavaleiro(vivo) 7 10
+Baratheon > Baratheon cavaleiro(vivo) 3 3
+Baratheon cavaleiro(vivo) 4 3
+Baratheon cavaleiro(vivo) 5 3
+Targaryen > Targaryen cavaleiro(vivo) 6 10
+Targaryen cavaleiro(vivo) 5 10
+Targaryen cavaleiro(vivo) 4 10
+Baratheon > Baratheon cavaleiro(vivo) 6 3
+Baratheon cavaleiro(vivo) 7 3
+Baratheon cavaleiro(vivo) 8 3
+Targaryen > Targaryen cavaleiro(vivo) 3 10
+Targaryen cavaleiro(vivo) 2 10
+Targaryen cavaleiro(vivo) 1 10
+Baratheon > Baratheon cavaleiro(vivo) 9 3
+Baratheon cavaleiro(vivo) 10 3
+O cavaleiro da ilustre casa de Baratheon e um cobardolas.
+Baratheon cavaleiro(vivo) 10 3
+Targaryen > O cavaleiro da ilustre casa de Targaryen e um cobardolas.
+Targaryen cavaleiro(vivo) 1 10
+Targaryen cavaleiro(vivo) 2 10
+Targaryen cavaleiro(vivo) 3 10
+Baratheon > Baratheon cavaleiro(vivo) 9 3
+Baratheon cavaleiro(vivo) 8 3
+Baratheon cavaleiro(vivo) 7 3
+Targaryen > Targaryen cavaleiro(vivo) 4 10
+Targaryen cavaleiro(vivo) 4 9
+Targaryen cavaleiro(vivo) 4 8
+Baratheon > Baratheon cavaleiro(vivo) 6 3
+Baratheon cavaleiro(vivo) 6 4
+Baratheon cavaleiro(vivo) 6 5
+Targaryen > Targaryen cavaleiro(vivo) 4 7
+Targaryen cavaleiro(vivo) 4 6
+Targaryen cavaleiro(vivo) 4 5
+Baratheon > Baratheon cavaleiro(vivo) 6 6
+Baratheon cavaleiro(vivo) 6 7
+Baratheon cavaleiro(vivo) 6 8
+Targaryen > Targaryen cavaleiro(vivo) 4 4
+Targaryen cavaleiro(vivo) 4 3
+Targaryen cavaleiro(vivo) 4 2
+Baratheon > 10 10
+Targaryen 9 9 cavaleiro(vivo) 4 2 espadachim(vivo) 10 9 lanceiro(vivo) 9 8
+Baratheon 2 2 cavaleiro(vivo) 6 8 espadachim(vivo) 3 2 lanceiro(vivo) 2 1
+Baratheon > O lanceiro da ilustre casa de Baratheon e um cobardolas.
+Baratheon lanceiro(vivo) 2 1
+Targaryen > O espadachim da ilustre casa de Targaryen e um cobardolas.
+Targaryen espadachim(vivo) 10 9
+Baratheon > Baratheon lanceiro(vivo) 1 1
+Targaryen > Targaryen espadachim(vivo) 10 10
+Baratheon > O lanceiro da ilustre casa de Baratheon e um cobardolas.
+Baratheon lanceiro(vivo) 1 1
+Targaryen > O espadachim da ilustre casa de Targaryen e um cobardolas.
+Targaryen espadachim(vivo) 10 10
+Baratheon > 10 10
+Targaryen 9 9 cavaleiro(vivo) 4 2 espadachim(vivo) 10 10 lanceiro(vivo) 9 8
+Baratheon 2 2 cavaleiro(vivo) 6 8 espadachim(vivo) 3 2 lanceiro(vivo) 1 1
+Baratheon > Obrigado por jogar. Ate a proxima.

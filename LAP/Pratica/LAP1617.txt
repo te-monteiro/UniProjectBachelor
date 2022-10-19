@@ -1,0 +1,63 @@
+LAP 2016/2017
+
+1. 
+
+a) List arrayToList (int a[], int n ) {
+
+	List list = NULL;
+
+	for(int i = 0; i < n; i++) {
+
+		l = newNode(a[i],l);
+	}
+
+	return list;
+}
+
+
+b) int listToArray (List l, int a[], int n) {
+
+
+	for (int i = 0; i < n && l != NULL; i++) {
+
+		a[i] = l -> value;
+		l = l -> next;
+	}
+
+	return i;
+}
+
+
+c) List clean (List l) {
+	
+	List ret = l;
+	if (l == NULL) return NULL;
+
+	while( l->next != NULL) {
+		
+		pdel = l->next;
+
+		if (l->value == pdel->value) {
+			l -> next = l->next->next;
+			free(pdel);
+		}
+
+		else {
+			l = l->next;
+		}
+	}
+
+	return ret;
+}
+
+
+2.
+
+a) C.
+
+b) A.
+
+c) A.
+
+
+

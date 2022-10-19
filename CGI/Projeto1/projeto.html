@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script id="vertex-shader-particle" type="x-shader/x-vertex">
+attribute float timeLaunched;
+uniform float timePassed;
+attribute vec2 pPosition;
+attribute vec2 velocity;
+uniform float acceleration;
+uniform vec2 explodeVelocity;
+uniform float angle;
+attribute vec4 vColor;
+varying vec4 fColor;
+
+
+void main(){
+  gl_PointSize = 8.0;
+  if(timePassed-timeLaunched < (velocity.y / 6.0)){
+  gl_Position = vec4(pPosition, 0, 1);
+  gl_Position.x = pPosition.x + velocity.x * (timePassed-timeLaunched);
+  gl_Position.y = pPosition.y + velocity.y * (timePassed-timeLaunched) + (-3.0*(timePassed-timeLaunched)*(timePassed-timeLaunched));
+}
+  if(timePassed-timeLaunched >= (velocity.y / 6.0)){
+    gl_Position.x = pPosition.x + velocity.x *(timePassed-timeLaunched) + explodeVelocity.x*(timePassed-timeLaunched-(velocity.y/6.0))*cos(angle);
+    gl_Position.y = pPosition.y + velocity.y *(timePassed-timeLaunched) + explodeVelocity.y*sin(angle)*(timePassed-timeLaunched-(velocity.y/6.0))-(3.0*(timePassed-timeLaunched-(velocity.y/6.0))*(timePassed-timeLaunched-(velocity.y/6.0)));
+    gl_Position.z = 0.0;
+    gl_Position.w = 1.0;
+  }
+
+fColor = vColor;
+   
+}
+</script>
+
+<script id="vertex-shader-line" type="x-shader/x-vertex">
+attribute vec2 lPosition;
+attribute vec4 vColor;
+varying vec4 fColor;
+void main(){
+gl_Position = vec4(lPosition, 0, 1);
+gl_PointSize = 8.0;
+fColor = vColor;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+
+varying vec4 fColor;
+
+void main(){
+  float r = 0.0, delta = 0.0, alpha = 1.0;
+    vec2 cxy = 2.0 * gl_PointCoord - 1.0;
+    r = dot(cxy, cxy);
+    if (r > 1.0) {
+        discard;
+    }
+    
+    gl_FragColor = fColor;
+}
+</script>
+2
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="morteiros.js"></script>
+</head>
+<body>
+    <title>HappyNewYear</title>
+    <canvas id="gl-canvas" width="512" height="512">
+        Oops... your browser doesn't support the HTML5 canvas element"
+    </canvas>
+</body>
+</html>

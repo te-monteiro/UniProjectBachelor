@@ -1,0 +1,332 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> 8 castelos:
+4 reinos:
+Jogo iniciado, comeca o reino TeamRed.
+TeamRed > 30 45
+8 castelos:
+Castle One (TeamWhite)
+Castle Two (TeamRed)
+Castle Three (sem dono)
+Castle Four (TeamGreen)
+Castle Five (sem dono)
+Castle Six (TeamBlue)
+Castle Seven (sem dono)
+Castle Big (sem dono)
+4 reinos:
+TeamRed; TeamGreen; TeamBlue; TeamWhite
+TeamRed > 1 castelos:
+Castle Two com riqueza 10 na posicao (17,22)
+TeamRed > Sem exercito.
+TeamRed > cavaleiro recrutado no Castle Two do reino TeamRed por 4 moedas.
+TeamGreen > 1 castelos:
+Castle Four com riqueza 11 na posicao (21,26)
+TeamGreen > lanceiro recrutado no Castle Four do reino TeamGreen por 2 moedas.
+TeamBlue > 1 castelos:
+Castle Six com riqueza 12 na posicao (15,25)
+TeamBlue > espadachim recrutado no Castle Six do reino TeamBlue por 2 moedas.
+TeamWhite > 1 castelos:
+Castle One com riqueza 8 na posicao (15,20)
+TeamWhite > lanceiro recrutado no Castle One do reino TeamWhite por 2 moedas.
+TeamRed > 1 soldados:
+cavaleiro na posicao (17,22)
+TeamRed > TeamRed cavaleiro (17,23)
+TeamRed cavaleiro (17,24)
+TeamRed cavaleiro (17,25)
+TeamGreen > 1 soldados:
+lanceiro na posicao (21,26)
+TeamGreen > TeamGreen lanceiro (21,25)
+TeamBlue > 1 soldados:
+espadachim na posicao (15,25)
+TeamBlue > TeamBlue espadachim (14,25)
+TeamWhite > 1 soldados:
+lanceiro na posicao (15,20)
+TeamWhite > O lanceiro da ilustre casa de TeamWhite adquiriu um novo castelo Castle Five para o seu reino.
+TeamWhite lanceiro (15,21)
+TeamRed > 1 soldados:
+cavaleiro na posicao (17,25)
+TeamRed > 1 castelos:
+Castle Two com riqueza 14 na posicao (17,22)
+TeamRed > cavaleiro recrutado no Castle Two do reino TeamRed por 4 moedas.
+TeamGreen > 1 soldados:
+lanceiro na posicao (21,25)
+TeamGreen > 1 castelos:
+Castle Four com riqueza 17 na posicao (21,26)
+TeamGreen > lanceiro recrutado no Castle Four do reino TeamGreen por 2 moedas.
+TeamBlue > 1 castelos:
+Castle Six com riqueza 18 na posicao (15,25)
+TeamBlue > 1 soldados:
+espadachim na posicao (14,25)
+TeamBlue > espadachim recrutado no Castle Six do reino TeamBlue por 2 moedas.
+TeamWhite > 30 45
+8 castelos:
+Castle One (TeamWhite)
+Castle Two (TeamRed)
+Castle Three (sem dono)
+Castle Four (TeamGreen)
+Castle Five (TeamWhite)
+Castle Six (TeamBlue)
+Castle Seven (sem dono)
+Castle Big (sem dono)
+4 reinos:
+TeamRed; TeamGreen; TeamBlue; TeamWhite
+TeamWhite > 1 soldados:
+lanceiro na posicao (15,21)
+TeamWhite > 2 castelos:
+Castle One com riqueza 14 na posicao (15,20)
+Castle Five com riqueza 21 na posicao (15,21)
+TeamWhite > cavaleiro recrutado no Castle One do reino TeamWhite por 4 moedas.
+TeamRed > 1 castelos:
+Castle Two com riqueza 14 na posicao (17,22)
+TeamRed > 2 soldados:
+cavaleiro na posicao (17,25)
+cavaleiro na posicao (17,22)
+TeamRed > 30 45
+8 castelos:
+Castle One (TeamWhite)
+Castle Two (TeamRed)
+Castle Three (sem dono)
+Castle Four (TeamGreen)
+Castle Five (TeamWhite)
+Castle Six (TeamBlue)
+Castle Seven (sem dono)
+Castle Big (sem dono)
+4 reinos:
+TeamRed; TeamGreen; TeamBlue; TeamWhite
+TeamRed > 2 soldados:
+cavaleiro na posicao (17,25)
+cavaleiro na posicao (17,22)
+TeamRed > 1 castelos:
+Castle Two com riqueza 14 na posicao (17,22)
+TeamRed > TeamRed cavaleiro (17,21)
+TeamRed cavaleiro (17,20)
+TeamRed cavaleiro (17,19)
+TeamGreen > 2 soldados:
+lanceiro na posicao (21,25)
+lanceiro na posicao (21,26)
+TeamGreen > 1 castelos:
+Castle Four com riqueza 19 na posicao (21,26)
+TeamGreen > 30 45
+8 castelos:
+Castle One (TeamWhite)
+Castle Two (TeamRed)
+Castle Three (sem dono)
+Castle Four (TeamGreen)
+Castle Five (TeamWhite)
+Castle Six (TeamBlue)
+Castle Seven (sem dono)
+Castle Big (sem dono)
+4 reinos:
+TeamRed; TeamGreen; TeamBlue; TeamWhite
+TeamGreen > 2 soldados:
+lanceiro na posicao (21,25)
+lanceiro na posicao (21,26)
+TeamGreen > TeamGreen lanceiro (21,24)
+TeamBlue > 2 soldados:
+espadachim na posicao (14,25)
+espadachim na posicao (15,25)
+TeamBlue > TeamBlue espadachim (14,26)
+TeamWhite > 2 soldados:
+lanceiro na posicao (15,21)
+cavaleiro na posicao (15,20)
+TeamWhite > 2 castelos:
+Castle One com riqueza 14 na posicao (15,20)
+Castle Five com riqueza 25 na posicao (15,21)
+TeamWhite > TeamWhite lanceiro (16,21)
+TeamRed > 2 soldados:
+cavaleiro na posicao (17,25)
+cavaleiro na posicao (17,19)
+TeamRed > 1 castelos:
+Castle Two com riqueza 18 na posicao (17,22)
+TeamRed > 30 45
+8 castelos:
+Castle One (TeamWhite)
+Castle Two (TeamRed)
+Castle Three (sem dono)
+Castle Four (TeamGreen)
+Castle Five (TeamWhite)
+Castle Six (TeamBlue)
+Castle Seven (sem dono)
+Castle Big (sem dono)
+4 reinos:
+TeamRed; TeamGreen; TeamBlue; TeamWhite
+TeamRed > TeamRed cavaleiro (18,25)
+O cavaleiro da ilustre casa de TeamRed adquiriu um novo castelo Castle Seven para o seu reino.
+TeamRed cavaleiro (19,25)
+O cavaleiro da ilustre casa de TeamRed adquiriu um novo castelo Castle Three para o seu reino.
+TeamRed cavaleiro (19,24)
+TeamGreen > 1 castelos:
+Castle Four com riqueza 23 na posicao (21,26)
+TeamGreen > 30 45
+8 castelos:
+Castle One (TeamWhite)
+Castle Two (TeamRed)
+Castle Three (TeamRed)
+Castle Four (TeamGreen)
+Castle Five (TeamWhite)
+Castle Six (TeamBlue)
+Castle Seven (TeamRed)
+Castle Big (sem dono)
+4 reinos:
+TeamRed; TeamGreen; TeamBlue; TeamWhite
+TeamGreen > 2 soldados:
+lanceiro na posicao (21,24)
+lanceiro na posicao (21,26)
+TeamGreen > TeamGreen lanceiro (22,24)
+TeamBlue > 2 soldados:
+espadachim na posicao (14,26)
+espadachim na posicao (15,25)
+TeamBlue > TeamBlue espadachim (14,25)
+TeamWhite > 2 soldados:
+lanceiro na posicao (16,21)
+cavaleiro na posicao (15,20)
+TeamWhite > TeamWhite cavaleiro (14,20)
+TeamWhite cavaleiro (13,20)
+TeamWhite cavaleiro (12,20)
+TeamRed > 2 soldados:
+cavaleiro na posicao (19,24)
+cavaleiro na posicao (17,19)
+TeamRed > TeamRed cavaleiro (17,18)
+TeamRed cavaleiro (17,17)
+TeamRed cavaleiro (17,16)
+TeamGreen > 2 soldados:
+lanceiro na posicao (22,24)
+lanceiro na posicao (21,26)
+TeamGreen > 1 castelos:
+Castle Four com riqueza 27 na posicao (21,26)
+TeamGreen > TeamGreen lanceiro (22,26)
+TeamBlue > 2 soldados:
+espadachim na posicao (14,26)
+espadachim na posicao (14,25)
+TeamBlue > 1 castelos:
+Castle Six com riqueza 28 na posicao (15,25)
+TeamBlue > cavaleiro recrutado no Castle Six do reino TeamBlue por 4 moedas.
+TeamWhite > 2 castelos:
+Castle One com riqueza 22 na posicao (15,20)
+Castle Five com riqueza 33 na posicao (15,21)
+TeamWhite > 2 soldados:
+lanceiro na posicao (16,21)
+cavaleiro na posicao (12,20)
+TeamWhite > TeamWhite cavaleiro (12,19)
+TeamWhite cavaleiro (12,18)
+TeamWhite cavaleiro (12,17)
+TeamRed > 2 soldados:
+cavaleiro na posicao (19,24)
+cavaleiro na posicao (17,16)
+TeamRed > 3 castelos:
+Castle Two com riqueza 26 na posicao (17,22)
+Castle Seven com riqueza 34 na posicao (19,25)
+Castle Three com riqueza 34 na posicao (19,24)
+TeamRed > lanceiro recrutado no Castle Seven do reino TeamRed por 2 moedas.
+TeamGreen > 1 castelos:
+Castle Four com riqueza 31 na posicao (21,26)
+TeamGreen > 2 soldados:
+lanceiro na posicao (22,24)
+lanceiro na posicao (22,26)
+TeamGreen > cavaleiro recrutado no Castle Four do reino TeamGreen por 4 moedas.
+TeamBlue > 3 soldados:
+espadachim na posicao (14,26)
+espadachim na posicao (14,25)
+cavaleiro na posicao (15,25)
+TeamBlue > O cavaleiro da ilustre casa de TeamBlue devia tentar ir para outro sitio.
+TeamBlue cavaleiro (15,25)
+O cavaleiro da ilustre casa de TeamBlue devia tentar ir para outro sitio.
+TeamBlue cavaleiro (15,25)
+TeamBlue cavaleiro (15,24)
+TeamWhite > 2 soldados:
+lanceiro na posicao (16,21)
+cavaleiro na posicao (12,17)
+TeamWhite > TeamWhite cavaleiro (11,17)
+TeamWhite cavaleiro (10,17)
+TeamWhite cavaleiro (9,17)
+TeamRed > 3 soldados:
+cavaleiro na posicao (19,24)
+cavaleiro na posicao (17,16)
+lanceiro na posicao (19,25)
+TeamRed > 3 castelos:
+Castle Two com riqueza 30 na posicao (17,22)
+Castle Seven com riqueza 36 na posicao (19,25)
+Castle Three com riqueza 38 na posicao (19,24)
+TeamRed > TeamRed cavaleiro (19,23)
+TeamRed cavaleiro (18,23)
+TeamRed cavaleiro (17,23)
+TeamGreen > 3 soldados:
+lanceiro na posicao (22,24)
+lanceiro na posicao (22,26)
+cavaleiro na posicao (21,26)
+TeamGreen > 1 castelos:
+Castle Four com riqueza 31 na posicao (21,26)
+TeamGreen > Castelo nao livre.
+TeamBlue > 3 soldados:
+espadachim na posicao (14,26)
+espadachim na posicao (14,25)
+cavaleiro na posicao (15,24)
+TeamBlue > 1 castelos:
+Castle Six com riqueza 32 na posicao (15,25)
+TeamBlue > lanceiro recrutado no Castle Six do reino TeamBlue por 2 moedas.
+TeamWhite > 2 soldados:
+lanceiro na posicao (16,21)
+cavaleiro na posicao (9,17)
+TeamWhite > TeamWhite cavaleiro (9,16)
+TeamWhite cavaleiro (9,15)
+TeamWhite cavaleiro (9,14)
+TeamRed > 30 45
+8 castelos:
+Castle One (TeamWhite)
+Castle Two (TeamRed)
+Castle Three (TeamRed)
+Castle Four (TeamGreen)
+Castle Five (TeamWhite)
+Castle Six (TeamBlue)
+Castle Seven (TeamRed)
+Castle Big (sem dono)
+4 reinos:
+TeamRed; TeamGreen; TeamBlue; TeamWhite
+TeamRed > 3 soldados:
+cavaleiro na posicao (17,23)
+cavaleiro na posicao (17,16)
+lanceiro na posicao (19,25)
+TeamRed > 3 castelos:
+Castle Two com riqueza 34 na posicao (17,22)
+Castle Seven com riqueza 40 na posicao (19,25)
+Castle Three com riqueza 42 na posicao (19,24)
+TeamRed > TeamRed lanceiro (19,24)
+TeamGreen > 3 soldados:
+lanceiro na posicao (22,24)
+lanceiro na posicao (22,26)
+cavaleiro na posicao (21,26)
+TeamGreen > 1 castelos:
+Castle Four com riqueza 35 na posicao (21,26)
+TeamGreen > TeamGreen cavaleiro (21,27)
+TeamGreen cavaleiro (21,28)
+TeamGreen cavaleiro (21,29)
+TeamBlue > 4 soldados:
+espadachim na posicao (14,26)
+espadachim na posicao (14,25)
+cavaleiro na posicao (15,24)
+lanceiro na posicao (15,25)
+TeamBlue > 1 castelos:
+Castle Six com riqueza 34 na posicao (15,25)
+TeamBlue > 30 45
+8 castelos:
+Castle One (TeamWhite)
+Castle Two (TeamRed)
+Castle Three (TeamRed)
+Castle Four (TeamGreen)
+Castle Five (TeamWhite)
+Castle Six (TeamBlue)
+Castle Seven (TeamRed)
+Castle Big (sem dono)
+4 reinos:
+TeamRed; TeamGreen; TeamBlue; TeamWhite
+TeamBlue > novo - Novo jogo
+soldado - Move o soldado
+recruta - Recruta um soldado num castelo
+mapa - Lista todos os castelos do mapa, incluindo os abandonados, pela ordem de criacao no jogo e todos os reinos ainda em jogo, pela ordem de jogada
+castelos - Lista os castelos do jogador activo, pela ordem pela qual foram conquistados
+exercito - Lista os soldados vivos do jogador activo, pela ordem de recrutamento
+reinos - Lista os varios reinos ainda em jogo, ordenados por nome do reino
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+TeamBlue > Obrigado por jogar. Ate a proxima.

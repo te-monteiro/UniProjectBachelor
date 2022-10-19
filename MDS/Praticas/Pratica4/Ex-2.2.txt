@@ -1,0 +1,25 @@
+EX 2.2:
+
+Name: Submit dissertation
+Id: 1
+Description: A graduate student submits his dissertation
+Actors: 
+	Main: Graduate
+	Secondary: Supervisor
+Pre-conditions: The graduate student has finished his/her dissertation.
+The graduate student has not submitted his/her dissertation.
+Main flow: 
+1. The use case starts when the graduate student starts to submit his dissertation.
+2. The student submits the dissertation evaluation request.
+3. The student submits the dissertation.
+4. The system notifies the supervisor.
+5. If the supervisor agrees with the submission:
+5.1. The supervisor submits the list of examiners.
+6. Else
+6.1. The system marks the dissertation as "in conflict"
+7. The system notifies the graduate that the thesis is submitted.
+
+Alternative flows: detours from the main scenario
+
+Post-conditions: The dissertation is submitted.
+The supervisor is warned.

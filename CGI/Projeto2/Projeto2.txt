@@ -1,0 +1,496 @@
+var gl;
+//var primitives = [];
+//var mModel_list;
+
+
+//html
+var mModelView;
+var mModelViewLoc;
+var mProjectionLoc;
+var mProjection;
+
+//objetos
+var object;
+
+//para a projecao axonometrica
+var projectionAxo;
+var theta;
+var gamma;
+var A;
+var B;
+var thetaRadians;
+var gammaRadians;
+
+//para a projecao obliqua
+var mObliquo; 
+var projetionObli;
+var l;
+var alpha = 45;
+
+
+//para a projecao ortogonal
+var mOrtogonal;
+var projectionOrto;
+var d;
+
+//para a projecao perspetiva
+var mPerspetiva;
+
+var rx = 0, ry = 0, rz = 0, sx = 1, sy = 1, sz = 1;
+var program;
+
+
+//dimensoes janela/visor
+var width;
+var height;
+
+
+var Start = true;
+
+window.onload = function init() {
+    var canvas = document.getElementById("gl-canvas");
+    gl = WebGLUtils.setupWebGL(canvas);
+    if(!gl) { alert("WebGL isn't available"); }
+    
+   
+    // alteracao das dimensões da janela podem ser acedidas
+    heighteight = window.innerHeight;
+    width = window.innerWidth;
+    var s = Math.min(width, height);
+    canvas.width = s;
+    canvas.height = s;
+    gl.viewport(0,0,s,s);
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    
+    if(!gl) { alert("WebGL isn't available"); }
+    
+
+    cubeInit(gl);
+    sphereInit(gl);
+    bunnyInit(gl);
+    cylinderInit(gl);
+    torusInit(gl);
+    
+    //Necessário para ativação do Z-Buffer (Hidden Surface Removal)
+    gl.enable(gl.DEPTH_TEST);
+    
+    // Configure WebGL  viewport original 
+    gl.viewport(0,0,canvas.width, canvas.height);
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    
+    // Load shaders and initialize attribute buffers
+    program = initShaders(gl, "vertex-shader", "fragment-shader");
+    gl.useProgram(program);
+  
+    
+    mProjection = ortho(-2,2,-2,2,10,-10);
+  /**   mModelView = mProjection;
+    console.log("modelView " + mModelView);    
+    */
+      
+    mModelViewLoc = gl.getUniformLocation(program, "mModelView");
+    mProjectionLoc = gl.getUniformLocation(program, "mProjection");
+    
+    console.log("ola");
+    object = "Cube";
+    //chooseObject();
+    projectionAxo = "Dimetrica";
+    console.log(projectionAxo);
+    fProjectionAxo();
+    
+    
+ /**   //projecao perspetiva
+     d = 2; //decidi por dois porque nao sei calcular o d, sei mas preciso do angulo pp
+     mPerspetiva = mat4(1, 0 , 0 , 0,
+                    0, 1, 0, 0,
+                    0, 0, 0, 0, 
+                    0, 0, -1/d, 1); */
+    
+    callback();
+    render();
+}
+
+
+function callback(){
+    /**
+    
+    //rotacao
+    document.getElementById("rx").addEventListener("input", function(e){
+        rx = e.target.value
+        ctm_calculate();
+    });
+    document.getElementById("ry").addEventListener("input", function(e){
+        ry = e.target.value
+        ctm_calculate();
+    });
+    document.getElementById("rz").addEventListener("input", function(e){
+        rz = e.target.value
+        ctm_calculate();
+    });
+
+    //escala
+    document.getElementById("sx").addEventListener("input", function(e){
+        sx = e.target.value
+        ctm_calculate();
+    });
+    document.getElementById("sy").addEventListener("input", function(e){
+        sy = e.target.value
+        ctm_calculate();
+    });
+    document.getElementById("sz").addEventListener("input", function(e){
+        sz = e.target.value
+        ctm_calculate();
+    });*/
+
+   
+    
+    document.getElementById("A").addEventListener("input", function(e){
+        A = e.target.value
+    });
+    
+    document.getElementById("B").addEventListener("input", function(e){
+        A = e.target.value
+    });
+    
+    document.getElementById("l").addEventListener("input", function(e){
+        l = e.target.value
+    });
+    
+    //buttons
+   // document.getElementById("Save").addEventListener("click", function(e){
+   //     mModel_list.push(mat4());
+    //    reset();
+    //});
+    
+    //document.getElementById("reset").addEventListener("click", function(e){
+      //  reset();
+    //});
+    
+    document.getElementById("Cube").addEventListener("click", function(e){
+        object = "Cube";
+    });
+    
+    document.getElementById("Sphere").addEventListener("click", function(e){
+        object = "Sphere";
+    });
+    
+    document.getElementById("Cylinder").addEventListener("click", function(e){
+        object = "Cylinder";
+    });
+    
+    document.getElementById("Torus").addEventListener("click", function(e){
+        object = "Torus";
+    });
+    
+    document.getElementById("Bunny").addEventListener("click", function(e){
+        object = "Bunny";
+    });
+    document.getElementById("Superquadric").addEventListener("click", function(e){
+        object = "Superquadric";
+    });
+    
+    //Projecoes
+    //projecao ortogonal
+    document.getElementById("Frontal").addEventListener("click", function(e){
+        projectionOrto = "Frontal";
+        fProjectionOrto();
+    });
+    
+    document.getElementById("Planta").addEventListener("click", function(e){
+        projectionOrto = "Planta";
+        fProjectionOrto();
+    });
+    
+    document.getElementById("LateralD").addEventListener("click", function(e){
+        projectionOrto = "LateralD";
+        fProjectionOrto();
+    
+    });
+    
+    //projecao Axonometrica
+    document.getElementById("Isometrica").addEventListener("click", function(e){
+        projectionAxo = "Isometrica";
+        fProjectionAxo();
+             
+    });
+    
+    document.getElementById("Dimetrica").addEventListener("click", function(e){
+        projectionAxo = "Dimetrica";
+        fProjectionAxo();
+           
+    });
+    
+    document.getElementById("Trimetrica").addEventListener("click", function(e){
+        projectionAxo = "Trimetrica";
+        fProjectionAxo();
+          
+    });
+    
+    document.getElementById("AxoLivre").addEventListener("click", function(e){
+        projectionAxo = "AxoLivre";
+        fProjectionAxo();
+
+         
+    });
+        
+    
+    //projecao obliqua
+    document.getElementById("Cavaleira").addEventListener("click", function(e){
+        projetionObli = "Cavaleira";
+        fProjectionObliqua();
+
+    });
+    
+    document.getElementById("Gabinete").addEventListener("click", function(e){
+        
+        projetionObli = "Gabinete";
+        fProjectionObliqua();
+          
+        
+    });
+    
+    document.getElementById("ObliLivre").addEventListener("click", function(e){
+        projetionObli = "ObliLivre";
+        fProjectionObliqua();        
+    });
+    
+    //projecao perspetiva
+  /**  document.getElementById("PersP").addEventListener("click", function(e){ 
+        mModelView = mPerspetiva;
+    });*/
+
+}
+
+ //teclas f e w para escolher modo de visualizacao dps de escolher o obejto
+function modeVisualization(){
+    window.onkeypress = function(e){
+        console.log(e.keyCode);
+        if (e.keyCode == 87 || e.keyCode == 90){ //letra W ou w --malha
+            cubeDrawWireFrame(gl, program);
+        } 
+        if(e.keyCode == 70 || e.keyCode == 102){// tecla F ou f  para preencher
+            cubeDrawFilled(gl, program);
+        }            
+      };
+}
+//z bufer e back face culling
+function modeAlgorithms(){
+    window.onkeypress = function(e){
+        console.log(e.keyCode);
+        if (e.keyCode == 122 || e.keyCode == 119){ //letra z ou Z -- z buffer
+            gl.enable(gl.DEPTH_TEST);
+        } 
+        if(e.keyCode == 66 || e.keyCode == 98){// tecla B ou b -- back face culling
+            gl.enable(gl.GL_CULL_FACE);
+        }            
+      };
+}
+
+function fProjectionOrto(){
+    mModelView = mOrtogonal;
+}
+
+function calculoProjectionOrto(){
+    switch(projectionOrto){
+        case "Frontal":
+            // plano z = 0;
+            mOrtogonal = mat4(1, 0 , 0, 0,
+                    0, 1, 0, 0,
+                    0, 0, 0, 0, 
+                    0, 0, 0, 1);
+            
+            break;
+        case "Planta":
+             // plano z = 0;
+            mOrtogonal = rotateZ(90) * mat4(1, 0 , 0, 0,
+                    0, 0, -1, 0,
+                    0, 0, 0, 0, 
+                    0, 0, 0, 1);
+            break;
+        case "LateralD":
+            // plano z = 0;
+            //90 porque queremos rodar para a direita
+            mOrtogonal = rotateX(90) * mat4(1, 0 , 0, 0,
+                    0, 0, -1, 0,
+                    0, 0, 0, 0, 
+                    0, 0, 0, 1);
+            break;
+    }
+}
+function radians(degrees){
+    A = A*Math.PI/180;
+    B = B*Math.PI/180;
+
+}
+function degrees(radians){
+    A = (180*A/Math.PI);
+    B = (180*B/Math.PI);
+}
+function calculoProjAxo(){
+        switch(projectionAxo){
+                case "Isometrica":
+                
+                    A = 30;
+                    B = 30;
+
+                    thetaRadians = Math.atan(Math.sqrt(Math.tan(radians(A)/Math.tan(radians(B))))) - Math.PI/2;
+        
+                    gammaRadians = Math.asin(Math.sqrt(Math.tan(radians(A))*Math.tan(radians(B))));
+                    console.log(gammaRadians);
+      
+                    //conversao de radianos para graus
+                    theta = (180*thetaRadians/Math.PI);
+                    gamma = (180*gammaRadians/Math.PI); 
+        
+                break;
+    
+                case "Dimetrica":
+                    A = 42;
+                    B = 7;
+                    console.log("entrei dimetrica");
+                
+                    
+      
+                    thetaRadians = Math.atan(Math.sqrt(Math.tan(radians(A)/Math.tan(radians(B))))) - Math.PI/2;
+        
+                    console.log("A: " + A);
+                    console.log("B: " + B);
+                
+                    gammaRadians = Math.asin(Math.sqrt(Math.tan(radians(A))*Math.tan(radians(B))));
+                    console.log("gamma radians " + gammaRadians);
+                    console.log("theta radians " + thetaRadians);
+      
+                    //conversao de radianos para graus
+                    theta = degrees(thetaRadians);
+                    gamma = degrees(gammaRadians); 
+                    console.log("gamma graus " + gamma);
+                    console.log("theta " + theta);
+
+                    break;
+    
+                case "Trimetrica":
+                    A = 54;
+                    B = 23;
+
+                    thetaRadians = Math.atan(Math.sqrt(Math.tan(radians(A)/Math.tan(radians(B))))) - Math.PI/2;
+        
+                    gammaRadians = Math.asin(Math.sqrt(Math.tan(radians(A))*Math.tan(radians(B))));
+                   // console.log(gammaRadians);
+      
+                    //conversao de radianos para graus
+                    theta = degrees(thetaRadians);
+                    gamma = degrees(gammaRadians); 
+                    
+                    break;
+
+                case "AxoLivre":
+
+                    thetaRadians = Math.atan(Math.sqrt(Math.tan(radians(A)/Math.tan(radians(B))))) - Math.PI/2;
+        
+                    gammaRadians = Math.asin(Math.sqrt(Math.tan(radians(A))*Math.tan(radians(B))));
+                   // console.log(gammaRadians);
+      
+                    //conversao de radianos para graus
+                    theta = degrees(thetaRadians);
+                    gamma = degrees(gammaRadians); 
+                     
+                    break;
+        }
+}
+
+
+function fProjectionAxo(){
+    console.log("olaa entrei axo");
+    
+    calculoProjAxo();
+    
+    mModelView = mult(rotateX(gamma), rotateY(theta)); 
+    
+    console.log("eu sou o gamma " + gamma);
+    console.log("eu sou o theta " + theta);
+    console.log(mModelView);
+}
+
+function calculoProjectionObliqua(){
+    switch(projetionObli){
+        case "Cavaleira":
+            l = 1;
+            mObliquo = mat4(1, 0 , -l*Math.cos(radians(alpha)), 0,
+                    0, 1, -l*Math.sin(radians(alpha)), 0,
+                    0, 0, 0, 0, 
+                    0, 0, 0, 1);             
+            break;
+        case "Gabinete":
+            l = 0.5;
+            
+            mObliquo = mat4(1, 0 , -l*Math.cos(radians(alpha)), 0,
+                    0, 1, -l*Math.sin(radians(alpha)), 0,
+                    0, 0, 0, 0, 
+                    0, 0, 0, 1); 
+            
+            break;
+        case "ObliLivre":
+            mObliquo = mat4(1, 0 , -l*Math.cos(radians(alpha)), 0,
+                    0, 1, -l*Math.sin(radians(alpha)), 0,
+                    0, 0, 0, 0, 
+                    0, 0, 0, 1);
+            
+            break;
+    }
+    
+    
+}
+function fProjectionObliqua(){
+    mModelView = mObliquo;
+}
+
+//escolha do objeto que inicialmente vai ter a forma de arame
+function chooseObject(){
+    switch(object){
+        case "Cube":
+            cubeDrawWireFrame(gl, program);
+            break;
+        case "Sphere":
+            sphereDrawWireFrame(gl, program);
+            break;
+        case "Cylinder":
+            cylinderDrawWireFrame(gl, program);
+            break;
+        case "Bunny":
+            bunnyDrawWireFrame(gl, program);
+            break;
+        case "Torus":
+            torusDrawWireFrame(gl, program);
+            break;
+        case "SuperQuadric":
+            break;
+    }
+}
+
+
+
+function ctm_calculate(){
+    var rotx = rotateX(rx); 
+    var roty = rotateY(ry);
+    var rotz = rotateZ(rz);
+    var s = scalem(sx, sy,  sz);
+        
+//    mModel_list[mModel_list.length - 1] = mult(t, mult(rotz, mult(roty, mult(rotx, s))));         
+}
+
+
+
+function render() {
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
+    
+    gl.uniformMatrix4fv(mProjectionLoc, false, flatten(mProjection));
+    gl.uniformMatrix4fv(mModelViewLoc, false, flatten(mModelView));
+    chooseObject();
+
+    
+    //mode de visualizacao se e preenchido ou nao
+   // modeVisualization();
+            
+    requestAnimFrame(render);
+       
+}

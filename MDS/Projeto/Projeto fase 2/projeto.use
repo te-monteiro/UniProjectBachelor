@@ -1,0 +1,286 @@
+model projeto
+
+--classes:
+
+class Corrida
+	attributes
+		titulo: String
+		ano: Integer
+		legs: Legs
+		publico: Publico
+		equipas : Equipa
+	operations
+		getTitulo() : String
+		getAno() : Integer
+		getLegs() : Bag(Legs)
+		getEquipas() : Bag(Equipa)
+end
+
+abstract class Pessoa
+	attributes
+		nome : String
+		idade : Integer
+		genero : String
+		nacionalidade : String
+	operations
+		getNome() : String
+		getIdade() : Integer
+		getGenero() : String
+		getNacionalidade() : String
+end
+
+class RO < Pessoa
+	attributes
+		idRO : Integer
+	operations
+		getIdRO() : Integer
+		definePortos()
+		setRegras() : OrderedSet(String)
+end
+
+class Publico < Pessoa
+	attributes
+		localizacao : String
+		meioDeVisualizacao : String
+	operations
+		getLocalizacao() : String	
+		getMeioDeVisualizacao() : String
+		assiste()
+end
+
+class Organizacao < Pessoa
+	attributes
+		idOrganizacao : String
+		filmagens : Filmagens
+		filmagensEditadas : FilmagensEditadas
+		blackout : Blackout
+	operations
+		criaBlackout(Data : Integer)
+		
+end
+
+abstract class MembroEquipa < Pessoa
+	attributes
+		idMembroEquipa: Integer
+	operations
+		getIdMembroEquipa() : Integer
+end
+
+abstract class MembroEquipaSuporte < MembroEquipa
+	operations
+		daApoio()
+		
+end
+
+class MembroSOS < MembroEquipaSuporte
+
+	operations
+		daApoio()	
+end
+
+class Tecnico < MembroEquipaSuporte
+	operations
+		daApoio()
+end
+
+class OBR < MembroEquipa
+	operations
+		analisa()
+		edita()
+end
+
+abstract class Tripulante < MembroEquipa
+	operations
+		auxilia()
+end
+
+class Skipper < Tripulante
+	operations
+		setEquipa()
+		pedeApoio()
+		ativaAlarmeSOS()
+end
+
+class Barco
+	attributes
+		nome : String
+		ano : Integer
+		matriula: Integer
+		membrosDeEquipa : MembroEquipa
+
+	operations
+		getNome() : String
+		getAno() : Integer
+		getMatricula() : Integer
+		getEquipa() : Equipa
+		navega()
+end
+
+class Filmagens
+	attributes
+		emDireto : Boolean
+		localizacao : String
+
+	operations
+		emDireto() : Boolean
+		getLocalizacao() : String
+end
+
+class FilmagensEditadas < Filmagens
+	attributes
+		numeroVizualizadores : Integer
+
+	operations
+		getVisualizadores() : Integer	
+end
+
+class Legs
+	attributes
+		id : Integer
+		dest : String
+		orig : String
+		distance: Integer
+		eExigente : Boolean
+		localizacao : String
+	operations
+		getId() : Integer
+		getDest() : String
+		getOrig() : String
+		getDistance() : Integer
+		eExigente() : Boolean
+		getLocalizacao() : String
+		
+end
+
+class Equipa
+	attributes
+		membrosDeEquipa : MembroEquipa
+
+	operations
+		getMembrosDeEquipa(): Set(MembroEquipa)
+end
+
+class Manutencao
+	attributes
+		tecnico : Tecnico
+		barco : Barco
+	operations
+		getTecnico() : Tecnico
+		getBarco() : Barco
+end
+
+class veCorrida
+	attributes
+		publico : Set(Publico)
+	operations
+		getPublico() : Set(Publico)
+	
+end
+
+class Blackout
+	attributes
+		duracao: Integer
+		data : Integer
+	operations
+		getData() : Integer
+end
+
+class Alerta
+	attributes
+		data : String
+	operations
+		getData() : String
+end
+
+aggregation analisa_e_edita between
+	OBR [1] role obr
+	Filmagens [1..*] role filmagens
+end
+
+aggregation notificaSOS between 
+	Skipper [1] role skipper
+	MembroSOS [1..5] role medico
+end
+
+aggregation disponibiliza between
+	Organizacao [1] role orgFilm
+	FilmagensEditadas [0..*] role filmEdit
+end
+
+aggregation ao between
+	FilmagensEditadas [1] role filmEditadas
+	Publico [0..*] role publicoFilmagens
+end
+
+
+aggregation filmagensPartilhadas between
+	Organizacao [1..*] role organizacao
+	Filmagens [1] role OBR 	
+end
+
+aggregation faz between
+	MembroEquipa[1] role membro
+	Alerta [0..*] role alertaMembro
+end
+
+aggregation recebe between 
+	Organizacao [1] role org
+	Alerta [0..*] role alertaOrg	
+end
+
+aggregation provoca between 
+	Organizacao [1] role orgBlackout  
+	Blackout [0..*] role blackout
+end
+
+aggregation escolheEaltera between
+	Skipper [1] role skipper
+	Equipa [1] role equipaMudada
+end 
+
+composition eFormada between
+	Equipa [1] role Equipa
+	MembroEquipa [1..11] role MembroEquipa
+end
+
+aggregation socorre between
+	MembroSOS [1] role SOS
+	Tripulante[1..11] role tripulante
+end
+
+aggregation pedeApoio between 
+	Organizacao [1] role org
+	MembroEquipaSuporte [1..*] role tecnico
+end
+
+aggregation agrega between
+	Corrida [1] role corridaVista
+	veCorrida [1..*] role verCorrida
+end
+
+composition compostoPor between
+	veCorrida [1] role serVista
+	Publico [0..*] role publioVC 
+end
+aggregation definePortos between
+	Legs [1..10] role Leg
+	RO [1..*] role ro
+end
+
+composition eFeita between
+	Manutencao [1..*] role manutencao
+	Tecnico [1..*] role tecnicoManutencao
+end
+
+aggregation no between
+	Barco [1] role barco
+	Manutencao[1..*] role manutencaoBarco
+end
+
+composition tem between
+	Corrida [1] role corrida
+	Legs [1..10] role leg
+end
+
+
+	 

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+
+varying vec4 fColor;
+
+uniform mat4 mModelView;
+uniform mat4 mProjection;
+
+attribute vec3 vNormal;
+
+void main(){
+
+    gl_Position = mProjection * mModelView * vPosition;
+    fColor = vec4(vNormal, 1.0);
+
+}
+</script>
+
+  <script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+
+varying vec4 fColor;
+
+void main() {
+    gl_FragColor = abs(fColor);
+}
+</script>
+
+  <script type="text/javascript" src="../Common/webgl-utils.js"></script>
+  <script type="text/javascript" src="../Common/initShaders.js"></script>
+  <script type="text/javascript" src="../Common/MV.js"></script>
+  <script type="text/javascript" src="../Common/cube.js"></script>
+  <script type="text/javascript" src="../Common/sphere.js"></script>
+  <script type="text/javascript" src="../Common/cylinder.js"></script>
+  <script type="text/javascript" src="../Common/bunny-data.js"></script>
+  <script type="text/javascript" src="../Common/bunny.js"></script>
+  <script type="text/javascript" src="../Common/torus.js"></script>
+  <script type="text/javascript" src="../Common/Superquadric.js"></script>
+  <script type="text/javascript" src="Projeto2.js"></script>
+</head>
+
+
+<body>
+
+  <title>Projection</title>
+  <canvas id="gl-canvas">
+    Oops... your browser doesn't support the HTML5 canvas element"
+  </canvas>
+
+
+  <div style="color: SteelBlue; font-style: italic;">
+
+    <h3>Shapes</h3>
+    <select style="border-style : double; background-color: rgba(135,206,250, 0.1)" id="shapes">
+      <option id="Cube"> Cube </option>
+      <option id="Sphere"> Sphere </option>
+      <option id="Bunny"> Bunny </option>
+      <option id="Cylinder"> Cylinder </option>
+      <option id="Torus"> Torus </option>
+      <option id="Superquadric"> Superquadric </option>
+    </select>
+  </div>
+
+
+  <div style="color: SteelBlue; font-style: italic;">
+    <div style="position: absolute; left: 25%; top:67.9%; ">
+      <h3> Projections </h3>
+      <select style="border-style : double; background-color: rgba(135,206,250, 0.1)" id="projections">
+        <option id="Axonometrica"> Axonometrica </option>
+        <option id="Ortogonal"> Ortogonal </option>
+        <option id="Obliqua"> Obliqua </option>
+        <option id="Perspetiva"> Perspetiva </option>
+      </select>
+    </div>
+  </div>
+
+  <div style="position: inline; margin-top: 4%">
+    <button
+      style="float: left; border-style: double ; border-color: SteelBlue; border-radius : 7px; background-color: rgba(135,206,250, 0.1); margin-right: 15px; "
+      id="Isometrica"> Projecao Axonometrica Isometrica</button>
+    <button
+      style="float: left; border-style: double ; border-color: SteelBlue; border-radius : 7px; margin-right: 15px; background-color: rgba(135,206,250, 0.1) "
+      id="Dimetrica"> Projecao Axonometrica Dimetrica</button>
+    <button
+      style="float: left; border-style: double ; border-color: SteelBlue; border-radius : 7px; margin-right: 15px; background-color: rgba(135,206,250, 0.1) "
+      id="Trimetria"> Projecao Axonometrica Trimetria</button>
+    <p><button
+        style="float: left; border-style: double ; border-color: SteelBlue; border-radius : 7px; margin-right: 15px; background-color: rgba(135,206,250, 0.1) "
+        id="AxoLivre"> Projecao Axonometrica Livre</button></p>
+  </div>
+
+  <div style="position: absolute; top:75%; left : 60%; color: SteelBlue;">
+    <text id="thetaAxo">Theta</text>
+    <p><input id="theta" style="float: center" type="range" min="0" max="100" step="0.01"></p>
+    <text id="gammaAxo">Gamma</text>
+    <p><input id="gamma" style="float: center" type="range" min="0" max="100" step="0.01"></p>
+  </div>
+
+  <div style="position: relative">
+    <p><button
+        style="float: left; border-style: double ; border-color: SteelBlue; border-radius : 7px; background-color: rgba(135,206,250, 0.1); margin-right: 15px;"
+        id="AlcadoPrin"> Projecao Ortogonal Alcado Principal</button></p>
+    <p><button
+        style="float: left; border-style: double ; border-color: SteelBlue; border-radius : 7px; background-color: rgba(135,206,250, 0.1); margin-right: 15px;"
+        id="Planta"> Projecao Ortogonal Planta</button></p>
+    <p><button
+        style="float: left; border-style: double ; border-color: SteelBlue; border-radius : 7px; background-color: rgba(135,206,250, 0.1); margin-right: 15px;"
+        id="LateralD"> Projecao Ortogonal Lateral Direito</button></p>
+  </div>
+
+  <div style="position: inline">
+
+    <p><button
+        style="float: left; border-style: double ; border-color: SteelBlue; border-radius : 7px; background-color: rgba(135,206,250, 0.1);  margin-right: 15px;"
+        id="Cavaleira"> Projecao Obliqua Cavaleira </button></p>
+    <p><button
+        style="float: left; border-style: double ; border-color: SteelBlue; border-radius : 7px; background-color: rgba(135,206,250, 0.1);  margin-right: 15px;"
+        id="Gabinete"> Projecao Obliqua Gabinete</button></p>
+    <p><button
+        style="float: left; border-style: double ; border-color: SteelBlue; border-radius : 7px; background-color: rgba(135,206,250, 0.1); margin-right: 15px;"
+        id="ObliLivre"> Projecao Obliqua Livre</button></p>
+  </div>
+
+  <div style="position: absolute; left: 40%; top:78%; color: SteelBlue;">
+    <text id="valueL">Value l</text>
+    <p><input style="float: left" id="l" type="range" min="0" max="1" step="0.01"></p>
+    <text id="valueAlpha">Value Alpha</text>
+    <p><input style="float: left" id="alpha" type="range" min="0" max="90" step="2"></p>
+  </div>
+
+  <div style="position: absolute; left: 37%; top: 73% ; color: SteelBlue;">
+    <text id="valueD">Value d</text>
+    <p><input id="d" type="range" min="0.5" max="25" step="0.01"></p>
+  </div>
+
+  <div style="position: fixed; left: 11%; top: 71% ; color: SteelBlue;">
+    <text id="valueE1">Value e1</text>
+    <input id="e1" type="range" min="0.5" max="10" step="0.1">
+    <text id="valueE2">Value e2</text>
+    <input id="e2" type="range" min="0.5" max="10" step="0.1">
+  </div>
+
+  <div style="color: SteelBlue; font-style: italic;">
+    <div style="position: fixed; left : 75%; top :68%;">
+      <h3>Instructions:</h3>
+      <p> Click "F" button for Filled Visualization </p>
+      <p> Click "Z" for Z-Buffer Algorithm </p>
+      <p> Click "B" for Back Face Culling Algorithm </p>
+      <p> Click "W" for WireFrame visualization </p>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>

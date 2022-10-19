@@ -1,0 +1,209 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> 3 castelos:
+2 reinos:
+Jogo iniciado, comeca o reino TeamBlack.
+TeamBlack > 10 10
+3 castelos:
+Castle Black (TeamBlack)
+Castle Red (TeamRed)
+Castle My (sem dono)
+2 reinos:
+TeamBlack; TeamRed
+TeamBlack > cavaleiro recrutado no Castle Black do reino TeamBlack por 4 moedas.
+TeamRed > cavaleiro recrutado no Castle Red do reino TeamRed por 4 moedas.
+TeamBlack > TeamBlack cavaleiro (3,3)
+TeamBlack cavaleiro (4,3)
+TeamBlack cavaleiro (5,3)
+TeamRed > 1 castelos:
+Castle Red com riqueza 14 na posicao (6,5)
+TeamRed > TeamRed cavaleiro (6,4)
+TeamRed cavaleiro (7,4)
+TeamRed cavaleiro (7,3)
+TeamBlack > 1 soldados:
+cavaleiro na posicao (5,3)
+TeamBlack > lanceiro recrutado no Castle Black do reino TeamBlack por 2 moedas.
+TeamRed > 1 soldados:
+cavaleiro na posicao (7,3)
+TeamRed > TeamRed cavaleiro (6,3)
+Muhahah, sou um TeamRed! Sou invencivel! Nenhum cavaleiro me faz frente!
+TeamRed cavaleiro (5,3)
+TeamRed cavaleiro (4,3)
+TeamBlack > TeamBlack lanceiro (4,2)
+TeamRed > TeamRed cavaleiro (3,3)
+O cavaleiro da ilustre casa de TeamRed adquiriu um novo castelo Castle Black para o seu reino.
+TeamRed cavaleiro (3,2)
+TeamRed cavaleiro (3,1)
+TeamBlack > Sem castelos.
+TeamBlack > 1 soldados:
+lanceiro na posicao (4,2)
+TeamBlack > TeamBlack lanceiro (5,2)
+TeamRed > 2 castelos:
+Castle Red com riqueza 20 na posicao (6,5)
+Castle Black com riqueza 13 na posicao (3,2)
+TeamRed > 1 soldados:
+cavaleiro na posicao (3,1)
+TeamRed > espadachim recrutado no Castle Black do reino TeamRed por 2 moedas.
+TeamBlack > 1 soldados:
+lanceiro na posicao (5,2)
+TeamBlack > O lanceiro da ilustre casa de TeamBlack adquiriu um novo castelo Castle My para o seu reino.
+TeamBlack lanceiro (6,2)
+TeamRed > 2 soldados:
+cavaleiro na posicao (3,1)
+espadachim na posicao (3,2)
+TeamRed > TeamRed cavaleiro (4,1)
+TeamRed cavaleiro (5,1)
+TeamRed cavaleiro (6,1)
+TeamBlack > 1 soldados:
+lanceiro na posicao (6,2)
+TeamBlack > Muhahah, sou um TeamBlack! Sou invencivel! Nenhum cavaleiro me faz frente!
+TeamBlack lanceiro (6,1)
+TeamRed > 1 soldados:
+espadachim na posicao (3,2)
+TeamRed > 2 castelos:
+Castle Red com riqueza 24 na posicao (6,5)
+Castle Black com riqueza 15 na posicao (3,2)
+TeamRed > TeamRed espadachim (3,1)
+TeamBlack > TeamBlack lanceiro (7,1)
+TeamRed > TeamRed espadachim (4,1)
+TeamBlack > TeamBlack lanceiro (6,1)
+TeamRed > TeamRed espadachim (5,1)
+TeamBlack > Argh! A dor! Maldito sejas, espadachim TeamRed.
+TeamBlack lanceiro morto
+TeamRed > 1 soldados:
+espadachim na posicao (5,1)
+TeamRed > TeamRed espadachim (4,1)
+TeamBlack > Tipo de soldado inexistente.
+TeamRed > TeamRed espadachim (4,2)
+TeamBlack > espadachim recrutado no Castle My do reino TeamBlack por 2 moedas.
+TeamRed > TeamRed espadachim (3,2)
+TeamBlack > TeamBlack espadachim (6,1)
+TeamRed > cavaleiro recrutado no Castle Red do reino TeamRed por 4 moedas.
+TeamBlack > TeamBlack espadachim (6,2)
+TeamRed > TeamRed espadachim (3,3)
+TeamBlack > TeamBlack espadachim (6,3)
+TeamRed > 10 10
+3 castelos:
+Castle Black (TeamRed)
+Castle Red (TeamRed)
+Castle My (TeamBlack)
+2 reinos:
+TeamBlack; TeamRed
+TeamRed > cavaleiro recrutado no Castle Black do reino TeamRed por 4 moedas.
+TeamBlack > TeamBlack espadachim (6,4)
+TeamRed > Muhahah, sou um TeamRed! Sou invencivel! Nenhum espadachim me faz frente!
+TeamRed cavaleiro (6,4)
+TeamRed cavaleiro (6,3)
+O cavaleiro da ilustre casa de TeamRed adquiriu um novo castelo Castle My para o seu reino.
+TeamRed cavaleiro (6,2)
+Sou um heroi TeamRed! Vitoria gloriosa!
+> 3 castelos:
+2 reinos:
+Jogo iniciado, comeca o reino TeamBlack.
+TeamBlack > 10 10
+3 castelos:
+Castle Black (TeamBlack)
+Castle Red (TeamRed)
+Castle My (sem dono)
+2 reinos:
+TeamBlack; TeamRed
+TeamBlack > cavaleiro recrutado no Castle Black do reino TeamBlack por 4 moedas.
+TeamRed > cavaleiro recrutado no Castle Red do reino TeamRed por 4 moedas.
+TeamBlack > TeamBlack cavaleiro (3,3)
+TeamBlack cavaleiro (4,3)
+TeamBlack cavaleiro (5,3)
+TeamRed > 1 castelos:
+Castle Red com riqueza 14 na posicao (6,5)
+TeamRed > TeamRed cavaleiro (6,4)
+TeamRed cavaleiro (7,4)
+TeamRed cavaleiro (7,3)
+TeamBlack > 1 soldados:
+cavaleiro na posicao (5,3)
+TeamBlack > lanceiro recrutado no Castle Black do reino TeamBlack por 2 moedas.
+TeamRed > 1 soldados:
+cavaleiro na posicao (7,3)
+TeamRed > TeamRed cavaleiro (6,3)
+Muhahah, sou um TeamRed! Sou invencivel! Nenhum cavaleiro me faz frente!
+TeamRed cavaleiro (5,3)
+TeamRed cavaleiro (4,3)
+TeamBlack > TeamBlack lanceiro (4,2)
+TeamRed > TeamRed cavaleiro (3,3)
+O cavaleiro da ilustre casa de TeamRed adquiriu um novo castelo Castle Black para o seu reino.
+TeamRed cavaleiro (3,2)
+TeamRed cavaleiro (3,1)
+TeamBlack > Sem castelos.
+TeamBlack > 1 soldados:
+lanceiro na posicao (4,2)
+TeamBlack > TeamBlack lanceiro (5,2)
+TeamRed > 2 castelos:
+Castle Red com riqueza 20 na posicao (6,5)
+Castle Black com riqueza 13 na posicao (3,2)
+TeamRed > 1 soldados:
+cavaleiro na posicao (3,1)
+TeamRed > espadachim recrutado no Castle Black do reino TeamRed por 2 moedas.
+TeamBlack > 1 soldados:
+lanceiro na posicao (5,2)
+TeamBlack > O lanceiro da ilustre casa de TeamBlack adquiriu um novo castelo Castle My para o seu reino.
+TeamBlack lanceiro (6,2)
+TeamRed > 2 soldados:
+cavaleiro na posicao (3,1)
+espadachim na posicao (3,2)
+TeamRed > TeamRed cavaleiro (4,1)
+TeamRed cavaleiro (5,1)
+TeamRed cavaleiro (6,1)
+TeamBlack > 1 soldados:
+lanceiro na posicao (6,2)
+TeamBlack > Muhahah, sou um TeamBlack! Sou invencivel! Nenhum cavaleiro me faz frente!
+TeamBlack lanceiro (6,1)
+TeamRed > 1 soldados:
+espadachim na posicao (3,2)
+TeamRed > 2 castelos:
+Castle Red com riqueza 24 na posicao (6,5)
+Castle Black com riqueza 15 na posicao (3,2)
+TeamRed > TeamRed espadachim (3,1)
+TeamBlack > TeamBlack lanceiro (7,1)
+TeamRed > TeamRed espadachim (4,1)
+TeamBlack > TeamBlack lanceiro (6,1)
+TeamRed > TeamRed espadachim (5,1)
+TeamBlack > Argh! A dor! Maldito sejas, espadachim TeamRed.
+TeamBlack lanceiro morto
+TeamRed > 1 soldados:
+espadachim na posicao (5,1)
+TeamRed > TeamRed espadachim (4,1)
+TeamBlack > Tipo de soldado inexistente.
+TeamRed > TeamRed espadachim (4,2)
+TeamBlack > espadachim recrutado no Castle My do reino TeamBlack por 2 moedas.
+TeamRed > TeamRed espadachim (3,2)
+TeamBlack > TeamBlack espadachim (6,1)
+TeamRed > cavaleiro recrutado no Castle Red do reino TeamRed por 4 moedas.
+TeamBlack > TeamBlack espadachim (6,2)
+TeamRed > TeamRed espadachim (3,3)
+TeamBlack > 1 soldados:
+espadachim na posicao (6,2)
+TeamBlack > TeamBlack espadachim (5,2)
+TeamRed > Nao existe nenhum soldado ilustre da casa de TeamRed na posicao (3,2).
+TeamBlack > TeamBlack espadachim (5,3)
+TeamRed > TeamRed espadachim (4,3)
+TeamBlack > 1 soldados:
+espadachim na posicao (5,3)
+TeamBlack > Castelo invadido ilegalmente.
+TeamRed > 2 soldados:
+espadachim na posicao (4,3)
+cavaleiro na posicao (6,5)
+TeamRed > Muhahah, sou um TeamRed! Sou invencivel! Nenhum espadachim me faz frente!
+TeamRed espadachim (5,3)
+TeamBlack > Sem exercito.
+TeamBlack > 1 castelos:
+Castle My com riqueza 39 na posicao (6,2)
+TeamBlack > espadachim recrutado no Castle My do reino TeamBlack por 2 moedas.
+TeamRed > 2 soldados:
+espadachim na posicao (5,3)
+cavaleiro na posicao (6,5)
+TeamRed > TeamRed cavaleiro (6,4)
+TeamRed cavaleiro (6,3)
+Muhahah, sou um TeamRed! Sou invencivel! Nenhum espadachim me faz frente!
+O cavaleiro da ilustre casa de TeamRed adquiriu um novo castelo Castle My para o seu reino.
+TeamRed cavaleiro (6,2)
+Sou um heroi TeamRed! Vitoria gloriosa!
+> Obrigado por jogar. Ate a proxima.

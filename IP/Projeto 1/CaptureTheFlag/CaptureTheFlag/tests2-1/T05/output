@@ -1,0 +1,29 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> Jogo iniciado, comeca a equipa ren.
+ren > novo - Novo jogo
+mapa - Mostra o mapa do jogo
+cavaleiro - Move o cavaleiro
+espadachim - Move o espadachim
+lanceiro - Move o lanceiro
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+ren > 10 20
+ren 2 18 cavaleiro(vivo) 2 19 espadachim(vivo) 3 18 lanceiro(vivo) 2 17
+stimpy 7 3 cavaleiro(vivo) 7 4 espadachim(vivo) 8 3 lanceiro(vivo) 7 2
+ren > Jogo iniciado, comeca a equipa stimpy.
+stimpy > 20 10
+stimpy 12 6 cavaleiro(vivo) 12 7 espadachim(vivo) 13 6 lanceiro(vivo) 12 5
+ren 18 2 cavaleiro(vivo) 18 3 espadachim(vivo) 19 2 lanceiro(vivo) 18 1
+stimpy > novo - Novo jogo
+mapa - Mostra o mapa do jogo
+cavaleiro - Move o cavaleiro
+espadachim - Move o espadachim
+lanceiro - Move o lanceiro
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+stimpy > Obrigado por jogar. Ate a proxima.

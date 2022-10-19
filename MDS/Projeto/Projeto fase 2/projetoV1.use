@@ -1,0 +1,169 @@
+model projeto
+
+--classes:
+
+class Corrida
+end
+
+abstract class Pessoa
+end
+
+class RO < Pessoa
+end
+
+class Publico < Pessoa
+end
+
+class Organizacao < Pessoa
+end
+
+abstract class MembroEquipa < Pessoa
+end
+
+abstract class MembroEquipaSuporte < MembroEquipa
+end
+
+class MembroSOS < MembroEquipaSuporte
+end
+
+class Tecnico < MembroEquipaSuporte
+end
+
+class OBR < MembroEquipa
+end
+
+abstract class Tripulante < MembroEquipa
+end
+
+class Skipper < Tripulante
+end
+
+class Barco
+end
+
+class Filmagens
+end
+
+class Legs
+end
+
+association analisa_e_edita between
+	OBR [1] role obr
+	Filmagens [1..*] role filmagens
+end
+
+association notificaSOS between 
+	Skipper [1] role skipper
+	MembroSOS [1..5] role medico
+end
+
+association partilhaInformacoes between 
+	Organizacao [1..*] role organizacao
+	OBR [1] role OBR
+end
+
+association blackout between
+	Organizacao [1..*] role Organizacao
+	MembroEquipa [1..*] role equipa
+end
+
+association escolheEalteraEquipa between
+	Skipper [1] role SkipperMudaEquipa
+	MembroEquipa [1..11] role MembroEquipa
+end
+
+association socorre between
+	MembroSOS [1] role SOS
+	Tripulante[1..11] role tripulante
+end
+
+association pedeApoio between 
+	MembroEquipaSuporte [1..*] role tecnico
+	Organizacao [1] role org
+end
+
+association assiste between
+	Publico [1..*] role publico
+	Corrida [1..*] role corrida
+end
+
+association definePortos between
+	Legs [1..10] role Leg
+	RO [1..*] role ro
+end
+
+association corrigeProblemasTecnicos between
+	Tecnico[1..*] role tecnico
+	Barco [1..*] role barco
+end
+
+association disponibiliza between
+	Organizacao [1..*] role Org
+	Filmagens[1..*] role imagens
+end
+
+association ve between
+	Publico [1..*] role espetador
+	Filmagens [1..*] role conteudos
+end
+
+association tem between
+	Corrida [1] role corrida
+	Legs [1..10] role leg
+end
+
+--context MembroEquipa
+ --inv uniqueMembro:
+ --Equipa::allInstances()->isUnique(membroEquipa
+-- |membroEquipa.membro)
+	 
+constraints
+
+--1
+context Barco
+inv barcosNomesMatriculasMembEquipaDifs:
+Barco.allInstances -> forAll(b1,b2:Barco | b1 <> b2 implies
+	(b1.nome <> b2.nome)
+	and (b1.matricula <> b2.matricula)
+	and (b1.membrosDeEquipa <> b2.membrosDeEquipa)) 
+
+--2
+context Organizacao
+inv FilmagensNaoEditadasVisualizadas:
+not (self.filmagensEditadas = null and self.disponibiliza.numeroVisualizadores > 0)
+--3
+context Equipa
+inv :
+self.membrosDeEquipa.forAll(m1 | m1.genero = 'mulher') implies self.membrosDeEquipa.size() = 11
+
+--4
+context Equipa :: trocaMembro(membId1: String, membId2 : String)
+ pre membsDifMesmaEquipa:
+	 membN1 <> membN2 and self.membrosDeEquipa.exists(m1, m2 | (m1.id = membId1 and m2.id = membId2)
+							 or (m1.id = membId2 and m2.id = membId1))
+--5
+context RO :: getCandidatosDisp() : Set(Pessoas)
+ pre ListaDeCandCorreta:
+	self.candidatos.forAll(c2 | c2.oclIsKindOf(MembroEquipa)) and
+	not self.candidatos.exists(c2 | c2.oclIsKindOf(Skipper))
+				
+--6
+context Publico :: getLocalizacao() : String
+ pre LocalizacaoCamaraDiretoDiferentePublico:
+	(self.filmagens.emDireto = true) implies (self.filmagens.localizacao <> self.localizacao)
+--7
+context OBR :: edita()
+ post filmagensFicaramEditadas:
+	self.filmagens.oclIsKindOf(FilmagensEditadas)
+--8
+context Organizacao :: criaBlackout(data : Integer)
+ post naoAcedeImagensDuranteBlackout:
+	self.filmagensEditadas.disponibiliza.numeroVisualizadores = 0
+	and
+	self.trataDe.allInstances -> forAll(m1 | m1.meioDeComunicacao = null)
+--9
+context RO :: definePortos()
+ post portoCriadoCorretamente:
+	self.definePortos.distancia > 0 and
+	self.definePortos.orig <> self.definePortos(Legs).dest and
+	self.definePortos -> isUnique(self.definePortos.id) 	

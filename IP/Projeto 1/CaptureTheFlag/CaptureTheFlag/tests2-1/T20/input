@@ -1,0 +1,137 @@
+novo 10 10
+Baratheon 2 2
+Targaryen 2 8
+mapa
+cavaleiro este este este
+ajuda
+cavaleiro sul sul sul
+cavaleiro norte norte norte
+cavaleiro este este sul
+mapa
+cavaleiro norte norte oeste
+lanceiro sul
+mapa
+cavaleiro oeste sul sul
+mapa
+lanceiro este
+espadachim norte
+lanceiro sul
+mapa
+espadachim norte
+lanceiro sul
+ajuda
+novo 
+10 10
+Lannister 2 2
+Stark 6 6
+mapa
+cavaleiro oeste oeste este
+cavaleiro sul sul sul
+cavaleiro norte norte norte
+mapa
+lanceiro oeste
+cavaleiro norte este este
+lanceiro este
+cavaleiro norte norte oeste
+lanceiro norte
+cavaleiro este este este
+mapa
+cavaleiro norte norte norte
+lanceiro este
+cavaleiro oeste oeste oeste
+lanceiro norte
+cavaleiro este sul sul
+espadachim norte
+cavaleiro este sul sul
+lanceiro norte
+cavaleiro este este sul
+lanceiro este
+cavaleiro oeste oeste oeste
+lanceiro oeste
+mapa
+cavaleiro sul sul sul
+mapa
+novo 20 20
+alien 3 4
+predator 8 8
+cavaleiro este este este
+cavaleiro oeste oeste sul
+cavaleiro norte norte norte
+mapa
+lanceiro oeste
+cavaleiro este este este
+novo
+12 12
+milan 7 7
+inter 2 6
+espadachim sul
+cavaleiro este este este
+lanceiro sul
+cavaleiro oeste oeste oeste
+lanceiro este
+espadachim este
+cavaleiro este este sul
+mapa
+lanceiro norte
+O lanceiro da ilustre casa de inter devia tentar ir para outro sitio.
+cavaleiro este este este
+cavaleiro norte norte norte
+cavaleiro norte sul sul
+lanceiro este
+cavaleiro este oeste oeste
+lanceiro norte
+cavaleiro oeste oeste oeste
+mapa
+espadachim este
+cavaleiro sul oeste oeste
+espadachim este
+espadachim sul
+espadachim norte
+espadachi oeste
+espadachim oeste
+espadachim oeste
+espadachim sul
+espadachim este
+mapa
+espadachim sul
+espadachim este
+espadachim este
+espadachim este
+espadachim oeste
+espadachim norte
+novo 10 10
+solteiros 5 2
+casados 8 2
+mapa
+novo
+10 10
+gregos 2 5
+troianos 9 5
+cavaleiro este este este
+cavaleiro oeste oeste oeste
+mapa
+cavaleiro este este este
+lanceiro oeste
+cavaleiro este este sul
+lanceiro norte
+espadachim este
+lanceiro norte
+espadachim este
+lanceiro este
+espadachim este
+lanceiro este
+espadachim este
+mapa
+lanceiro sul
+espadachim este
+lanceiro oeste
+espadachim sul
+lanceiro sul
+lanceiro oeste
+espadachim este
+espadachim oeste
+lanceiro este
+espadachim este
+lanceiro oeste
+espadachim este
+sai

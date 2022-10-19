@@ -1,0 +1,30 @@
+> No show is selected!
+> Game of Thrones created.
+> Game of Thrones. Seasons: 1 Episodes: 0
+> Modern Family created.
+> 1986 created.
+> Downton Abbey created.
+> Homeland created.
+> Altered Carbon created.
+> Altered Carbon. Seasons: 1 Episodes: 0
+> Dr. Who created.
+> Friends created.
+> Dead to Me created.
+> Breaking Bad created.
+> Roman Empire created.
+> Fawlty Towers created.
+> Monty Pythons Flying Circus created.
+> Will and Grace created.
+> Dr. Who. Seasons: 1 Episodes: 0
+> Dr. Who. Seasons: 1 Episodes: 0
+> Fawlty Towers. Seasons: 1 Episodes: 0
+> Fawlty Towers. Seasons: 1 Episodes: 0
+> Show already exists!
+> Show already exists!
+> How I Met Your Mother created.
+> Young Sheldon created.
+> The Good Wife created.
+> The Good Wife. Seasons: 1 Episodes: 0
+> Unknown show!
+> The Good Wife. Seasons: 1 Episodes: 0
+> Bye!

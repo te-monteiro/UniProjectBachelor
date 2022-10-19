@@ -1,0 +1,157 @@
+currentShow
+addSeason
+addShow
+Game of Thrones
+currentShow
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Modern Family
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+1986
+addShow
+Downton Abbey
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Homeland
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Altered Carbon
+switchToShow
+Downton Abbey
+switchToShow
+Game of Thrones
+switchToShow
+The Borgias
+currentShow
+addShow
+Dr. Who
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Dead to Me
+switchToShow
+Dr. Who
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Friends
+addShow
+Breaking Bad
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Roman Empire
+addSeason
+addSeason
+addShow
+Fawlty Towers
+addSeason
+addShow
+Monty Pythons Flying Circus
+addSeason
+addSeason
+addSeason
+addShow
+Will and Grace
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+switchToShow
+Dr. Who
+currentShow
+switchToShow
+Fawlty Towers
+addShow
+How I Met Your Mother
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Young Sheldon
+addSeason
+addShow
+The Good Wife
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+currentShow
+switchToShow
+Lost
+currentShow
+switchToShow
+Friends
+switchToShow
+Fawlty Towers
+exit

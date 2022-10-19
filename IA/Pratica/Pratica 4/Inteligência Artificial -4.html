@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0037)http://ia.ssdi.di.fct.unl.pt/tp4.html -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml"><!-- #BeginTemplate "/Templates/master.dwt" --><!-- DW6 --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- #BeginEditable "doctitle" -->
+<title>Inteligência Artificial</title>
+<!-- #EndEditable -->
+<link href="./Inteligência Artificial -4_files/style3.css" media="screen" rel="stylesheet" title="CSS" type="text/css">
+<link rel="stylesheet" crossorigin="anonymous" href="./Inteligência Artificial -4_files/main.css"><style type="text/css">
+.style1 {
+	border-width: 0px;
+}
+</style>
+<style type="text/css"></style></head>
+
+<body>
+
+<!-- Begin Container -->
+<div id="container">
+	<!-- Begin Masthead -->
+	<div id="masthead">
+		<a href="http://ia.ssdi.di.fct.unl.pt/index.html">
+		<img alt="" height="66" src="./Inteligência Artificial -4_files/logo.gif" width="150" class="style1"></a>
+		<p>Inteligência Artificial</p>
+	</div>
+	<!-- End Masthead -->
+	<!-- Begin Navigation -->
+	<div id="navigation">
+		<ul>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/index.html">Início</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/objectivos.html">Objectivos</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/programa.html">Programa</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/bibliografia.html">Bibliografia</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/docentes.html">Docentes</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/avaliacao.html">Avaliação</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/horario.html">Horário</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/aulas.html">Aulas</a></li>
+			</ul>
+	</div>
+	<!-- End Navigation -->
+	<!-- Begin Page Content -->
+	<div id="page_content">
+		<!-- Begin Left Column -->
+		<div id="column_l">
+			<!-- #BeginEditable "content" -->
+			<h2>Programação por Conjuntos de Resposta</h2>
+			<p>O tópico destas aulas é a programação pro conjuntos de resposta. Pretende-se que use a programação por conjuntos de resposta para modelar alguns problemas e obter as sua soluções usando o <a href="https://potassco.org/">CLINGO</a>.</p>
+			<p>Mas antes de usar o CLINGO...			</p>
+            <h3>1 - Programas Proposicionais</h3>
+            <p>Para cada um dos seguintes programas positivos, indique os modelos (clássicos) e decida quais deles são estáveis.</p>
+            <p>P1.1:<br>
+            chuva←<br>
+            molhado←chuva<br>
+            molhado←rega</p>
+            <p>P1.2:<br>
+            café←<br>
+            limão←chá<br>
+            açucar←café<br>
+            leite←café,açucar<br>
+            chá←limão<br>
+            chá←dieta</p>
+            <p>P1.3:<br>
+            camisa←<br>
+            sapatilhas←<br>
+            calças←sapatilhas<br>
+            saia←camisa,sandálias<br>
+            sandálias←vestido</p>
+            <p>P1.4:<br>
+            tinto←<br>
+            carne←couves<br>
+            carne←tinto<br>
+            peixe←espargos<br>
+            espargos←peixe,branco<br>
+            branco←peixe</p>
+            <p>Para cada um dos seguintes programas normais, indique os modelos (clássicos) e decida quais deles são estáveis.</p>
+            <p>P1.5:<br>
+              rega←~chuva<br>
+              chuva←~rega<br>
+              molhado←chuva<br>
+              molhado←rega</p>
+            <p>P1.6:<br>
+              dieta←~açucar<br>
+              café←~chá<br>
+              limão←chá<br>
+              açucar←café<br>
+              leite←café,açucar<br>
+              chá←limão<br>
+              chá←dieta</p>
+            <p>P1.7:<br>
+              vestido←~camisa<br>
+              camisa←~vestido<br>
+              sandálias←~sapatilhas<br>
+              sapatilhas←~sandálias<br>
+              calças←sapatilhas<br>
+              saia←camisa,sandálias<br>
+              sandálias←vestido</p>
+            <p>P1.8:<br>
+              espargos←~couves<br>
+              couves←~espargos<br>
+              tinto←~branco<br>
+              carne←couves<br>
+              carne←tinto<br>
+              peixe←espargos<br>
+              espargos←peixe,branco<br>
+              branco←peixe            </p>
+            <h3>2 - Programas com Variáveis</h3>
+            <p>Para o seguinte programa com variáveis P e cada um dos conjuntos de factos Fi, indique os modelos estáveis de (P⋃Fi).</p>
+            <p>P:<br>
+              1{cycle(X,Y) : edge(X,Y)}1 ← node(X)<br>
+              reach(Y)←cycle(1,Y)<br>
+              reach(Y)←reach(X),cycle(X,Y),X≠1			<br>
+            ←node(Y),~reach(Y)</p>
+            <p>F1:<br>
+node(1)← node(2)← node(3)← <br>
+edge(1,2)← edge(2,3)← edge(3,1)← edge(3,2)← </p>
+            <p>F2:<br>
+              node(1)← node(2)← node(3)← node(4)← <br>
+              edge(1,2)← edge(1,3)← edge(2,3)← edge(2,4)← <br>
+edge(3,2)← edge(3,4)← edge(4,1)← edge(4,2)← </p>
+            <h3>3 - CLINGO</h3>
+            <p>Use o CLINGO para verificar a correcção dos modelos estáveis encontrados nas perguntas anteriores. Não se esqueça de especificar a linha de comando do CLINGO de modo a que ele devolva  todos os modelos estáveis, e não apenas um.            </p>
+            <h3>4 - Programação por Conjuntos de Resposta (I)            </h3>
+            <p>Pretende-se organizar um torneio com 6 equipas (<strong>a</strong>,<strong>b</strong>,<strong>c</strong>,<strong>d</strong>,<strong>e</strong>,<strong>f</strong>) com uma fase de grupos (dois grupos de três equipas) e uma final entre os vencedores dos grupos. A pedido de certas equipas, pretende-se assegurar, na fase de grupos, o seguinte:</p>
+            <ol>
+              <li type="i">a equipa <strong>a</strong> não quer ficar no grupo 1</li>
+              <li type="i">as equipas <strong>a</strong> e <strong>e</strong> não querem ficar no mesmo grupo</li>
+              <li type="i">as equipas <strong>e</strong> e <strong>f</strong> não querem ficar no mesmo grupo</li>
+              <li type="i">as equipas <strong>b</strong> e <strong>c</strong> querem ficar no mesmo grupo</li>
+            </ol>
+            <p>Especifique uma codificação uniforme deste problema em programação por conjuntos de resposta tal que os átomos sobre o predicado in/2 em cada conjunto de resposta (modelo estável) correspondam a distribuição das equipas pelos grupos.            <br>Pode utilizar os seguintes passos para desenvolver esta solução:            </p>
+            <ol>
+              <li>Crie uma representação dos factos (equipas e grupos).</li>
+              <li>Crie um (ou mais) gerador(es) para o predicado in/2 que gere(m) as possíveis associações das equipas aos grupos, garantindo que cada grupo tem  três equipas e cada equipa pertence a um grupo.</li>
+              <li>Adicione restrições correspondendo a i)-iv).</li>
+            </ol>
+            <h3>5 - Programação por Conjuntos de Resposta (II)</h3>
+            <p><strong>I - Exact Hitting Sets</strong>: Dada uma colecção de conjuntos, o problema Exact Hitting Sets consiste em seleccionar exactamente um elemento de cada conjunto. Por exemplo, os conjuntos {a,b,c}, {a,c,d} e {b,c} têm dois Exact Hitting Sets: {b,d} e {c}. Representamos esta instância através dos seguintes factos:</p>
+            <p>set(1). element(1,a). element(1,b). element(1,c).<br>
+            set(2). element(2,a). element(2,c). element(2,d).<br>
+            set(3). element(3,b). element(3,c). </p>
+            <p>Especifique uma codificação uniforme deste problema em programação por conjuntos de resposta tal que os átomos sobre o predicado select/1 em cada conjunto de resposta (modelo estável) correspondam a Exact Hitting Sets para instâncias arbitrárias do problema. Por exemplo, no caso descrito, haveria os seguintes dois conjuntos de resposta (módulo átomos que não sobre o predicado select/1: {select(b),select(d)} e {select(c)}.</p>
+            <p><strong>II - Dominating Sets</strong>: Dado um grafo não dirigido, o problema Dominating Hitting Set consiste em seleccionar um sub-conjunto dos vértices tal que cada vértice não seleccionado seja adjacente a um vértice seleccionado, e o número de vértices seleccionado que não exceda um dado limiar. Por exemplo, o grafo ({1,2,3,4,5,6},{{1,2},{1,3},{2,4},{3,5},{4,5},{4,6}} tem dois Dominating Sets com um máximo de dois vértices: {1,4} e {3,4}.  Representamos esta instância através dos seguintes factos:</p>
+            <p>vertex(1). vertex(2). vertex(3). vertex(4). vertex(5). vertex(6).<br>
+              edge(1,2). edge(1,3). edge(2,4). edge(3,5). edge(4,5). edge(4,6).<br>
+              threshold(2).</p>
+            <p>Especifique uma codificação uniforme deste problema em programação por conjuntos de resposta tal que os átomos sobre o predicado select/1 em cada conjunto de resposta (modelo estável) correspondam a Dominating Sets para instâncias arbitrárias do problema. Por exemplo, no caso descrito, haveria os seguintes dois conjuntos de resposta (módulo átomos que não sobre o predicado select/1: {select(1),select(4)} e {select(3),select(4)}.</p>
+            <p><strong>III - Vertex Cover</strong>: Dado um grafo não dirigido, o problema Vertex Cover consiste em seleccionar um sub-conjunto dos vértices tal que cada arco contenha um vértice  seleccionado, e que o número de vértices seleccionado  não exceda um dado limiar. Por exemplo, o grafo ({1,2,3,4,5,6},{{1,2},{1,3},{2,4},{3,5},{4,5},{4,6}} tem três Vertex Covers  com um máximo de três vértices: {1,3,4}, {1,4,5} e {2,3,4}.  Representamos esta instância através dos seguintes factos:</p>
+            <p>vertex(1). vertex(2). vertex(3). vertex(4). vertex(5). vertex(6).<br>
+              edge(1,2). edge(1,3). edge(2,4). edge(3,5). edge(4,5). edge(4,6).<br>
+              threshold(3).</p>
+            <p>Especifique uma codificação uniforme deste problema em programação por conjuntos de resposta tal que os átomos sobre o predicado select/1 em cada conjunto de resposta (modelo estável) correspondam a Vertex Covers para instâncias arbitrárias do problema. Por exemplo, no caso descrito, haveria os seguintes três conjuntos de resposta (módulo átomos que não sobre o predicado select/1: {select(1),select(3),select(4)}, {select(1),select(4),select(5)}, e {select(2),select(3),select(4)}.</p>
+            <h3>6 - De quem é o gato?</h3>
+            <p>Existe uma rua com cinco casas, cada uma com uma côr diferente (vermelha, azul, branca, amarela e verde), habitadas por homens diferentes mas da mesma família (Miguel, João, Pedro, Marco e Carlos), adeptos de clubes diferentes (Académica, Benfica, Vitória de Setúbal, F. C. Porto e Sporting) e onde se bebe uma bebida diferente (sumo, chá, café, leite e água). Os cinco homens são casados com cinco mulheres (Maria, Carla, Paula, Cristina e Ana), sendo cada uma delas dona de um animal de estimação diferente (cão, raposa, tartaruga, cavalo e gato).</p>
+            <p>Desta história sabe-se que:</p>
+            <ol>
+              <li>O Miguel é filho do João.</li>
+              <li>O João é filho do Pedro.</li>
+              <li>O Marco é filho do Pedro.</li>
+              <li>O Carlos é filho do Marco.</li>
+              <li>O pai do Carlos vive na casa vermelha.</li>
+              <li>A mulher do Miguel é dona do cão.</li>
+              <li>O avô do Carlos vive na primeira casa à esquerda.</li>
+              <li>Na casa amarela é-se adepto do F. C. Porto.</li>
+              <li>O adepto da Académica vive na casa ao lado da dona da raposa.</li>
+              <li>O Pedro vive ao lado da casa azul.</li>
+              <li dir="ltr">A mulher do adepto do Sporting tem uma tartaruga. </li>
+              <li dir="ltr">O adepto do Benfica bebe sumo. </li>
+              <li dir="ltr">O pai do Miguel bebe chá. </li>
+              <li dir="ltr">O filho do Marco é adepto do Vitória de Setúbal. </li>
+              <li dir="ltr">É adepto do F. C. Porto o morador da casa ao lado da casa onde mora a mulher que é dona do cavalo. </li>
+              <li dir="ltr">Na casa verde bebe-se café. </li>
+              <li dir="ltr">A casa verde fica imediatamente à direita da casa branca. </li>
+              <li dir="ltr">Na casa do meio bebe-se leite. </li>
+              <li dir="ltr">O Pedro é casado com a Ana. </li>
+              <li dir="ltr">O Carlos não é casado com a Maria. </li>
+            </ol>
+            <p dir="ltr">Sabe-se que os homens e mulheres desta história têm as suas preferências em relação aos elementos do sexo oposto. Por exemplo, sabe-se que a mais preferida do Miguel é a Paula, seguida da Ana, após a qual aparece a Maria, seguida da Carla. A menos preferida do Miguel é a Cristina. Representemos estas preferências da seguinte maneira:</p>
+            <p dir="ltr">Miguel:&nbsp;&nbsp;&nbsp; Paula&nbsp;&gt;&nbsp;Ana&nbsp;&gt;&nbsp;Maria&nbsp;&gt;&nbsp;Carla&nbsp;&gt;&nbsp;Cristina</p>
+            <p dir="ltr">Os restantes elementos da nossa história têm as seguintes preferências:</p>
+            <table border="0" cellpadding="0" cellspacing="0" bordercolor="#111111" width="100%" id="AutoNumber2">
+              <tbody>
+                <tr>
+                  <td width="60"><p dir="ltr">Maria:&nbsp;&nbsp;</p></td>
+                  <td width="662"><p dir="ltr">Carlos &gt; Miguel &gt; Marco &gt; João &gt; Pedro</p></td>
+                </tr>
+                <tr>
+                  <td width="60"><p dir="ltr">João:&nbsp;&nbsp;</p></td>
+                  <td width="662"><p dir="ltr">Maria &gt; Paula &gt; Carla &gt; Cristina &gt; Ana</p></td>
+                </tr>
+                <tr>
+                  <td width="60"><p dir="ltr">Paula:&nbsp;&nbsp;</p></td>
+                  <td width="662"><p dir="ltr">&nbsp;Marco &gt; Carlos &gt; João &gt; Miguel &gt; Pedro</p></td>
+                </tr>
+                <tr>
+                  <td width="60"><p dir="ltr">Pedro:&nbsp;&nbsp;</p></td>
+                  <td width="662"><p dir="ltr">&nbsp;Paula &gt; Carla &gt; Ana &gt; Cristina &gt; Maria</p></td>
+                </tr>
+                <tr>
+                  <td width="60"><p dir="ltr">Carla:&nbsp;&nbsp;</p></td>
+                  <td width="662"><p dir="ltr">&nbsp;Miguel &gt; Marco &gt; João &gt; Pedro &gt; Carlos</p></td>
+                </tr>
+                <tr>
+                  <td width="60"><p dir="ltr">Marco:&nbsp;&nbsp;</p></td>
+                  <td width="662"><p dir="ltr">&nbsp;Maria &gt; Carla &gt; Paula &gt; Cristina &gt; Ana</p></td>
+                </tr>
+                <tr>
+                  <td width="60"><p dir="ltr">Cristina:&nbsp;&nbsp;</p></td>
+                  <td width="662"><p dir="ltr">&nbsp;Pedro &gt; João &gt; Marco &gt; Miguel &gt; Carlos</p></td>
+                </tr>
+                <tr>
+                  <td width="60"><p dir="ltr">Carlos:&nbsp;&nbsp;</p></td>
+                  <td width="662"><p dir="ltr">&nbsp;Ana &gt; Carla &gt; Paula &gt; Maria &gt; Cristina</p></td>
+                </tr>
+                <tr>
+                  <td width="60"><p dir="ltr">Ana:&nbsp;&nbsp;</p></td>
+                  <td width="662"><p dir="ltr">&nbsp;Marco &gt; João &gt; Pedro &gt; Carlos &gt; Miguel</p></td>
+                </tr>
+              </tbody>
+            </table>
+            <p dir="ltr">Para além disto, sabe-se que todos os homens e mulheres desta história têm casamentos estáveis. Um casamento é instável se existe um homem e uma mulher que se preferem mais entre eles do que aos seus esposos. Por exemplo, considerem uma situação em que o Manuel é casado com a Paula, e o Pedro com a Maria. Se o Manuel preferir a Maria à Paula e a Maria preferir o Manuel ao Pedro, então ambos os casamentos são instáveis (pois o Manuel e a Maria separar-se-iam dos seus cônjuges para ficarem juntos).</p>
+            <p dir="ltr">Belo dia é encontrado o gato no meio da rua. Os serviços camarários pretendem saber quem é a dona do gato e em que casa é que ela mora.</p>
+            <p dir="ltr">Resolva este problema usando programação por conjuntos de resposta. Em concreto, especifique um programa por conjuntos de resposta onde a informação disponível esteja codificada, e seja usada para resolver o problema: o(s) conjunto(s) de resposta deverão conter  a solução do problema. Para facilitar, pode encontrar&nbsp;<a href="http://ia.ssdi.di.fct.unl.pt/tp4/tp4.lp">aqui</a>&nbsp;um ficheiro com alguns factos desta história.</p>
+            <p dir="ltr">Não é recomendável a modelação deste problema recorrendo a um predicado do tipo&nbsp;<em>tuplo(T,U,V,W,X,Y,Z)</em>&nbsp;significando que a casa número T é habitada pelo personagem U, adepto do clube V, com o animal de estimação W, etc.... A razão para tal está relacionada com a vantagem em manter baixo o número de variáveis nas regras. Porquê?</p>
+            <p dir="ltr">&nbsp;</p>
+            <!-- #EndEditable --></div>
+		<!-- End Left Column --></div>
+	<!-- End Page Content -->
+	<!-- Begin Footer -->
+	<div id="footer">
+		<p>	<a href="http://ia.ssdi.di.fct.unl.pt/index.html">Início</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/objectivos.html">Objectivos</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/programa.html">Programa</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/bibliografia.html">Bibliografia</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/docentes.html">Docentes</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/avaliacao.html">Avaliação</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/horario.html">Horário</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/aulas.html">Aulas</a> |
+	  </p><p>Comentários e sugestões para 
+		<a href="mailto:jleite@fct.unl.pt?subject=BD%20-%20Website">jleite@fct.unl.pt</a></p>
+	</div>
+	<!-- End Footer --></div>
+<!-- End Container -->
+
+
+
+<!-- #EndTemplate -->
+</body></html>

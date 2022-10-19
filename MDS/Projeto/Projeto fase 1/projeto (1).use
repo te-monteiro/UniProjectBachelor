@@ -1,0 +1,85 @@
+model projeto
+
+--classes:
+abstract class Pessoa
+end
+
+class AutoridadePortuaria < Pessoa
+end
+
+class RO < Pessoa
+end
+
+class Publico < Pessoa
+end
+
+class Organizacao < Pessoa
+end
+
+abstract class MembroEquipa < Pessoa
+end
+
+abstract class MembroEquipaSuporte < MembroEquipa
+end
+
+class MembroSOS < MembroEquipaSuporte
+end
+
+class Tecnico < MembroEquipaSuporte
+end
+
+class OBR < MembroEquipa
+end
+
+abstract class Tripulante < MembroEquipa
+end
+
+class Skipper < Tripulante
+end
+
+class Barco
+end
+
+class Filmagens
+end
+
+association analisa_e_edita between
+	OBR [1] role obr
+	Filmagens [1..*] role filmagens
+end
+
+association notificaSOS between 
+	Skipper [1] role skipper
+	MembroSOS [1..5] role medico
+end
+
+association partilhaInformacoes between 
+	Organizacao [1..*] role organizacao
+	OBR [1] role OBR
+end
+
+association blackout between
+	Organizacao [1..*] role Organizacao
+	MembroEquipa [1..*] role equipa
+end
+
+association monitoriza between
+	MembroEquipa [1..11] role membroEquipa
+	Barco [1] role barco
+end
+
+association alteraEquipa between
+	Skipper [1] role SkipperMudaEquipa
+	MembroEquipa [1..11] role MembroEquipa
+end
+
+association socorre between
+	MembroSOS [1] role SOS
+	Tripulante[1..11] role tripulante
+end
+
+association pedeApoio between 
+	MembroEquipaSuporte [1..*] role tecnico
+	Organizacao [1] role org
+end
+

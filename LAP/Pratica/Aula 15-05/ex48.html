@@ -1,0 +1,37 @@
+<HTML>
+
+<HEAD>
+    <TITLE>MyDocument</TITLE>
+
+    <SCRIPT TYPE="text/javascript">
+        function compute(n1) {
+            if (n1 <= 1)
+                return false;
+            for (var i = 2; i < n1; i++) {
+                if ((n1 % i) == 0)
+                    return false;
+            }
+            return true;
+
+        }
+        function runForm1(form) {
+            if (compute(form.text1.value) === true)
+                form.text2.value = "Is a prime number";
+            else
+                form.text2.value = "Is not a prime number";
+
+        }
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <H1>Is a prime number?</H1>
+    <FORM ID="form1">
+        <INPUT TYPE="text" ID="text1" VALUE="1" SIZE=10 style="text-align: right">
+        -> <INPUT TYPE="text" ID="text2" VALUE="Is a prime number" SIZE=25 READONLY
+            style="text-align: right; font-weight: bold">
+        <p> <INPUT TYPE="button" ID="button1" VALUE="Prime?" ONCLICK="runForm1(form)">
+    </FORM>
+</BODY>
+
+</HTML>

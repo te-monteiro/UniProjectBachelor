@@ -1,0 +1,170 @@
+> No show is selected!
+> No show is selected!
+> Game of Thrones created.
+> Game of Thrones. Seasons: 1 Episodes: 0
+> Game of Thrones. Seasons: 2 Episodes: 0
+> Game of Thrones. Seasons: 3 Episodes: 0
+> Game of Thrones. Seasons: 4 Episodes: 0
+> Game of Thrones. Seasons: 5 Episodes: 0
+> Game of Thrones. Seasons: 6 Episodes: 0
+> Game of Thrones. Seasons: 7 Episodes: 0
+> Game of Thrones. Seasons: 8 Episodes: 0
+> Modern Family created.
+> Modern Family. Seasons: 2 Episodes: 0
+> Modern Family. Seasons: 3 Episodes: 0
+> Modern Family. Seasons: 4 Episodes: 0
+> Modern Family. Seasons: 5 Episodes: 0
+> Modern Family. Seasons: 6 Episodes: 0
+> Modern Family. Seasons: 7 Episodes: 0
+> Modern Family. Seasons: 8 Episodes: 0
+> Modern Family. Seasons: 9 Episodes: 0
+> Modern Family. Seasons: 10 Episodes: 0
+> 1986 created.
+> Downton Abbey created.
+> Downton Abbey. Seasons: 2 Episodes: 0
+> Downton Abbey. Seasons: 3 Episodes: 0
+> Downton Abbey. Seasons: 4 Episodes: 0
+> Downton Abbey. Seasons: 5 Episodes: 0
+> Downton Abbey. Seasons: 6 Episodes: 0
+> Homeland created.
+> Homeland. Seasons: 2 Episodes: 0
+> Homeland. Seasons: 3 Episodes: 0
+> Homeland. Seasons: 4 Episodes: 0
+> Homeland. Seasons: 5 Episodes: 0
+> Homeland. Seasons: 6 Episodes: 0
+> Homeland. Seasons: 7 Episodes: 0
+> Altered Carbon created.
+> Downton Abbey. Seasons: 6 Episodes: 0
+> Game of Thrones. Seasons: 8 Episodes: 0
+> Unknown show!
+> Game of Thrones. Seasons: 8 Episodes: 0
+> Dr. Who created.
+> Dr. Who. Seasons: 2 Episodes: 0
+> Dr. Who. Seasons: 3 Episodes: 0
+> Dr. Who. Seasons: 4 Episodes: 0
+> Dr. Who. Seasons: 5 Episodes: 0
+> Dr. Who. Seasons: 6 Episodes: 0
+> Dr. Who. Seasons: 7 Episodes: 0
+> Dr. Who. Seasons: 8 Episodes: 0
+> Dr. Who. Seasons: 9 Episodes: 0
+> Dr. Who. Seasons: 10 Episodes: 0
+> Dr. Who. Seasons: 11 Episodes: 0
+> Dr. Who. Seasons: 12 Episodes: 0
+> Dr. Who. Seasons: 13 Episodes: 0
+> Dr. Who. Seasons: 14 Episodes: 0
+> Dr. Who. Seasons: 15 Episodes: 0
+> Dr. Who. Seasons: 16 Episodes: 0
+> Dr. Who. Seasons: 17 Episodes: 0
+> Dr. Who. Seasons: 18 Episodes: 0
+> Dr. Who. Seasons: 19 Episodes: 0
+> Dr. Who. Seasons: 20 Episodes: 0
+> Dr. Who. Seasons: 21 Episodes: 0
+> Dr. Who. Seasons: 22 Episodes: 0
+> Dr. Who. Seasons: 23 Episodes: 0
+> Dr. Who. Seasons: 24 Episodes: 0
+> Dr. Who. Seasons: 25 Episodes: 0
+> Dr. Who. Seasons: 26 Episodes: 0
+> Dead to Me created.
+> Dr. Who. Seasons: 26 Episodes: 0
+> Dr. Who. Seasons: 27 Episodes: 0
+> Dr. Who. Seasons: 28 Episodes: 0
+> Dr. Who. Seasons: 29 Episodes: 0
+> Dr. Who. Seasons: 30 Episodes: 0
+> Dr. Who. Seasons: 31 Episodes: 0
+> Dr. Who. Seasons: 32 Episodes: 0
+> Dr. Who. Seasons: 33 Episodes: 0
+> Dr. Who. Seasons: 34 Episodes: 0
+> Dr. Who. Seasons: 35 Episodes: 0
+> Dr. Who. Seasons: 36 Episodes: 0
+> Dr. Who. Seasons: 37 Episodes: 0
+> Friends created.
+> Breaking Bad created.
+> Breaking Bad. Seasons: 2 Episodes: 0
+> Breaking Bad. Seasons: 3 Episodes: 0
+> Breaking Bad. Seasons: 4 Episodes: 0
+> Breaking Bad. Seasons: 5 Episodes: 0
+> Roman Empire created.
+> Roman Empire S1, Ep1: Born in the Purple.
+> Roman Empire S1, Ep2: The Making of an Emperor.
+> Roman Empire S1, Ep3: Enemy of the Senate.
+> Roman Empire S1, Ep4: Rome is Burning.
+> Roman Empire. Seasons: 2 Episodes: 4
+> Roman Empire S1, Ep5: Fight for Glory.
+> Roman Empire S1, Ep6: 14 Days of Blood.
+> Roman Empire S2, Ep1: The Triumvirate.
+> Roman Empire S2, Ep2: The Great Conqueror.
+> Roman Empire S2, Ep3: Crossing the Rubicon.
+> Roman Empire S2, Ep4: Queen of the Nile.
+> Roman Empire S2, Ep5: The Ides of March.
+> Fawlty Towers created.
+> Fawlty Towers. Seasons: 2 Episodes: 0
+> Fawlty Towers S1, Ep1: A Touch of Class.
+> Fawlty Towers S1, Ep2: The Builders.
+> Fawlty Towers S1, Ep3: The Wedding Party.
+> Fawlty Towers S1, Ep4: The Hotel Inspectors.
+> Fawlty Towers S1, Ep5: Gourmet Night.
+> Fawlty Towers S2, Ep1: Communication Problems.
+> Fawlty Towers S2, Ep2: The Psychiatrist.
+> Fawlty Towers S1, Ep6: The Germans.
+> Fawlty Towers S2, Ep3: Waldorf Salad.
+> Fawlty Towers S2, Ep4: The Kipper and the Corpse.
+> Fawlty Towers S2, Ep5: The Anniversary.
+> Fawlty Towers S2, Ep6: Basil the Rat.
+> Roman Empire. Seasons: 2 Episodes: 11
+> Roman Empire. Seasons: 3 Episodes: 11
+> Roman Empire S3, Ep1: The Rightful Heir.
+> Roman Empire S3, Ep2: A New Hope.
+> Roman Empire S3, Ep3: In Search of an Heir.
+> Roman Empire S3, Ep4: Descent into Madness.
+> Monty Pythons Flying Circus created.
+> Monty Pythons Flying Circus. Seasons: 2 Episodes: 0
+> Monty Pythons Flying Circus. Seasons: 3 Episodes: 0
+> Monty Pythons Flying Circus. Seasons: 4 Episodes: 0
+> Monty Pythons Flying Circus. Seasons: 5 Episodes: 0
+> Will and Grace created.
+> Will and Grace. Seasons: 2 Episodes: 0
+> Will and Grace. Seasons: 3 Episodes: 0
+> Will and Grace. Seasons: 4 Episodes: 0
+> Will and Grace. Seasons: 5 Episodes: 0
+> Will and Grace. Seasons: 6 Episodes: 0
+> Will and Grace. Seasons: 7 Episodes: 0
+> Will and Grace. Seasons: 8 Episodes: 0
+> Will and Grace. Seasons: 9 Episodes: 0
+> Will and Grace. Seasons: 10 Episodes: 0
+> Will and Grace. Seasons: 11 Episodes: 0
+> Dr. Who. Seasons: 37 Episodes: 0
+> Dr. Who. Seasons: 37 Episodes: 0
+> Fawlty Towers. Seasons: 2 Episodes: 12
+> How I Met Your Mother created.
+> How I Met Your Mother. Seasons: 2 Episodes: 0
+> How I Met Your Mother. Seasons: 3 Episodes: 0
+> How I Met Your Mother. Seasons: 4 Episodes: 0
+> How I Met Your Mother. Seasons: 5 Episodes: 0
+> How I Met Your Mother. Seasons: 6 Episodes: 0
+> How I Met Your Mother. Seasons: 7 Episodes: 0
+> How I Met Your Mother. Seasons: 8 Episodes: 0
+> How I Met Your Mother. Seasons: 9 Episodes: 0
+> How I Met Your Mother. Seasons: 10 Episodes: 0
+> After Life created.
+> Young Sheldon created.
+> Young Sheldon. Seasons: 2 Episodes: 0
+> The Good Wife created.
+> The Good Wife. Seasons: 2 Episodes: 0
+> The Good Wife. Seasons: 3 Episodes: 0
+> The Good Wife. Seasons: 4 Episodes: 0
+> The Good Wife. Seasons: 5 Episodes: 0
+> The Good Wife. Seasons: 6 Episodes: 0
+> The Good Wife. Seasons: 7 Episodes: 0
+> The Good Wife. Seasons: 7 Episodes: 0
+> Unknown show!
+> The Good Wife. Seasons: 7 Episodes: 0
+> Friends. Seasons: 1 Episodes: 0
+> Fawlty Towers. Seasons: 2 Episodes: 12
+> Unknown season!
+> Unknown season!
+> Fawlty Towers. Seasons: 2 Episodes: 12
+> Game of Thrones. Seasons: 8 Episodes: 0
+> Unknown season!
+> Unknown season!
+> Game of Thrones. Seasons: 8 Episodes: 0
+> Bye!

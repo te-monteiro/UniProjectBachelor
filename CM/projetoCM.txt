@@ -1,0 +1,142 @@
+//keypoints
+	//string imageFrame = "movies/" + outras imagens + ".png";
+	ofImage image;
+	//image.load(imageFrame);
+	//.setFrame(0;)
+	ofxCvColorImage imageColor;
+	ofPixels & pixelsImage = image.getPixels();
+	imageColor.setFromPixels(pixelsImage);
+
+	ofxCvGrayscaleImage grayscaleImage;
+	grayscaleImage = imageColor;
+
+	//cv::Mat imgMat = cv::cvarrToMat(grayscaleImage.getCvImage());
+
+	// detecting keypoints
+	//cv::SurfFeatureDetector detector(400);
+	vector<cv::KeyPoint> keypoints1, keypoints2;
+	//detector.detect(grayscaleImage, keypoints1);
+
+
+	ofVideoPlayer video;
+	//ofLog() << " videosnamessss " << videoName;
+	video.load(getPath(videoName, eventName));
+	//ofLog() << "movies/" << getPath(videoName, eventName);
+
+	video.play();
+
+	int totalFrames = video.getTotalNumFrames();
+	int videoWidth = video.getWidth();
+	int videoHeight = video.getHeight();
+	int dimensionFrame = videoWidth * videoHeight;
+
+	video.setFrame(0);
+	//detector.detect(video, keypoints2);
+
+	ofPixels & pixels = video.getPixels();
+
+	//edge disbrution
+
+	// set ofxCvColorImage colorImg
+	//colorImg.setFromPixels(myGrabber.getPixels().getData(), camWidth, camHeight);
+
+	colorFrame.setFromPixels(pixels);
+
+	// create Mat
+	// Mat colorm(colorImg.getCvImage());
+	// create grayscale Mat
+	//cvtColor(colorm, graym, COLOR_BGR2GRAY);
+
+	grayscaleFrame = colorFrame;
+	//getCvImage() -- Returns a raw pointer to the OpenCV IplImage. 
+	//create Mat
+	cv::Mat mat = cv::cvarrToMat(grayscaleFrame.getCvImage());
+
+	calcEdgeDistribution(dimensionFrame, mat);
+
+	getColors(dimensionFrame, pixels);
+
+	// load image (ofImage) and create Mat in grayscale as an example. markImg is a ofxCvColorImage
+	//loader.loadImage("test.jpg");
+	//markImg.allocate(loader.getWidth(), loader.getHeight());
+	//markImg.setFromPixels(loader.getPixels().getData(), loader.getWidth(), loader.getHeight());
+	//cvtColor(Mat(markImg.getCvImage()), markm, COLOR_BGR2GRAY);
+
+	// or convert an OfImage to OpenCV format
+
+	//ofImage ofimg;
+	//ofimg.load("someimage.png");
+	//cv::Mat img = ofxCv::toCv(ofimg);
+
+
+	//textura
+	//so para  uma frame
+	//Várias orientações podem ser usadas e frequências / comprimentos de onda, resultando em um banco com vários filtros (por exemplo, 6 orientações e 4 frequências).
+	int size = 25;
+	int sigma = 20.00;
+	float theta = 0; //orientation
+	float wavelength = 40.00; //lambda
+	int gamma = 0.50; //aspectratio
+	int offset = 0; //phi
+
+	//matriz destino
+	cv::Mat dst;
+	cv::Scalar average, variance;
+	vector<pair<float, float>> texture;
+
+	for (int i = 0; i < SIGMA; i++) {
+		for (int j = 0; j < THETA; j++) {
+			cv::Mat gaborFilter = cv::getGaborKernel(cv::Size(size, size), sigma, theta, wavelength, gamma, offset);
+			cv::filter2D(mat, dst, -1, gaborFilter);
+			cv::countNonZero(dst)*1.0;
+			//media
+			//cv::mean(dst, average);
+			//variance
+			cv::meanStdDev(dst, average, variance);
+			//input array that should have from 1 to 4 channels so that the result can be stored in Scalar_ .
+			float averagef = average[0] * 1.0;
+			float variancef = pow(variance[0], 2) * averagef;
+			texture.push_back(make_pair(averagef, variancef));
+			theta += theta;
+		}
+		sigma += sigma;
+	}
+
+	//Match
+	//cv::Mat img1 = cv::imread(argv[1], CV_LOAD_IMAGE_GRAYSCALE);
+	//cv::Mat img2 = cv::imread(argv[2], CV_LOAD_IMAGE_GRAYSCALE);
+	//if (!img1.empty() || !img2.empty()){
+
+	// computing descriptors
+	/*cv::SurfDescriptorExtractor extractor;
+	cv::Mat descriptors1;//, descriptors2;
+	extractor.compute(grayscaleImage, keypoints1, descriptors1);
+	//extractor.compute(img2, keypoints2, descriptors2);
+
+	// matching descriptors
+	cv::BruteForceMatcher<L2<float> > matcher;
+	vector<cv::DMatch> matches;
+	matcher.match(descriptors1, matches); //, descriptors2
+
+	// drawing the results
+	namedWindow("matches", 1);
+	cv::Mat img_matches;
+	drawMatches(grayscaleImage, keypoints1, matches, img_matches); //img2,keypoints2,
+	cv::imshow("matches", img_matches);
+	waitKey(0);*/
+
+
+	for (int i = 0; i < totalFrames; i += totalFrames / 20) {
+		video.setFrame(i);
+		video.update();
+		pixels = video.getPixels();
+		getColors(dimensionFrame, pixels);
+
+		//EDGE DISTRIBUTION
+		colorFrame.setFromPixels(pixels);
+		grayscaleFrame = colorFrame;
+
+		mat = cv::cvarrToMat(grayscaleFrame.getCvImage());
+		calcEdgeDistribution(dimensionFrame, mat);
+
+	}

@@ -1,0 +1,52 @@
+currentShow
+addShow
+Game of Thrones
+currentShow
+addShow
+Modern Family
+addShow
+1986
+addShow
+Downton Abbey
+addShow
+Homeland
+addShow
+Altered Carbon
+currentShow
+addShow
+Dr. Who
+addShow
+Friends
+addShow
+Dead to Me
+addShow
+Breaking Bad
+addShow
+Roman Empire
+addShow
+Fawlty Towers
+addShow
+Monty Pythons Flying Circus
+addShow
+Will and Grace
+switchToShow
+Dr. Who
+currentShow
+switchToShow
+Fawlty Towers
+currentShow
+addShow
+Dead to Me
+addShow
+Roman Empire
+addShow
+How I Met Your Mother
+addShow
+Young Sheldon
+addShow
+The Good Wife
+currentShow
+switchToShow
+Lost
+currentShow
+exit

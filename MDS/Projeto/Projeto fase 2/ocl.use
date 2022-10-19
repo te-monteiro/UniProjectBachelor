@@ -1,0 +1,247 @@
+model projeto
+
+--classes:
+
+class Corrida
+end
+
+abstract class Pessoa
+	attributes
+		nome : String
+		idade : Integer
+		genero : String
+		nacionalidade : String
+	operations
+		getNome() : String
+		getIdade() : Integer
+		getGenero() : String
+		getNacionalidade() : String
+end
+
+
+class RO < Pessoa
+	attributes
+		candidatos: Set(Pessoa)
+	operations
+		getIdRO() : Integer
+		definePortos()
+		getCandidatosDisp() : Set(Pessoa)
+end
+
+class Publico < Pessoa
+	attributes
+		localizacao : String
+		meioDeVisualizacao : String
+	operations
+		getLocalizacao() : String	
+		getMeioDeVisualizacao() : String
+		assiste()
+end
+
+class Organizacao < Pessoa
+	attributes
+		idOrganizacao : String
+		filmagens : Filmagens
+		filmagensEditadas : FilmagensEditadas
+		blackout : Blackout
+	operations
+		criaBlackout(Data : Integer)
+		
+end
+
+abstract class MembroEquipa < Pessoa
+	attributes
+		id: String
+end
+
+abstract class MembroEquipaSuporte < MembroEquipa
+end
+
+class MembroSOS < MembroEquipaSuporte
+end
+
+class Tecnico < MembroEquipaSuporte
+end
+
+class OBR < MembroEquipa
+	attributes
+		filmagens : Set(Filmagens)
+	operations
+		analisa()
+		edita()
+end
+
+abstract class Tripulante < MembroEquipa
+end
+
+class Skipper < Tripulante
+end
+
+class Barco
+	attributes
+		nome : String
+		matricula : String
+		ano : Integer
+		membrosDeEquipa : Set(MembroEquipa)
+
+end
+
+class Filmagens
+	attributes
+		emDireto : Boolean
+		localizacao : String
+
+	operations
+		emDireto() : Boolean
+		getLocalizacao() : String
+end
+
+class FilmagensEditadas < Filmagens
+	attributes
+		numeroVisualizadores : Integer
+
+	operations
+		getVisualizadores() : Integer
+		emDireto() : Boolean
+		getLocalizacao() : String
+		
+end
+
+class Equipa
+	attributes
+		membrosDeEquipa : Set(MembroEquipa)
+
+	operations
+		getMembrosDeEquipa(): Set(MembroEquipa)
+		setTrocaMembros(membId1 : String, membId2 : String) 
+end
+
+class Legs
+	attributes
+		id : Integer
+		dest : String
+		orig : String
+		distancia: Integer
+		eExigente : Boolean
+		localizacao : String
+	operations
+		getId() : Integer
+		getDest() : String
+		getOrig() : String
+		getDistance() : Integer
+		eExigente() : Boolean
+		getLocalizacao() : String		
+end
+
+class MeioDeComunicacao
+	attributes
+		meioDeComunicacao : String
+end
+
+class Blackout
+	attributes
+		duracao: Integer
+		data : Integer
+	operations
+		getData() : Integer
+end
+
+aggregation disponibiliza between
+	Organizacao [1] role orgFilm
+	FilmagensEditadas [0..*] role filmEditad
+end
+
+aggregation ao between
+	FilmagensEditadas [1] role filmEditadas
+	Publico [0..*] role publicoFilmagens
+end
+
+
+aggregation filmagensEditadas between
+	Organizacao [1] role organizacao
+	Filmagens [0..*] role filmEdit 	
+end
+
+composition eFormada between
+	Equipa [1] role Equipa
+	MembroEquipa [1..11] role MembroEquipa
+end
+
+aggregation definePortos between
+	RO [1] role ro
+	Legs [1..10] role legs
+end
+
+aggregation trataDe between
+	Organizacao [1] role organ
+	MeioDeComunicacao [0..*] role mcom
+end
+	 
+constraints
+
+--1
+context Barco
+inv barcosNomesMatriculasMembEquipaDifs:
+Barco.allInstances -> forAll(b1,b2:Barco | b1 <> b2 implies
+	(b1.nome <> b2.nome)
+	and (b1.matricula <> b2.matricula)
+	and (b1.membrosDeEquipa <> b2.membrosDeEquipa)) 
+
+
+--2
+context Organizacao
+inv FilmagensNaoEditadasVisualizadas:
+not (self.filmagensEditadas = null and self.filmEditad.forAll(f | f.numeroVisualizadores > 0))
+--3
+context Equipa
+inv equipaMulheres:
+self.membrosDeEquipa.forAll(m1 | m1.genero = 'mulher') implies self.membrosDeEquipa -> size = 11
+--4
+context Equipa :: setTrocaMembros(membId1: String, membId2 : String)
+ pre membsDifMesmaEquipa:
+	 membId1 <> membId2 and self.membrosDeEquipa.exists(m1, m2 | (m1.id = membId1 and m2.id = membId2)
+							 or (m1.id = membId2 and m2.id = membId1))
+--5
+context RO :: getCandidatosDisp() : Set(Pessoa)
+ pre ListaDeCandCorreta:
+	self.candidatos.forAll(c2 | c2.oclIsKindOf(MembroEquipa)) and
+	not self.candidatos.exists(c2 | c2.oclIsKindOf(Skipper))	
+--6
+context FilmagensEditadas :: getLocalizacao() : String
+ pre LocalizacaoCamaraDiretoDiferentePublico:
+	(self.emDireto = true) implies self.publicoFilmagens -> forAll(p | p.localizacao <> self.localizacao)
+--7
+context OBR :: edita()
+ post filmagensFicaramEditadas:
+	self.filmagens.forAll(f1 | f1.oclIsKindOf(FilmagensEditadas) )
+--8
+context Organizacao :: criaBlackout(Data : Integer)
+ post naoAcedeImagensDuranteBlackout:
+	self.filmEditad.forAll(f | f.numeroVisualizadores = 0)
+	and
+	self.mcom -> forAll(m1 | m1.meioDeComunicacao = null)
+--9
+context RO :: definePortos()
+ post portoCriadoCorretamente:
+	self.legs.forAll(l1 | l1.distancia > 0) and
+	self.legs.forAll(l1,l2 : Legs | l1.orig <> l2.dest) and
+	self.legs.forAll ( l1,l2: Legs | l1 <> l2 implies (l1.id <> l2.id))	
+
+--1 Restrição
+--Barcos diferentes têm nomes, matrículas e equipas diferentes a bordo.
+--2 Restrição
+--Não pode existir um caso em que a organização não disponibilize filmagens editadas e ao mesmo tempo haja pessoas a assistir às mesmas
+--3 Restrição
+--Se a equipa for toda constituída por mulheres então a mesma terá de ter obrigatóriamente 11 elementos
+--4 Restrição
+--Os membros que vão ser trocados têm de ser diferentes e fazer parte da mesma equipa
+--5 Restrição
+--Todos os candidatos disponíveis para formarem a equipa têm de ser do tipo membro de equipa e não podem ser o skipper (pois este é que escolhe uma equipa e já integra inicialmente uma)
+--6 Restrição
+--Se uma certa filmagem editada estiver em direto então não pode existir um elemento do público com a mesma localização que ela 
+--7 Restrição
+--Depois de editadas o conjunto de filmagens que o obr tem na sua classe deve ser da "kind" filmagensEditadas
+--8 Restrição
+--Depois do blackout ser criado não podem existir filmagens com espetadores nem meios de comunicação disponíveis
+--9 Restrição
+--Depois das legs serem criadas (e consequentemente os portos definidos), o id desta deve ser único e os respectivos portos de origem e destino devem ter uma distância maior que 0 e ser diferentes entre si

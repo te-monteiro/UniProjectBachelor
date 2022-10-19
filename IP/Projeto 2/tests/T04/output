@@ -1,0 +1,28 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> 4 castelos:
+3 reinos:
+Castelo ja ocupado.
+Castelo ja ocupado.
+Numero insuficiente de reinos criados.
+Erro fatal, jogo nao inicializado.
+> 4 castelos:
+3 reinos:
+Castelo ja ocupado.
+Jogo iniciado, comeca o reino Lannister.
+Lannister > 4 castelos:
+3 reinos:
+Castelo ja ocupado.
+Castelo nao existe.
+Numero insuficiente de reinos criados.
+Erro fatal, jogo nao inicializado.
+> 4 castelos:
+3 reinos:
+Castelo ja ocupado.
+Jogo iniciado, comeca o reino Stark.
+Stark > 4 castelos:
+3 reinos:
+Os reinos nao podem ter nomes duplicados.
+Jogo iniciado, comeca o reino Lannister.
+Lannister > Obrigado por jogar. Ate a proxima.

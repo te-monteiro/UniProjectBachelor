@@ -1,0 +1,230 @@
+currentShow
+addSeason
+addShow
+Game of Thrones
+currentShow
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Modern Family
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+1986
+addShow
+Downton Abbey
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Homeland
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Altered Carbon
+switchToShow
+Downton Abbey
+switchToShow
+Game of Thrones
+switchToShow
+The Borgias
+currentShow
+addShow
+Dr. Who
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Dead to Me
+switchToShow
+Dr. Who
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Friends
+addShow
+Breaking Bad
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Roman Empire
+addEpisode
+1 Born in the Purple
+addEpisode
+1 The Making of an Emperor
+addEpisode
+1 Enemy of the Senate
+addEpisode
+1 Rome is Burning
+addSeason
+addEpisode
+1 Fight for Glory
+addEpisode
+1 14 Days of Blood
+addEpisode
+2 The Triumvirate
+addEpisode
+2 The Great Conqueror
+addEpisode
+2 Crossing the Rubicon
+addEpisode
+2 Queen of the Nile
+addEpisode
+2 The Ides of March
+addShow
+Fawlty Towers
+addSeason
+addEpisode
+1 A Touch of Class
+addEpisode
+1 The Builders
+addEpisode
+1 The Wedding Party
+addEpisode
+1 The Hotel Inspectors
+addEpisode
+1 Gourmet Night
+addEpisode
+2 Communication Problems
+addEpisode
+2 The Psychiatrist
+addEpisode
+1 The Germans
+addEpisode
+2 Waldorf Salad
+addEpisode
+2 The Kipper and the Corpse
+addEpisode
+2 The Anniversary
+addEpisode
+2 Basil the Rat
+switchToShow
+Roman Empire
+addSeason
+addEpisode
+3 The Rightful Heir
+addEpisode
+3 A New Hope
+addEpisode
+3 In Search of an Heir
+addEpisode
+3 Descent into Madness
+addShow
+Monty Pythons Flying Circus
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+Will and Grace
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+switchToShow
+Dr. Who
+currentShow
+switchToShow
+Fawlty Towers
+addShow
+How I Met Your Mother
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addShow
+After Life
+addShow
+Young Sheldon
+addSeason
+addShow
+The Good Wife
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+addSeason
+currentShow
+switchToShow
+Lost
+currentShow
+switchToShow
+Friends
+switchToShow
+Fawlty Towers
+addEpisode
+0 And now for something completely different
+addEpisode
+3 The larch
+currentShow
+switchToShow
+Game of Thrones
+addEpisode
+0 Roberts Rebellion
+addEpisode
+9 An amazing episode in the last season
+currentShow
+exit

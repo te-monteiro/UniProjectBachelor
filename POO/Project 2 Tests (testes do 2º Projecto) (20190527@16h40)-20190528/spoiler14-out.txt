@@ -1,0 +1,149 @@
+> No show is selected!
+> No show is selected!
+> Sophia the First created.
+> Sophia the First. Seasons: 1 Episodes: 0
+> Game of Thrones created.
+> Game of Thrones. Seasons: 1 Episodes: 0
+> Game of Thrones. Seasons: 2 Episodes: 0
+> Game of Thrones. Seasons: 3 Episodes: 0
+> Game of Thrones. Seasons: 4 Episodes: 0
+> Game of Thrones. Seasons: 5 Episodes: 0
+> Game of Thrones. Seasons: 6 Episodes: 0
+> Game of Thrones. Seasons: 7 Episodes: 0
+> Game of Thrones. Seasons: 8 Episodes: 0
+> Game of Thrones S1, Ep1: 1.
+> Game of Thrones S1, Ep2: 2.
+> Game of Thrones S1, Ep3: 3.
+> Game of Thrones S1, Ep4: 4.
+> Game of Thrones S1, Ep5: 5.
+> Game of Thrones S1, Ep6: 6.
+> Game of Thrones S1, Ep7: 7.
+> Game of Thrones S1, Ep8: 8.
+> Game of Thrones S1, Ep9: 9.
+> Game of Thrones S1, Ep10: 10.
+> Game of Thrones S2, Ep1: 1.
+> Game of Thrones S2, Ep2: 2.
+> Game of Thrones S2, Ep3: 3.
+> Game of Thrones S2, Ep4: 4.
+> Game of Thrones S2, Ep5: 5.
+> Game of Thrones S2, Ep6: 6.
+> Game of Thrones S2, Ep7: 7.
+> Game of Thrones S7, Ep1: 1.
+> Game of Thrones S7, Ep2: 2.
+> Game of Thrones S7, Ep3: 3.
+> Game of Thrones S7, Ep4: 4.
+> Game of Thrones S7, Ep5: 5.
+> Game of Thrones S7, Ep6: 6.
+> Game of Thrones S7, Ep7: 7.
+> Game of Thrones S8, Ep1: 1.
+> Game of Thrones S8, Ep2: 2.
+> Game of Thrones S8, Ep3: 3.
+> Game of Thrones S8, Ep4: 4.
+> Game of Thrones S8, Ep5: 5.
+> Game of Thrones S8, Ep6: 6.
+> Modern Family created.
+> Modern Family. Seasons: 2 Episodes: 0
+> Modern Family S1, Ep1: Pilot.
+> Modern Family S1, Ep2: The bycicle thief.
+> Modern Family. Seasons: 3 Episodes: 2
+> Modern Family S1, Ep3: Come fly with me.
+> Modern Family S1, Ep4: The incident.
+> Modern Family S1, Ep5: The coal digger.
+> Modern Family S2, Ep1: The old wagon.
+> Modern Family S2, Ep2: The kiss.
+> Modern Family S2, Ep3: Earthquake.
+> Modern Family. Seasons: 4 Episodes: 8
+> Modern Family S3, Ep1: Dude ranch.
+> Modern Family S3, Ep2: When good kids go bad.
+> Modern Family. Seasons: 5 Episodes: 10
+> Modern Family S3, Ep3: Phil on wire.
+> Modern Family S4, Ep1: Bringing up baby.
+> Modern Family S4, Ep2: Schooled.
+> Modern Family. Seasons: 6 Episodes: 13
+> Modern Family. Seasons: 7 Episodes: 13
+> Modern Family. Seasons: 8 Episodes: 13
+> Modern Family. Seasons: 9 Episodes: 13
+> Modern Family. Seasons: 10 Episodes: 13
+> Modern Family S10, Ep1: I love a parade.
+> Modern Family S10, Ep2: Kiss and tell.
+> 1986 created.
+> Modern Family. Seasons: 10 Episodes: 15
+> Javier Delgado is now part of Modern Family. This is Benjamin Bratt role 1.
+> Terry Bradshaw is now part of Modern Family. This is Terry Bradshaw role 1.
+> Gloria Pritchett is now part of Modern Family. This is Sofia Vergara role 1.
+> Manny Delgado is now part of Modern Family. This is Rico Rodriguez role 1.
+> Jay Pritchett is now part of Modern Family. This is Ed ONeill role 1.
+> Claire Dunphy is now part of Modern Family. This is Julie Bowen role 1.
+> Phil Dunphy is now part of Modern Family. This is Ty Burrell role 1.
+> Mitchell Pritchett is now part of Modern Family. This is Jesse Tyler Ferguson role 1.
+> Cameron Tucker is now part of Modern Family. This is Eric Stonestreet role 1.
+> Haley Dunphy is now part of Modern Family. This is Sarah Hyland role 1.
+> Alex Dunphy is now part of Modern Family. This is Ariel Winter role 1.
+> Luke Dunphy is now part of Modern Family. This is Nolan Gould role 1.
+> Lily Tucker-Pritchett is now part of Modern Family. This is Aubrey Anderson-Emmons role 1.
+> Fulgencio Joe Pritchett-Delgado is now part of Modern Family. This is Jeremy Maguire role 1.
+> DeDe Pritchett is now part of Modern Family. This is Shelley Long role 1.
+> Dylan Marshall is now part of Modern Family. This is Reid Ewing role 1.
+> Frank Dunphy is now part of Modern Family. This is Fred Willard role 1.
+> Grace Dunphy is now part of Modern Family. This is Dead from the start role 1.
+> Unnamed Son is now part of Modern Family. This is Baby Boy role 1.
+> Unnamed Daughter is now part of Modern Family. This is Baby Girl role 1.
+> Barb Tucker is now part of Modern Family. This is Celia Weston role 1.
+> Donnie Pritchett is now part of Modern Family. This is Jonathan Banks role 1.
+> Merle Tucker is now part of Modern Family. This is Barry Corbin role 1.
+> Pilar Ramirez is now part of Modern Family. This is Elizabeth Pena role 1.
+> Sonia Ramirez is now part of Modern Family. This is Stephanie Beatriz role 1.
+> Pameron Tucker is now part of Modern Family. This is Dana Powell role 1.
+> Calhoun Johnson is now part of Modern Family. This is God knows who will play this one role 1.
+> Sophia the First. Seasons: 1 Episodes: 0
+> Minimus is now part of Sophia the First. This is Eric Stonestreet role 2.
+> Princess Sophia is now part of Sophia the First. This is Ariel Winter role 2.
+> American Horror Story Murder House created.
+> Derrick is now part of American Horror Story Murder House. This is Eric Stonestreet role 3.
+> Game of Thrones. Seasons: 8 Episodes: 30
+> Drogon is now part of Game of Thrones. This is a virtual actor.
+> Viserion is now part of Game of Thrones. This is a virtual actor.
+> Rhaegal is now part of Game of Thrones. This is a virtual actor.
+> Ghost is now part of Game of Thrones. This is a virtual actor.
+> Grey Wind is now part of Game of Thrones. This is a virtual actor.
+> Lady is now part of Game of Thrones. This is a virtual actor.
+> Summer is now part of Game of Thrones. This is a virtual actor.
+> Shaggydog is now part of Game of Thrones. This is a virtual actor.
+> Nymeria is now part of Game of Thrones. This is a virtual actor.
+> Ned Stark is now part of Game of Thrones. This is Sean Bean role 1.
+> Daenerys Targaryen is now part of Game of Thrones. This is Emilia Clarke role 1.
+> Jon Snow is now part of Game of Thrones. This is Kit Harrington role 1.
+> Cersei Lannister is now part of Game of Thrones. This is Lena Hedey role 1.
+> Jamie Lannister is now part of Game of Thrones. This is Nikolai Koster-Walnau role 1.
+> Syrio Forel is now part of Game of Thrones. This is Miltos Yerolemou role 1.
+> Arya Stark is now part of Game of Thrones. This is Maisie Williams role 1.
+> Ygritte is now part of Game of Thrones. This is Rose Leslie role 1.
+> Quote added.
+> Quote added.
+> Quote added.
+> Quote added.
+> Quote added.
+> Quote added.
+> Quote added.
+> Who is Melisandre?
+> Quote added.
+> Quote added.
+> Quote added.
+> Quote added.
+> Quote added.
+> Game of Thrones does not have season 10!
+> Game of Thrones. Seasons: 8 Episodes: 30
+> Game of Thrones S1 does not have episode 20!
+> Quote added.
+> Modern Family. Seasons: 10 Episodes: 15
+> Quote added.
+> Quote added.
+> Quote added.
+> Quote added.
+> Phil Dunphy
+> Phil Dunphy
+> Game of Thrones. Seasons: 8 Episodes: 30
+> Ygritte
+> Arya Stark, Jon Snow, Ned Stark
+> Daenerys Targaryen
+> Bye!

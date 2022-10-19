@@ -1,0 +1,72 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> Comando inactivo.
+> 4 castelos:
+3 reinos:
+Jogo iniciado, comeca o reino Lannister.
+Lannister > 1 castelos:
+Casterly Rock com riqueza 10 na posicao (1,3)
+Lannister > Sem exercito.
+Lannister > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (NightWatch)
+Casterly Rock (Lannister)
+Dread Fort (sem dono)
+3 reinos:
+Lannister; Stark; NightWatch
+Lannister > Tipo de soldado inexistente.
+Stark > 1 castelos:
+Winterfell com riqueza 5 na posicao (10,15)
+Stark > Sem exercito.
+Stark > Castelo invadido ilegalmente.
+NightWatch > 1 castelos:
+Castle Black com riqueza 3 na posicao (12,20)
+NightWatch > Sem exercito.
+NightWatch > Riqueza insuficiente para recrutamento.
+Lannister > 1 castelos:
+Casterly Rock com riqueza 13 na posicao (1,3)
+Lannister > Sem exercito.
+Lannister > cavaleiro recrutado no Casterly Rock do reino Lannister por 4 moedas.
+Stark > 1 castelos:
+Winterfell com riqueza 8 na posicao (10,15)
+Stark > Sem exercito.
+Stark > espadachim recrutado no Winterfell do reino Stark por 2 moedas.
+NightWatch > 1 castelos:
+Castle Black com riqueza 6 na posicao (12,20)
+NightWatch > Sem exercito.
+NightWatch > lanceiro recrutado no Castle Black do reino NightWatch por 2 moedas.
+Lannister > 1 castelos:
+Casterly Rock com riqueza 12 na posicao (1,3)
+Lannister > 1 soldados:
+cavaleiro na posicao (1,3)
+Lannister > Castelo nao livre.
+Stark > 1 castelos:
+Winterfell com riqueza 9 na posicao (10,15)
+Stark > 1 soldados:
+espadachim na posicao (10,15)
+Stark > Castelo nao livre.
+NightWatch > 1 castelos:
+Castle Black com riqueza 7 na posicao (12,20)
+NightWatch > Castelo nao livre.
+Lannister > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (NightWatch)
+Casterly Rock (Lannister)
+Dread Fort (sem dono)
+3 reinos:
+Lannister; Stark; NightWatch
+Lannister > Tipo de soldado inexistente.
+Stark > 20 20
+4 castelos:
+Winterfell (Stark)
+Castle Black (NightWatch)
+Casterly Rock (Lannister)
+Dread Fort (sem dono)
+3 reinos:
+Lannister; Stark; NightWatch
+Stark > 1 soldados:
+espadachim na posicao (10,15)
+Stark > Obrigado por jogar. Ate a proxima.

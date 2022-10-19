@@ -1,0 +1,46 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> Jogo iniciado, comeca a equipa Baratheon.
+Baratheon > 12 12
+Baratheon 10 6 cavaleiro(vivo) 10 7 espadachim(vivo) 11 6 lanceiro(vivo) 10 5
+Lannister 2 6 cavaleiro(vivo) 2 7 espadachim(vivo) 3 6 lanceiro(vivo) 2 5
+Baratheon > Baratheon cavaleiro(vivo) 9 7
+Baratheon cavaleiro(vivo) 8 7
+Baratheon cavaleiro(vivo) 7 7
+Lannister > Lannister espadachim(vivo) 3 7
+Baratheon > Baratheon cavaleiro(vivo) 6 7
+Baratheon cavaleiro(vivo) 5 7
+Baratheon cavaleiro(vivo) 4 7
+Lannister > Argh! A dor! Maldito sejas, cavaleiro Baratheon.
+Lannister espadachim(morto) 4 7
+Baratheon > Baratheon cavaleiro(vivo) 4 6
+Baratheon cavaleiro(vivo) 4 5
+Baratheon cavaleiro(vivo) 3 5
+Lannister > Lannister cavaleiro(vivo) 3 7
+Lannister cavaleiro(vivo) 4 7
+Lannister cavaleiro(vivo) 5 7
+Baratheon > Argh! A dor! Maldito sejas, lanceiro Lannister.
+Baratheon cavaleiro(morto) 2 5
+O cavaleiro da ilustre casa de Baratheon ja nao esta entre nos.
+Baratheon cavaleiro(morto) 2 5
+O cavaleiro da ilustre casa de Baratheon ja nao esta entre nos.
+Baratheon cavaleiro(morto) 2 5
+Lannister > Lannister lanceiro(vivo) 3 5
+Baratheon > Baratheon espadachim(vivo) 11 5
+Lannister > Lannister lanceiro(vivo) 4 5
+Baratheon > Baratheon espadachim(vivo) 11 4
+Lannister > Lannister lanceiro(vivo) 5 5
+Baratheon > Baratheon espadachim(vivo) 10 4
+Lannister > Lannister lanceiro(vivo) 6 5
+Baratheon > Baratheon espadachim(vivo) 9 4
+Lannister > Lannister lanceiro(vivo) 6 4
+Baratheon > Baratheon espadachim(vivo) 8 4
+Lannister > Lannister lanceiro(vivo) 7 4
+Baratheon > Baratheon lanceiro(vivo) 9 5
+Lannister > Argh! A dor! Maldito sejas, espadachim Baratheon.
+Lannister lanceiro(morto) 8 4
+Baratheon > 12 12
+Baratheon 10 6 cavaleiro(morto) 2 5 espadachim(vivo) 8 4 lanceiro(vivo) 9 5
+Lannister 2 6 cavaleiro(vivo) 5 7 espadachim(morto) 4 7 lanceiro(morto) 8 4
+Baratheon > Obrigado por jogar. Ate a proxima.

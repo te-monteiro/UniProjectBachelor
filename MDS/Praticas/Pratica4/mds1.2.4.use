@@ -1,0 +1,24 @@
+model exercicisesMds4
+
+
+--classes
+class Person
+end
+
+abstract class Accounts
+end
+
+class Checking < Accounts
+end
+
+class Savings < Accounts
+end
+
+class Credit < Accounts
+end
+
+--association:
+association have between
+	Person[1] role person
+	Accounts[*] role account
+end

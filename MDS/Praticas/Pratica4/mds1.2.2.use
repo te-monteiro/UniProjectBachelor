@@ -1,0 +1,26 @@
+model exercisesMds2
+
+class Student
+end
+
+class Course
+end
+
+class Instructor
+end
+
+
+--associacoes:
+associationclass enrollement between
+	Student[0..*] role student
+	Course[0..*] role course
+attributes
+	year : Integer
+end
+
+association teach between
+	Instructor[1] role instructor
+	Course[1..*] role course
+
+
+end

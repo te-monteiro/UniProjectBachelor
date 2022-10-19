@@ -1,0 +1,16 @@
+model exercicisesMds3
+
+class Musician
+end
+
+class Band
+end
+
+--associacoes:
+associationclass play between
+	Musician[2..*] role musician
+	Band[0..*] role band
+attributes 
+	starDate : Integer
+	endDate : Integer
+end

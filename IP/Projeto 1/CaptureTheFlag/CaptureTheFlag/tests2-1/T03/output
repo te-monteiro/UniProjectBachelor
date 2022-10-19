@@ -1,0 +1,8 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> Jogo iniciado, comeca a equipa montesco.
+montesco > 15 18
+montesco 4 3 cavaleiro(vivo) 4 4 espadachim(vivo) 5 3 lanceiro(vivo) 4 2
+capuleto 10 12 cavaleiro(vivo) 10 13 espadachim(vivo) 11 12 lanceiro(vivo) 10 11
+montesco > Obrigado por jogar. Ate a proxima.

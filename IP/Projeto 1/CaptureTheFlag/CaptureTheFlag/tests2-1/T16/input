@@ -1,0 +1,45 @@
+novo 10 10
+NightWatch 5 2
+Wildlings 5 9
+mapa
+cavaleiro norte norte norte
+lanceiro sul
+cavaleiro este norte norte
+lanceiro sul
+cavaleiro norte norte oeste
+lanceiro sul
+lanceiro oeste
+lanceiro sul
+lanceiro norte
+lanceiro oeste
+lanceiro norte
+lanceiro sul
+novo 10 10
+NightWatch 5 2
+Wildlings 5 9
+espadachim norte
+espadachim sul
+espadachim norte
+espadachim sul
+espadachim norte
+espadachim sul
+espadachim norte
+lanceiro este
+espadachim norte
+cavaleiro oeste sul sul
+espadachim norte
+novo 10 10
+Wildlings 5 9
+NightWatch 5 2
+lanceiro sul
+cavaleiro norte norte norte
+lanceiro sul
+lanceiro oeste
+lanceiro oeste
+lanceiro norte
+lanceiro sul
+lanceiro norte
+lanceiro sul
+lanceiro norte
+mapa
+sai

@@ -1,0 +1,4 @@
+float u = atan(-fNormal.z, fNormal.x)/(2.0*3.14);
+            float v = fNormal.y;
+        
+            return vec2(u,v);

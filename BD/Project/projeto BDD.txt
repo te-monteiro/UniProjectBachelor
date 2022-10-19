@@ -1,0 +1,104 @@
+drop table Branches
+cascade constraints;
+
+create table Branches{
+
+    code_b number
+(10) not null,
+    address_b varchar2
+(255) not null,
+    phone_b number
+(9) not null,
+
+    primary key
+(code_b)
+    
+
+};
+
+drop table People
+cascade constraints;
+
+create table People{
+
+    nif number
+(9) not null,
+    email_p varchar2
+(255) not null,
+    phone_p number
+(9) not null,
+    address_p varchar2
+(255) not null,
+    birthdate date not null,
+    name_p varchar2
+(255) not null,
+    code_b number
+(10) not null
+
+    primary key
+(nif), 
+    foreign key
+(code_b) references Branches
+(code_b)
+
+};
+
+drop table Workers
+cascade constraints;
+
+create table Workers{
+    nif number
+(9) not null,
+    wage number
+(9) not null,
+
+    primary key
+(nif),
+    foreign key
+(nif) references People
+(nif)
+};
+
+drop table Clients
+cascade constraints;
+
+create table Clients{
+    nif number
+(9) not null,
+
+    primary key
+(nif),
+    foreign key
+(nif) references People
+(nif)
+};
+
+drop table Interns
+cascade constraints;
+
+create table Interns{
+    nif number
+(9) not null,
+
+    primary key
+(nif),
+    foreign key
+(nif) references Workers
+(nif)
+};
+
+drop table Associates
+cascade constraints;
+
+create table Associates{
+    nif number
+(9) not null,
+
+    primary key
+(nif),
+    foreign key
+(nif) references Workers
+(nif)
+};
+
+

@@ -1,0 +1,141 @@
+novo - Novo jogo
+ajuda - Mostra a ajuda
+sai - Termina a execucao do programa
+> 5 castelos:
+3 reinos:
+Jogo iniciado, comeca o reino blue.
+blue > 10 10
+5 castelos:
+Castle1 (black)
+Castle2 (blue)
+Castle3 (red)
+Castle4 (sem dono)
+Castle5 (sem dono)
+3 reinos:
+blue; red; black
+blue > espadachim recrutado no Castle2 do reino blue por 2 moedas.
+red > cavaleiro recrutado no Castle3 do reino red por 4 moedas.
+black > lanceiro recrutado no Castle1 do reino black por 2 moedas.
+blue > 1 soldados:
+espadachim na posicao (3,2)
+blue > blue espadachim (4,2)
+red > 1 soldados:
+cavaleiro na posicao (5,2)
+red > Castelo nao livre.
+black > 1 soldados:
+lanceiro na posicao (1,2)
+black > black lanceiro (2,2)
+blue > 1 soldados:
+espadachim na posicao (4,2)
+blue > Argh! A dor! Maldito sejas, cavaleiro red.
+blue espadachim morto
+red > 1 castelos:
+Castle3 com riqueza 13 na posicao (5,2)
+red > 1 soldados:
+cavaleiro na posicao (5,2)
+red > red cavaleiro (4,2)
+O cavaleiro da ilustre casa de red adquiriu um novo castelo Castle2 para o seu reino.
+red cavaleiro (3,2)
+Argh! A dor! Maldito sejas, lanceiro black.
+red cavaleiro morto
+black > 10 10
+5 castelos:
+Castle1 (black)
+Castle2 (red)
+Castle3 (red)
+Castle4 (sem dono)
+Castle5 (sem dono)
+2 reinos:
+red; black
+black > 1 soldados:
+lanceiro na posicao (2,2)
+black > espadachim recrutado no Castle1 do reino black por 2 moedas.
+red > Sem exercito.
+red > cavaleiro recrutado no Castle2 do reino red por 4 moedas.
+black > 2 soldados:
+lanceiro na posicao (2,2)
+espadachim na posicao (1,2)
+black > black lanceiro (2,3)
+red > 1 soldados:
+cavaleiro na posicao (3,2)
+red > red cavaleiro (4,2)
+red cavaleiro (4,3)
+red cavaleiro (4,2)
+black > 2 soldados:
+lanceiro na posicao (2,3)
+espadachim na posicao (1,2)
+black > black lanceiro (2,2)
+red > red cavaleiro (3,2)
+Argh! A dor! Maldito sejas, lanceiro black.
+red cavaleiro morto
+black > 10 10
+5 castelos:
+Castle1 (black)
+Castle2 (red)
+Castle3 (red)
+Castle4 (sem dono)
+Castle5 (sem dono)
+2 reinos:
+red; black
+black > 3 castelos:
+3 reinos:
+Jogo iniciado, comeca o reino reino1.
+reino1 > espadachim recrutado no c1 do reino reino1 por 2 moedas.
+reino2 > lanceiro recrutado no c2 do reino reino2 por 2 moedas.
+reino3 > cavaleiro recrutado no c3 do reino reino3 por 4 moedas.
+reino1 > reino1 espadachim (1,3)
+reino2 > reino2 lanceiro (4,2)
+reino3 > 1 soldados:
+cavaleiro na posicao (5,2)
+reino3 > Argh! A dor! Maldito sejas, lanceiro reino2.
+reino3 cavaleiro morto
+reino1 > 10 10
+3 castelos:
+c1 (reino1)
+c2 (reino2)
+c3 (reino3)
+3 reinos:
+reino1; reino2; reino3
+reino1 > 1 soldados:
+espadachim na posicao (1,3)
+reino1 > lanceiro recrutado no c1 do reino reino1 por 2 moedas.
+reino2 > 1 soldados:
+lanceiro na posicao (4,2)
+reino2 > reino2 lanceiro (4,3)
+reino3 > Sem exercito.
+reino3 > cavaleiro recrutado no c3 do reino reino3 por 4 moedas.
+reino1 > 2 soldados:
+espadachim na posicao (1,3)
+lanceiro na posicao (1,2)
+reino1 > reino1 espadachim (2,3)
+reino2 > reino2 lanceiro (3,3)
+reino3 > 1 soldados:
+cavaleiro na posicao (5,2)
+reino3 > reino3 cavaleiro (4,2)
+reino3 cavaleiro (5,2)
+reino3 cavaleiro (4,2)
+reino1 > 2 soldados:
+espadachim na posicao (2,3)
+lanceiro na posicao (1,2)
+reino1 > reino1 lanceiro (2,2)
+reino2 > 1 soldados:
+lanceiro na posicao (3,3)
+reino2 > Argh! A dor! Maldito sejas, espadachim reino1.
+reino2 lanceiro morto
+reino3 > 1 soldados:
+cavaleiro na posicao (4,2)
+reino3 > O cavaleiro da ilustre casa de reino3 adquiriu um novo castelo c2 para o seu reino.
+reino3 cavaleiro (3,2)
+Argh! A dor! Maldito sejas, lanceiro reino1.
+reino3 cavaleiro morto
+reino1 > 10 10
+3 castelos:
+c1 (reino1)
+c2 (reino3)
+c3 (reino3)
+2 reinos:
+reino1; reino3
+reino1 > 2 soldados:
+espadachim na posicao (2,3)
+lanceiro na posicao (2,2)
+reino1 > Obrigado por jogar. Ate a proxima.

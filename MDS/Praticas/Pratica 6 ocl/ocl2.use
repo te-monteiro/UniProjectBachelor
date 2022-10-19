@@ -1,0 +1,33 @@
+model exercicisesMDSP6
+
+class Puzzle
+end
+
+class Numeros
+end
+
+class Linhas
+end
+
+class Colunas
+--restrincao de que nao ha numeros repetidos
+--ocl parte 
+--associacoes
+associationclass numerosl between
+	Linhas[1] role numeros
+	Numeros[1..9] role linhas
+end
+associationclass numerosc between
+	Colunas[1] role numeros
+	Numeros[1..9] role colunas
+end
+
+associationclass havel between
+	Puzzle[9] role linhas
+	Linhas[0] role puzzle
+end
+
+associationclass havec between
+	Puzzle[9] role colunas
+	Colunas[0] role puzzle
+end

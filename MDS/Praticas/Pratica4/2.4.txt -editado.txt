@@ -1,0 +1,134 @@
+var gl;
+const MAX_VERTICES = 15;
+const MIN_VERTICES = 3;
+
+var vertices_num;
+var timeLoc;
+
+
+window.onload = function init() {
+    var canvas = document.getElementById("gl-canvas");
+    gl = WebGLUtils.setupWebGL(canvas);
+    if(!gl) { alert("WebGL isn't available"); }
+    
+    var vertices = [];
+    vertices_num = Math.round(Math.random()* (MAX_VERTICES - MIN_VERTICES) + MIN_VERTICES);
+   //) var r = 0.5;
+//    points.push(center);
+    for (var  i = 0; i < vertices_num; i++){
+      var x = Math.random()*2-1,
+          y= Math.random()*2-1;
+        
+     vertices.push(vec2(x,y));
+        
+        //points.push(add(center,vec4(
+       // r*Math.cos(i*2*Math.PI/200),
+      //)  r*Math.sin(i*2*Math.PI/200),0,1.0 
+   // )));
+    }
+    
+    var random = [];
+    for(var j = 0; j <= 202; j++){
+        random.push(vec4(randomIntFromInterval(-1,1),randomIntFromInterval(-1,1),0,1));
+    }
+    
+    // Configure WebGL
+    gl.viewport(0,0,canvas.width, canvas.height);
+    gl.clearColor(1.0, 1.0, 1.0, 1.0);
+    
+    // Load shaders and initialize attribute buffers
+    var program = initShaders(gl, "vertex-shader", "fragment-shader");
+    gl.useProgram(program);
+
+    // Load the data into the GPU
+    var bufferId = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, bufferId);
+    gl.bufferData(gl.ARRAY_BUFFER, flatten(points), gl.STATIC_DRAW);
+
+    // Associate our shader variables with our data buffer
+    var vStartPosition = gl.getAttribLocation(program, "circle");
+    gl.vertexAttribPointer(vCircle, 2, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(vStartPosition);
+
+      // Associate our shader variables with our data buffer
+    var vFinalPosition = gl.getAttribLocation(program, "circle");
+    gl.vertexAttribPointer(vCircle, 2, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(vFinalPosition);
+    
+    
+    // Load the data into the GPU
+  /**  var bufferRand = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, bufferId);
+    gl.bufferData(gl.ARRAY_BUFFER, flatten(random), gl.STATIC_DRAW);
+
+    // Associate our shader variables with our data buffer
+    var vRandom = gl.getAttribLocation(program, "random");
+    gl.vertexAttribPointer(vRandom, 2, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(vRandom);
+    */
+    timeLoc = gl.getUniformLocation(program, "time");
+    
+    render();
+}
+
+function randomIntFromInterval(min, max) { // min and max included 
+  return Math.random() * (max - min) + min;
+}
+
+function render() {
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.drawArrays(gl.LINE_LOOP, 0, vertices_num);
+    gl.uniform1f(timeLoc, time);
+    time += SPEED;
+    requestAnimFrame(render);
+}
+
+
+
+
+
+<html><head>
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vStartingPosition;
+attribute vec4 vFianlPosition;
+uniform float time;
+
+float mix_percentage_calculator(float step){
+return (sin(step)+1.0)/2.0;
+}
+void main(){
+    gl_Position = mix(circle, random, 0.5);
+}
+
+</script>
+<script id="fragment-shader" type="x-shader/x-fragment">
+void main() {
+gl_Position.xy = mix(vStartingPosition, vFinalPosition, mix_percentage_calculator);
+gl_Position.z = 0.0;
+gl_Position.w = 1.0;
+
+
+}
+
+    
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+void main() {
+
+    gl_FragColor = vec4(1.0,0.0,0.0,0.0);
+
+}
+</script>
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="2.4.js"></script>   
+</head>
+<body>
+    <title>Triangle</title>
+    <canvas id="gl-canvas" width="512" height="512">
+        Oops... your browser doesn't support the HTML5 canvas element"
+    </canvas>
+
+    
+</body></html>

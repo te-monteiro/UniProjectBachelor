@@ -1,0 +1,28 @@
+model exercicisesMds5
+
+abstract class Animals
+end
+
+abstract class Pet < Animals
+end
+
+abstract class Wild < Animals
+end 
+
+class Dogs < Pet
+end
+
+class Cat < Pet
+end
+
+class Lions < Wild
+end
+
+class Tigers < Wild
+end
+
+class Elephants < Wild
+end
+
+class Wolves < Wild
+end

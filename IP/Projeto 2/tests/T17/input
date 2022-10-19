@@ -1,0 +1,72 @@
+novo 10 10 3 5
+1 2 10 Castle1
+3 2 10 Castle2
+5 2 10 Castle3
+3 4 10 Castle4
+5 4 10 Castle5
+blue Castle2
+red Castle3
+black Castle1
+mapa
+recruta espadachim Castle2
+recruta cavaleiro Castle3
+recruta lanceiro Castle1
+exercito
+soldado 3 2 este
+exercito
+recruta lanceiro Castle3
+exercito
+soldado 1 2 este
+exercito
+soldado 4 2 este
+castelos
+exercito
+soldado 5 2 oeste oeste oeste
+mapa
+exercito
+recruta espadachim Castle1
+exercito
+recruta cavaleiro Castle2
+exercito
+soldado 2 2 norte
+exercito
+soldado 3 2 este norte sul
+exercito
+soldado 2 3 sul
+soldado 4 2 oeste oeste oeste
+mapa
+novo 10 10 3 3
+1 2 10 c1
+3 2 10 c2
+5 2 10 c3
+reino1 c1
+reino2 c2
+reino3 c3
+recruta espadachim c1
+recruta lanceiro c2
+recruta cavaleiro c3
+soldado 1 2 norte
+soldado 3 2 este
+exercito
+soldado 5 2 oeste este oeste
+mapa
+exercito
+recruta lanceiro c1
+exercito
+soldado 4 2 norte
+exercito
+recruta cavaleiro c3
+exercito
+soldado 1 3 este
+soldado 4 3 oeste
+exercito
+soldado 5 2 oeste este oeste
+exercito
+soldado 1 2 este
+exercito
+soldado 3 3 oeste
+exercito
+soldado 4 2 oeste oeste este
+mapa
+exercito
+sai

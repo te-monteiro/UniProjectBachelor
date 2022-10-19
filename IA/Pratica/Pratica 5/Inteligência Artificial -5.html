@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0037)http://ia.ssdi.di.fct.unl.pt/tp5.html -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml"><!-- #BeginTemplate "Macintosh HD:Users:jleite:Documents:webs:ia:Templates:master.dwt" --><!-- DW6 --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- #BeginEditable "doctitle" -->
+<title>Inteligência Artificial</title>
+<!-- #EndEditable -->
+<link href="./Inteligência Artificial -5_files/style3.css" media="screen" rel="stylesheet" title="CSS" type="text/css">
+<link rel="stylesheet" crossorigin="anonymous" href="./Inteligência Artificial -5_files/main.css"><style type="text/css">
+.style1 {
+	border-width: 0px;
+}
+</style>
+<style type="text/css"></style></head>
+
+<body>
+
+<!-- Begin Container -->
+<div id="container">
+	<!-- Begin Masthead -->
+	<div id="masthead">
+		<a href="http://ia.ssdi.di.fct.unl.pt/index.html">
+		<img alt="" height="66" src="./Inteligência Artificial -5_files/logo.gif" width="150" class="style1"></a>
+		<p>Inteligência Artificial</p>
+	</div>
+	<!-- End Masthead -->
+	<!-- Begin Navigation -->
+	<div id="navigation">
+		<ul>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/index.html">Início</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/objectivos.html">Objectivos</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/programa.html">Programa</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/bibliografia.html">Bibliografia</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/docentes.html">Docentes</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/avaliacao.html">Avaliação</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/horario.html">Horário</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/aulas.html">Aulas</a></li>
+			<li><a href="http://ia.ssdi.di.fct.unl.pt/trabalhos.html">Trabalhos</a></li>
+			</ul>
+	</div>
+	<!-- End Navigation -->
+	<!-- Begin Page Content -->
+	<div id="page_content">
+		<!-- Begin Left Column -->
+		<div id="column_l">
+			<!-- #BeginEditable "content" -->			
+<h2>Modelação de problemas de Planeamento</h2>
+<p>O tópico destas aulas é modelação de problemas de Planeamento em PDDL. Poderá usar o editor/planeador disponível em <a href="http://editor.planning.domains/">http://editor.planning.domains</a>.</p>
+<h3>Exemplo</h3>
+<p><strong>I</strong> - Dentro de uma sala, onde se encontra  um macaco, está um cacho de bananas  pendurado no tecto, demasiado alto para o macaco lhe chegar, existindo também uma fonte de água, uma faca e um copo. Num canto da sala está um caixote, que não está por baixo das bananas. O caixote é suficientemente forte para suportar o macaco se ele lhe subir para cima, e suficientemente leve para por ele ser empurrado entre quaisquer dois locais. Se o macaco, na posse da faca, subir para cima do caixote e este estiver junto às bananas, o macaco consegue apanhar as bananas. Noutro local da sala, afastado da fonte de água, está um copo. Se o macaco tiver o copo consigo, e estiver junto à fonte de água, pode encher o copo de água. O macaco consegue executar as seguintes acções:</p>
+<ul>
+  <li>Mover-se entre quaisquer dois pontos da sala, desde que não esteja em cima do caixote;</li>
+  <li>Subir para cima do caixote, assumindo que o macaco está no local do caixote;</li>
+  <li>Empurrar o caixote entre quaisquer dois pontos, assumindo que o macaco está no local do caixote, e não  está em cima dele;</li>
+  <li>Apanhar a faca, assumindo que o macaco está no local da faca;</li>
+  <li>Apanhar o copo, assumindo que o macaco está no local do copo;</li>
+  <li>Apanhar as bananas, assumindo que o macaco está em cima do caixote, no local das bananas, e tem a faca.</li>
+  <li>Encher o copo de água, assumindo que o macaco está no chão, tem o copo e está no local da fonte de água.</li>
+</ul>
+<p>Para modelar este exemplo em PDDL, iremos usar as  constantes (com significado óbvio) monkey, box, knife, bananas, glass, water e waterfountain, bem como os seguintes  predicados:</p>
+<ul>
+  <li><code>location/1</code> - predicado de domínio indicando os locais da sala;</li>
+  <li><code>on-floor/0</code> - proposição indicando que o macaco está no chão;</li>
+  <li> <code>at/2</code> - predicado binário indicando que o objecto referido pelo primeiro termo está no local referido pelo segundo termo.</li>
+  <li><code>onbox/0</code> - proposição indicando que o macaco está em cima do caixote;</li>
+  <li><code>hasknife/0</code> - proposição indicando que o macaco tem a faca;</li>
+  <li><code>hasbananas/0</code> - proposição indicando que o macaco tem as bananas;</li>
+  <li><code>hasglass/0</code> - proposição indicando que o macaco tem o copo;</li>
+  <li><code>haswater/0</code> - proposição indicando que o macaco tem o copo cheio de água;</li>
+</ul>
+<p>Em PDDL, isto é declarado através de:</p>
+<blockquote>
+  <p> <code>(:constants monkey box knife bananas glass water waterfountain) </code></p>
+  <p><code>(:predicates (on-floor) (at ?x ?y) (onbox) (hasknife)<br> 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(hasbananas) 	       (hasglass) (haswater) (location ?x))</code></p>
+</blockquote>
+<p>As acções são definidas da seguinte forma:</p>
+<blockquote>
+  <p> <code>(:action go-to<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:parameters (?x ?y)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:precondition (and (not (= ?y ?x)) (on-floor)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(at monkey ?y))<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:effect (and (at monkey ?x) (not (at monkey ?y))))<br>
+    (:action climb<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:parameters (?x)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:precondition (and (at box ?x) (at monkey ?x))<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:effect (and (onbox) (not (on-floor))))<br>
+    (:action push-box<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:parameters (?x ?y)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:precondition (and (not (= ?y ?x)) (at box ?y)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(at monkey ?y) (on-floor))<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:effect (and (at monkey ?x) (not (at monkey ?y))<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(at box ?x) (not (at box ?y))))<br>
+    (:action get-knife<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:parameters (?y)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:precondition (and (at knife ?y) (at monkey ?y))<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:effect (and (hasknife) (not (at knife ?y))))<br>
+    (:action grab-bananas<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:parameters (?y)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:precondition (and (at monkey ?y) (hasknife)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(at bananas ?y) (onbox))<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:effect (hasbananas))<br>
+    (:action pickglass<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:parameters (?y)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:precondition (and (at glass ?y) (at monkey ?y))<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:effect (and (hasglass) (not (at glass ?y))))<br>
+    (:action getwater<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:parameters (?y)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:precondition (and (hasglass) (at waterfountain ?y)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(at monkey ?y) (on-floor))<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:effect (haswater))</code></p>
+</blockquote>
+<p>Devido à utilização da igualdade, é necessário declarar </p>
+<blockquote>
+  <p> <code>(:requirements :equality)</code></p>
+</blockquote>
+<p>A definição completa do domínio pode ser encontrada <a href="http://ia.ssdi.di.fct.unl.pt/tp5/monkey.pddl">aqui</a><a href="https://pt.wikipedia.org/wiki/Torre_de_Han%C3%B3i"></a>.</p>
+<p>Pode testar a implementação usando o seguinte problema (disponível <a href="http://ia.ssdi.di.fct.unl.pt/tp5/monkey6.pddl">aqui</a>):</p>
+<blockquote>
+  <p><code>(define (problem monkey-test3)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:domain monkey-domain)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:objects p1 p2 p3 p4 p5 p6)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:init (location p1) (location p2) <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(location p3) (location p4)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(location p5) (location p6)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(at monkey p1) (on-floor)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(at box p2)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(at bananas p3)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(at knife p4)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(at waterfountain p5) (at glass p6))<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:goal (and (hasbananas) (haswater))))</code></p>
+</blockquote>
+<p>Poderá também criar outros problemas diferentes para testar a definição do domínio.</p>
+<h3>Exercícios</h3>
+<p><strong>I</strong> - Considere uma generalização do problema das <a href="https://pt.wikipedia.org/wiki/Torre_de_Han%C3%B3i">Torres de Hanói</a>, permitindo a existência de um número arbitrário de pinos e de discos. Assumindo que o domínio está definido em PDDL com o nome "hanoi",uma instância da versão clássica com 3 torres e 3 discos poderia ser representada da seguinte forma em PDDL:</p>
+<blockquote>
+  <p><code>(define (problem hanoi-3)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:domain hanoi)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:objects p1 p2 p3 d1 d2 d3)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:init (disk d1) (disk d2) (disk d3) (on d1 d2)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;(on d2 d3) (on d3 p3)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(smaller d1 p1) (smaller d2 p1) (smaller d3 p1) <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(smaller d1 p2) (smaller d2 p2) (smaller d3 p2) <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(smaller d1 p3) (smaller d2 p3) (smaller d3 p3) <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(smaller d1 d2) (smaller d1 d3) (smaller d2 d3) <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(clear p1) (clear p2) (clear d1))<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:goal (and (on d1 d2) (on d2 d3) (on d3 p1))))</code></p>
+</blockquote>
+<p>Modele o domínio das Torres de Hanói em PDDL de modo a que possa resolver problemas arbitrários do tipo do problema descrito i.e. considerando várias torres, discos, configurações iniciais e finais (dica: basta definir uma acção <code>move-disk/3</code>). Pode testar a sua implementação <a href="http://ia.ssdi.di.fct.unl.pt/tp5/hanoi7.pddl">neste problema</a>.</p>
+<p><strong>II</strong> - Um robô tem vários braços, podendo apanhar e largar caixas, uma com cada um dos braços de forma independente, e transportá-las entre as várias divisões de uma casa. Claro que o robô só se pode deslocar entre divisões que estejam ligadas. O objectivo é colocar as caixas nas salas indicadas. </p>
+<p>Assumindo que o domínio está definido em PDDL com o nome "robot", segue a descrição de um problema concreto envolvendo uma casa com duas divisões, A e B, ligadas entre sí, um robô inicialmente localizado na divisao A, com dois braços, inicialmente vazios, duas caixas, 1 e 2, e o objectivo de colocar a caixa 1 na divisão B.</p>
+<blockquote>
+  <p align="left"><code>(define (problem duasSalas)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:domain robot)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:objects divisaoA divisaoB caixa1 caixa2<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;bracoEsquerdo bracoDireito)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:init (divisao divisaoA)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(divisao divisaoB)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(caixa caixa1)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(caixa caixa2)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(braco bracoEsquerdo)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (braco bracoDireito)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(em-robot divisaoA)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(livre bracoEsquerdo)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(livre bracoDireito)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(em caixa1 divisaoA)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(em caixa2 divisaoA)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ligado divisaoA divisaoB)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ligado divisaoB divisaoA))<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(:goal (em caixa1 divisaoB)))</code></p>
+</blockquote>
+<p align="left">Um plano para este problema consistiria na execução da acção apanhar da caixa1 com um dos braços, deslocar para a divisão b, e largar a caixa1 com o braço usado para a apanhar, na divisão b.</p>
+<p align="left">Modele este domínio em PDDL de modo a que possa resolver problemas arbitrários do tipo do problema descrito i.e. considerando vários braços, várias caixas, varias casas com várias configurações, e objectivos que prevejam localizações específicas para várias caixas. Pode testar a sua implementação <a href="http://ia.ssdi.di.fct.unl.pt/tp5/robot12.pddl">neste problema</a>.</p>
+<p><strong>III</strong> - Existem várias cidades, cada uma contendo vários locais, alguns dos quais são aeroportos. Há também camiões, que podem ser conduzidos dentro de uma única cidade, e aviões, que podem voar entre os aeroportos. O objetivo é transportar alguns objectos de vários locais para vários novos locais. </p>
+<p>Modele este domínio em PDDL usando 9 predicados: pacote/1, camiao/1, aviao/1, local/1, aeroporto/1, cidade/1, em_local/2, em_veiculo/2 e em_cidade/2. Pode testar a sua implementação <a href="http://ia.ssdi.di.fct.unl.pt/tp5/logistica1.pddl">neste problema</a>.</p>
+<p align="left"><br>
+</p>
+			<!-- #EndEditable --></div>
+		<!-- End Left Column --></div>
+	<!-- End Page Content -->
+	<!-- Begin Footer -->
+	<div id="footer">
+		<p>	<a href="http://ia.ssdi.di.fct.unl.pt/index.html">Início</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/objectivos.html">Objectivos</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/programa.html">Programa</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/bibliografia.html">Bibliografia</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/docentes.html">Docentes</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/avaliacao.html">Avaliação</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/horario.html">Horário</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/aulas.html">Aulas</a> |
+			<a href="http://ia.ssdi.di.fct.unl.pt/trabalhos.html">Trabalhos</a> |
+		</p><p>Comentários e sugestões para 
+		<a href="mailto:jleite@fct.unl.pt?subject=BD%20-%20Website">jleite@fct.unl.pt</a></p>
+	</div>
+	<!-- End Footer --></div>
+<!-- End Container -->
+
+
+
+<!-- #EndTemplate -->
+</body></html>
